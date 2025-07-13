@@ -1,0 +1,348 @@
+"use client"
+
+import type React from "react"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false)
+      setFormData({ name: "", email: "", phone: "", message: "" })
+    }, 3000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  const contactInfo = [
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: "Phone",
+      details: ["[Phone Number]"],
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: "Email",
+      details: ["[Email Address]"],
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: "Address",
+      details: [
+        "Kynexa Advanced Physiotherapy and Manual Therapy Clinic",
+        "[Full Address]",
+        "Delhi, India"
+      ],
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "Clinic Hours",
+      details: [
+        "Monday to Saturday: 9:00 AM – 7:00 PM",
+        "Sunday: Closed"
+      ],
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#4e54c8] to-[#8f94fb] text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Badge className="bg-white/20 text-white hover:bg-white/30 border-none px-4 py-1.5 text-sm rounded-full">Contact Us</Badge>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white font-heading leading-tight">
+                Let's Start Your Healing Journey
+              </h1>
+              <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
+                We're just one message away from helping you move better, feel stronger, and live pain-free.
+              </p>
+              <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
+                Whether you're ready to book your first session, have questions about our therapies, or simply want to say hello—we'd love to hear from you. At Kynexa, we believe healing begins with connection. So go ahead, reach out. Your recovery story starts here.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book Consultation
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Us Now
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative hidden lg:block">
+              <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#4e54c8]/5 to-[#8f94fb]/5 rounded-3xl"></div>
+                <Image
+                  src="/placeholder.svg?height=500&width=400"
+                  alt="Contact Us"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto rounded-2xl relative z-10"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#8f94fb] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#4e54c8] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white -mt-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow">
+                <div className="h-1 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] rounded-full flex items-center justify-center mx-auto text-white">
+                    {info.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#4e54c8] text-center font-heading">{info.title}</h3>
+                  <div className="space-y-1 text-center">
+                    {info.details.map((detail, detailIndex) => (
+                      <p key={detailIndex} className="text-gray-700 font-medium">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-700 font-medium flex items-center justify-center">
+              <Phone className="w-5 h-5 mr-2 text-[#4e54c8]" />
+              WhatsApp: [WhatsApp Number]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content Section with Form */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8">
+            {/* Quick Contact Form - Redesigned and Compact */}
+            <div className="lg:col-span-5">
+              <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white h-full">
+                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <CardContent className="p-6">
+                  <div className="space-y-5">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center">
+                        <div className="bg-[#4e54c8]/10 p-2 rounded-full mr-3">
+                          <MessageSquare className="w-5 h-5 text-[#4e54c8]" />
+                        </div>
+                        <h2 className="text-xl font-bold text-[#4e54c8] font-heading">Quick Contact Form</h2>
+                      </div>
+                      <p className="text-gray-600 text-sm font-body">
+                        Not sure where to begin? Tell us what's troubling you, and we'll point you toward the right solution.
+                      </p>
+                    </div>
+
+                    {isSubmitted ? (
+                      <div className="text-center py-10 space-y-4">
+                        <div className="w-16 h-16 bg-[#4e54c8]/10 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle className="w-8 h-8 text-[#4e54c8]" />
+                        </div>
+                        <h3 className="text-lg font-bold text-[#4e54c8]">Message Sent Successfully!</h3>
+                        <p className="text-gray-600 text-sm">We'll get back to you within 24 hours.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit} className="space-y-3">
+                        <Input
+                          name="name"
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="border-gray-200  rounded-md h-10 text-sm"
+                        />
+                        <Input
+                          name="email"
+                          type="email"
+                          placeholder="Email Address"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="border-gray-200  rounded-md h-10 text-sm"
+                        />
+                        <Input
+                          name="phone"
+                          placeholder="Phone Number"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          className="border-gray-200   rounded-md h-10 text-sm"
+                        />
+                        <Textarea
+                          name="message"
+                          placeholder="Your Message / Query"
+                          rows={10}
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                          className="border-gray-200 rounded-md resize-none text-sm"
+                        />
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] text-white hover:opacity-80 py-2 rounded-md transition-all duration-200 text-sm"
+                        >
+                          {isSubmitting ? (
+                            "Sending..."
+                          ) : (
+                            <>
+                              <Send className="w-4 h-4 mr-2" />
+                              Let's Talk
+                            </>
+                          )}
+                        </Button>
+                      </form>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Face-to-Face Chat & Map */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Face-to-Face Chat */}
+              <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
+                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-[#4e54c8]/10 p-2 rounded-full mt-0.5">
+                      <Headphones className="w-5 h-5 text-[#4e54c8]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[#4e54c8] font-heading mb-2">Prefer a Face-to-Face Chat?</h3>
+                      <p className="text-gray-600 text-sm font-body">
+                        We offer free 10-minute consultations to help you understand which therapy suits you best. Just mention it when you reach out!
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Map Integration */}
+              <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
+                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <CardContent className="p-0">
+                  <div className="h-[220px] bg-gradient-to-br from-slate-50 to-gray-100 rounded-b-xl flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <MapPin className="w-10 h-10 text-[#4e54c8] mx-auto opacity-80" />
+                      <p className="text-[#4e54c8] font-medium text-sm">Find Us On Map</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Stay Connected */}
+              <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
+                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-[#4e54c8]/10 p-2 rounded-full mt-0.5">
+                      <Users className="w-5 h-5 text-[#4e54c8]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-[#4e54c8] font-heading mb-2">Stay Connected</h3>
+                      <p className="text-gray-600 text-sm font-body mb-4">
+                        Healing never goes out of style—follow Kynexa for a daily dose of movement, motivation, and momentum.
+                      </p>
+                      <div className="flex space-x-4">
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                          <Instagram className="w-4 h-4" />
+                        </Link>
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                          <Facebook className="w-4 h-4" />
+                        </Link>
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                          <Twitter className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Ready to Take the First Step?</h2>
+            <p className="text-xl text-white/90 font-body">
+              Your healing begins the moment you reach out. Don't let pain decide your pace.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Your Appointment Now
+            </Button>
+            <Button
+              variant="outline"
+              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+            >
+              <Send className="w-5 h-5 mr-2" />
+              Or just drop us a message
+            </Button>
+          </div>
+          
+          <div className="pt-8 flex justify-center items-center">
+            <Link href="/services" className="text-white/90 hover:text-white flex items-center group transition-all duration-300">
+              <span className="mr-2">Explore Our Services</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
