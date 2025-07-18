@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Phone, Menu, X, ChevronDown, Heart, Brain, Activity, Dumbbell, Users, Home, PhoneCall } from "lucide-react"
+import { Phone, Menu, X, ChevronDown, Heart, Brain, Activity, Dumbbell, Users, Home, PhoneCall, Syringe, Waves, Zap, Bone, Bandage, Accessibility } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -25,20 +25,22 @@ export default function Navbar({ subServices }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
-  // All services from the provided image with their icons
+  // All services with proper routing and specific icons
   const allServices = [
-    { name: "Dry Needling Therapy", href: "/services/DryNiddle", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Cupping Therapy", href: "#services/cupping-therapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Kinesio Taping", href: "#services/KinesioTapingTherapy", icon: <Dumbbell className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Laser Therapy", href: "/services/LaserTherapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Manual Therapy", href: "#services/ManualTherapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Electrotherapy", href: "/services/Electrotherapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Sports Physiotherapy", href: "#services/SportsPhysiotherapy", icon: <Dumbbell className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Cardio & Pulmonary Rehab", href: "#services/CardioPulmonaryRehab", icon: <Heart className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Chiropractic Care", href: "#services/ChiropracticCare", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Geriatric Rehabilitation", href: "#services/GeriatricRehabilitation", icon: <Users className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Post Surgical Rehabilitation", href: "#services/PostSurgicalRehabilitation", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
-    { name: "Spine Alignment Therapy", href: "#services/SpineAlignmentTherapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> }
+    { name: "Dry Needling Therapy", href: "/services/DryNiddle", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Cupping Therapy", href: "/services/cupping-therapy", icon: <Waves className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Kinesio Taping", href: "/services/KinesioTapingTherapy", icon: <Bandage className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Laser Therapy", href: "/services/LaserTherapy", icon: <Zap className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Manual Therapy", href: "/services/ManualTherapy", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Electrotherapy", href: "/services/Electrotherapy", icon: <Zap className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Sports Physiotherapy", href: "/services/SportsPhysiotherapy", icon: <Dumbbell className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Cardio & Pulmonary Rehab", href: "/services/CardioPulmonaryRehab", icon: <Heart className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Chiropractic Care", href: "/services/ChiropracticCare", icon: <Bone className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Geriatric Rehabilitation", href: "/services/GeriatricRehabilitation", icon: <Accessibility className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Post Surgical Rehabilitation", href: "/services/PostSurgicalRehabilitation", icon: <Activity className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Spine Alignment Therapy", href: "/services/SpineAlignmentTherapy", icon: <Bone className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Neuro Rehabilitation", href: "/services/NeuroRehabilitation", icon: <Brain className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Pre & Post Natal Physiotherapy", href: "/services/PreAndPostNatalPhysiotherapy", icon: <Heart className="w-4 h-4 mr-2 text-[#6c2c8b]" /> }
   ]
 
   return (
@@ -74,12 +76,12 @@ export default function Navbar({ subServices }: NavbarProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent 
                 align="center" 
-                className="w-[800px] bg-white shadow-xl p-6 rounded-xl mt-4 border border-gray-100"
+                className="w-[900px] bg-white shadow-xl p-6 rounded-xl mt-4 border border-gray-100"
               >
-                <div className="grid grid-cols-4 gap-3">
+                <div className="grid grid-cols-3 gap-3">
                   {allServices.map((service, i) => (
                     <DropdownMenuItem key={i} asChild className="rounded-md hover:bg-gray-50 focus:bg-gray-50 transition-all duration-200 py-2.5 px-3">
-                      <Link href={service.href} className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium">
+                      <Link href={service.href} className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium text-sm">
                         {service.icon}
                         {service.name}
                       </Link>
@@ -151,7 +153,7 @@ export default function Navbar({ subServices }: NavbarProps) {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="mt-2 pl-4 space-y-2 border-l-2 border-[#6c2c8b]/20">
+                  <div className="mt-2 pl-4 space-y-2 border-l-2 border-[#6c2c8b]/20 max-h-80 overflow-y-auto">
                     {allServices.map((service, i) => (
                       <Link 
                         key={i}

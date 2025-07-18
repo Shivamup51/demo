@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Calendar, Home, Waves, CheckCircle, ArrowLeft, Clock, MapPin, Mail } from "lucide-react"
+import { Phone, Calendar, Home, Waves, CheckCircle, ArrowLeft, Clock, MapPin, Mail, Shield, Activity } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -39,6 +39,15 @@ export default function CuppingTherapyPage() {
     "Trusted provider of physiotherapy in Delhi with a growing base of happy clients",
   ]
 
+  const cuppingTypes = [
+    "Dry Cupping – Creates suction to lift skin and promote blood flow",
+    "Wet Cupping – Combines suction with controlled micro-incisions for deeper therapy",
+    "Fire Cupping – Traditional method using flame to create suction",
+    "Silicone Cupping – Modern, flexible cups for dynamic movement therapy",
+    "Massage Cupping – Moving cups technique for broader muscle treatment",
+    "Facial Cupping – Gentle technique for facial rejuvenation and tension relief"
+  ]
+
   const faqs = [
     {
       question: "Is cupping therapy painful?",
@@ -59,31 +68,30 @@ export default function CuppingTherapyPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB]">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge className="bg-[#A259FF]/10 text-[#A259FF] border-[#A259FF]/20">Traditional Healing</Badge>
-                <h1 className="text-4xl sm:text-5xl font-bold text-[#111827] font-heading leading-tight">
+              <div className="space-y-4 mt-10">
+                <h1 className="text-4xl sm:text-5xl font-bold text-white font-heading leading-tight">
                   Cupping Therapy in Delhi
                 </h1>
-                <p className="text-xl text-[#2E3A59] font-body">Ancient Wisdom. Modern Healing.</p>
-                <p className="text-lg text-[#6B7280] font-body max-w-lg">
+                <p className="text-xl text-white/90 font-body">Ancient Wisdom. Modern Healing.</p>
+                <p className="text-lg text-white/80 font-body max-w-lg">
                   At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer cupping therapy in Delhi as part of our holistic physiotherapy services. This time-tested technique, rooted in traditional medicine and now backed by modern science, is designed to relieve pain, improve circulation, and promote deep tissue healing.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-[#2E3A59] to-[#A259FF] hover:from-[#A259FF] hover:to-[#2E3A59] text-white px-8 py-6 text-lg font-medium transition-all duration-300">
+                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-[#A259FF] text-[#A259FF] hover:bg-[#A259FF] hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent"
+                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
                 >
                   <Home className="w-5 h-5 mr-2" />
                   Home Visit Available
@@ -92,111 +100,58 @@ export default function CuppingTherapyPage() {
             </div>
 
             <div className="relative">
-              <div className="relative z-10 bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-2xl border border-gray-200/50">
-                <div className="w-full h-96 bg-gradient-to-br from-[#A259FF]/10 to-[#2E3A59]/10 rounded-2xl flex items-center justify-center">
-                  <Waves className="w-24 h-24 text-[#2E3A59]" />
+              <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
+                <div className="w-full h-96 bg-gradient-to-br from-[#6c2c8b]/10 to-[#9d4ed8]/10 rounded-2xl flex items-center justify-center">
+                  <Waves className="w-24 h-24 text-[#6c2c8b]" />
                 </div>
               </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What is Cupping */}
+      {/* What is Cupping Therapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">What is Cupping Therapy?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Cupping Therapy?</h2>
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-[#6B7280] font-body leading-relaxed mb-6">
-              Cupping therapy is a non-invasive treatment where specialized cups are placed on the skin to create suction. This suction gently lifts the skin and underlying tissues, stimulating blood flow, loosening tight muscles, and encouraging lymphatic drainage. It's often described as a "reverse massage" because instead of applying pressure, it lifts and decompresses the tissues.
+            <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
+              Cupping therapy is an ancient healing practice that involves placing special cups on the skin to create suction. This suction helps to increase blood flow, reduce inflammation, and promote healing in the targeted areas. The technique has been used for thousands of years across various cultures and is now increasingly integrated into modern healthcare.
             </p>
-
-            <div className="bg-[#F9FAFB] rounded-2xl p-8 mb-6">
-              <h3 className="text-xl font-bold text-[#111827] font-heading mb-4">There are two main types:</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#A259FF] rounded-full mt-3"></div>
-                  <p className="text-[#6B7280] font-body">
-                    <strong className="text-[#111827]">Dry Cupping:</strong> Suction is applied without any incisions.
-                  </p>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#A259FF] rounded-full mt-3"></div>
-                  <p className="text-[#6B7280] font-body">
-                    <strong className="text-[#111827]">Wet Cupping (Hijama):</strong> Involves light skin pricks to draw out small amounts of blood, used for detoxification.
-                  </p>
-                </li>
-              </ul>
-            </div>
-
-            <p className="text-lg text-[#6B7280] font-body leading-relaxed">
-              At Kynexa, we primarily use dry cupping as part of our physiotherapy services in Delhi, ensuring a safe and comfortable experience.
+            <p className="text-lg text-gray-700 font-body leading-relaxed">
+              By creating negative pressure, cupping helps to lift and separate tissue layers, allowing for improved circulation and the release of toxins. This makes it an excellent complement to other physiotherapy treatments for pain management and muscle recovery.
             </p>
           </div>
         </div>
       </section>
 
-      {/* How Does Cupping Work */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
+      {/* Types of Cupping */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">How Does Cupping Therapy Work?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Types of Cupping Therapy</h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <p className="text-lg text-[#6B7280] font-body leading-relaxed">
-                Cupping therapy works by creating a vacuum-like suction on the skin using specialized cups. This gentle suction raises the skin and underlying tissues, helping to:
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                  <p className="text-[#6B7280] font-body">Increase blood circulation to the targeted area</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                  <p className="text-[#6B7280] font-body">Loosen tight muscles and fascia</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                  <p className="text-[#6B7280] font-body">Stimulate lymphatic drainage to remove toxins</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                  <p className="text-[#6B7280] font-body">Trigger the body's natural healing response</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-xl font-bold text-[#111827] font-heading mb-4">Two Main Methods:</h3>
-                <div className="space-y-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cuppingTypes.map((type, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-[#2E3A59] rounded-full mt-3"></div>
-                    <div>
-                      <h4 className="font-semibold text-[#111827] mb-2">Dry Cupping</h4>
-                      <p className="text-[#6B7280] font-body text-sm">Cups are placed on the skin and left for 5–15 minutes to create suction. This draws blood to the surface and promotes healing.</p>
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">
+                      {index + 1}
                     </div>
+                    <p className="text-gray-700 font-body text-sm leading-relaxed">{type}</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-[#2E3A59] rounded-full mt-3"></div>
-                    <div>
-                      <h4 className="font-semibold text-[#111827] mb-2">Gliding Cupping</h4>
-                      <p className="text-[#6B7280] font-body text-sm">Cups are smoothly moved over the skin using oil, creating a massage-like effect that's perfect for relaxing muscles and releasing fascia.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-lg text-[#6B7280] font-body leading-relaxed">
-                At Kynexa, we use safe, hygienic, and clinically approved cupping techniques as part of our integrated physiotherapy services in Delhi to ensure optimal results with minimal discomfort.
-              </p>
-            </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -206,14 +161,15 @@ export default function CuppingTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Benefits */}
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#111827] font-heading mb-6">Benefits of Cupping Therapy</h3>
+                <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6">Benefits of Cupping Therapy</h3>
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                      <p className="text-[#6B7280] font-body">{benefit}</p>
+                      <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                      <p className="text-gray-700 font-body">{benefit}</p>
                     </div>
                   ))}
                 </div>
@@ -221,14 +177,15 @@ export default function CuppingTherapyPage() {
             </Card>
 
             {/* Conditions Treated */}
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#111827] font-heading mb-6">Conditions We Treat with Cupping</h3>
+                <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6">Conditions We Treat</h3>
                 <div className="space-y-4">
                   {conditions.map((condition, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <Waves className="w-5 h-5 text-[#2E3A59] mt-1 flex-shrink-0" />
-                      <p className="text-[#6B7280] font-body">{condition}</p>
+                      <Waves className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                      <p className="text-gray-700 font-body">{condition}</p>
                     </div>
                   ))}
                 </div>
@@ -239,19 +196,20 @@ export default function CuppingTherapyPage() {
       </section>
 
       {/* Why Choose Kynexa */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">Why Choose Kynexa for Cupping Therapy?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa Advanced Physiotherapy?</h2>
           </div>
 
-          <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+            <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
             <CardContent className="p-8">
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#A259FF] mt-1 flex-shrink-0" />
-                    <p className="text-[#6B7280] font-body">{reason}</p>
+                    <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body">{reason}</p>
                   </div>
                 ))}
               </div>
@@ -264,100 +222,93 @@ export default function CuppingTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">What to Expect During Your Session</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During Your Session</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center bg-gradient-to-br from-[#A259FF]/5 to-[#2E3A59]/5 border-0">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h3 className="text-lg font-bold text-[#111827] font-heading">Assessment</h3>
-                <p className="text-[#6B7280] font-body text-sm">Your session begins with a detailed assessment of your symptoms and goals.</p>
+                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Assessment</h3>
+                <p className="text-gray-600 font-body text-sm">
+                  We'll evaluate your condition and determine the best cupping approach for your specific needs.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center bg-gradient-to-br from-[#A259FF]/5 to-[#2E3A59]/5 border-0">
+            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
                   <Waves className="w-8 h-8" />
                 </div>
-                <h3 className="text-lg font-bold text-[#111827] font-heading">Apply Cups</h3>
-                <p className="text-[#6B7280] font-body text-sm">Apply cups to specific areas using gentle suction.</p>
+                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Treatment</h3>
+                <p className="text-gray-600 font-body text-sm">
+                  Gentle placement of cups on targeted areas with controlled suction for optimal therapeutic effect.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center bg-gradient-to-br from-[#A259FF]/5 to-[#2E3A59]/5 border-0">
+            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white">
-                  <Clock className="w-8 h-8" />
+                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
+                  <Shield className="w-8 h-8" />
                 </div>
-                <h3 className="text-lg font-bold text-[#111827] font-heading">Treatment</h3>
-                <p className="text-[#6B7280] font-body text-sm">Leave them in place for 5–15 minutes or use gliding cupping for a massage-like effect.</p>
+                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Aftercare</h3>
+                <p className="text-gray-600 font-body text-sm">
+                  Post-treatment care instructions and recommendations for maximizing therapeutic benefits.
+                </p>
               </CardContent>
             </Card>
-
-            <Card className="text-center bg-gradient-to-br from-[#A259FF]/5 to-[#2E3A59]/5 border-0">
-              <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white">
-                  <CheckCircle className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-[#111827] font-heading">Post-Care</h3>
-                <p className="text-[#6B7280] font-body text-sm">Provide post-session care tips to enhance results.</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-lg text-[#6B7280] font-body">
-              You may notice temporary circular marks on the skin—these are not bruises but signs of increased blood flow and typically fade within a few days.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Book Appointment */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">Book Your Appointment Today</h2>
-            <p className="text-lg text-[#6B7280] font-body">
-              If you're looking for cupping therapy in Delhi that blends tradition with clinical precision, Kynexa Advanced Physiotherapy and Manual Therapy Clinic is your destination. Let us help you restore balance, relieve pain, and rejuvenate your body.
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Experience the Healing Power of Cupping</h2>
+            <p className="text-lg text-white/80 font-body">
+              Discover how this ancient therapy can help you achieve modern wellness. Our skilled practitioners combine traditional cupping techniques with contemporary physiotherapy for optimal results.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white mb-4">
+            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Phone className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#111827] font-heading mb-2">Call Us</h3>
-              <p className="text-[#6B7280] font-body">[Phone Number]</p>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
+              <p className="text-white/80 font-body">+91 9876543210</p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#2E3A59] to-[#A259FF] rounded-2xl flex items-center justify-center mx-auto text-white mb-4">
+            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#111827] font-heading mb-2">Email Us</h3>
-              <p className="text-[#6B7280] font-body">[Email Address]</p>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
+              <p className="text-white/80 font-body">info@kynexa.com</p>
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 bg-white/10 p-6 rounded-2xl backdrop-blur-sm inline-block mx-auto">
             <div className="flex items-center justify-center space-x-4">
-              <MapPin className="w-5 h-5 text-[#2E3A59]" />
-              <p className="text-[#6B7280] font-body">Visit us: [Clinic Address]</p>
+              <MapPin className="w-5 h-5 text-white" />
+              <p className="text-white/80 font-body">Delhi, India</p>
             </div>
             <div className="flex items-center justify-center space-x-4">
-              <Clock className="w-5 h-5 text-[#2E3A59]" />
-              <p className="text-[#6B7280] font-body">Hours: [Operating Hours]</p>
+              <Clock className="w-5 h-5 text-white" />
+              <p className="text-white/80 font-body">Mon-Sat: 9AM-7PM</p>
             </div>
           </div>
 
           <div className="mt-8">
-            <Button className="bg-gradient-to-r from-[#2E3A59] to-[#A259FF] hover:from-[#A259FF] hover:to-[#2E3A59] text-white px-8 py-6 text-lg font-medium transition-all duration-300">
+            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>
@@ -369,35 +320,22 @@ export default function CuppingTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] font-heading">Frequently Asked Questions (FAQs)</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
           </div>
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300">
+                <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-[#111827] font-heading mb-3">{index + 1}. {faq.question}</h3>
-                  <p className="text-[#6B7280] font-body">{faq.answer}</p>
+                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading mb-3">{index + 1}. {faq.question}</h3>
+                  <p className="text-gray-600 font-body">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <Image src="/logo.png" alt="KYNEXA PHYSIO Logo" width={120} height={40} className="h-10 w-auto" />
-            </div>
-            <p className="text-[#6B7280] font-body">
-              KYNEXA PHYSIO - Providing exceptional physiotherapy and rehabilitation services with a personal touch.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
