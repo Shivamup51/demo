@@ -56,7 +56,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#4e54c8] to-[#8f94fb] text-white">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -67,12 +67,12 @@ export default function AboutPage() {
                 </h1>
                 <p className="text-xl text-white/90 font-body">Where Movement Meets Mastery</p>
                 <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  At Kynexa, we believe that healing is more than just recovery—it's about reclaiming strength, restoring confidence, and redefining personal limits. Located in the heart of Delhi, our clinic serves as a sanctuary for individuals seeking expert care, personalized treatment, and long-term wellness.
+                  At Kynexa, we believe that healing is more than just recovery—it’s about reclaiming strength, restoring confidence, and redefining personal limits. Located in the heart of Delhi, our clinic serves as a sanctuary for individuals seeking expert care, personalized treatment, and long-term wellness.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Consultation
                 </Button>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4e54c8]/5 to-[#8f94fb]/5 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
                 <Image
                   src="/placeholder.svg?height=500&width=400"
                   alt="Kynexa Clinic"
@@ -97,8 +97,8 @@ export default function AboutPage() {
                   className="w-full h-auto rounded-2xl relative z-10"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#8f94fb] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#4e54c8] rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>
@@ -117,15 +117,14 @@ export default function AboutPage() {
                   height={400}
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] rounded-t-3xl"></div>
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-t-3xl"></div>
               </div>
             </div>
 
             <div className="space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-1 bg-[#4e54c8] rounded-full mr-3"></div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-[#4e54c8] font-heading">Our Approach</h2>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Our Approach</h2>
                 </div>
                 <p className="text-lg text-gray-700 font-body leading-relaxed">
                   We specialize in evidence-based physiotherapy services that address orthopedic, neurological, and sports-related conditions. From chronic pain and post-surgical rehab to athletic performance and posture correction, our approach blends modern science with compassionate care.
@@ -136,24 +135,27 @@ export default function AboutPage() {
               </div>
               
               <div className="mt-8 space-y-4">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-1 bg-[#8f94fb] rounded-full mr-3"></div>
-                  <h3 className="text-2xl font-bold text-[#4e54c8] font-heading">Our Mission</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Card className="border-none rounded-xl shadow-lg bg-white">
+                    <CardContent className="p-6">
+                      <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-3">Our Mission</h3>
+                      <p className="text-lg text-gray-700 font-body leading-relaxed">
+                        To deliver evidence-based, personalized physiotherapy that empowers individuals to heal, move, and thrive.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-none rounded-xl shadow-lg bg-white">
+                    <CardContent className="p-6">
+                      <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-3">Our Vision</h3>
+                      <p className="text-lg text-gray-700 font-body leading-relaxed">
+                        To be Delhi’s leading center for integrative physiotherapy, where innovation meets compassionate care.
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  To deliver evidence-based, personalized physiotherapy that empowers individuals to heal, move, and thrive.
-                </p>
-                
-                <div className="flex items-center mb-3 mt-6">
-                  <div className="w-8 h-1 bg-[#8f94fb] rounded-full mr-3"></div>
-                  <h3 className="text-2xl font-bold text-[#4e54c8] font-heading">Our Vision</h3>
-                </div>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  To be Delhi's leading center for integrative physiotherapy, where innovation meets compassionate care.
-                </p>
                 
                 <p className="text-lg text-gray-700 font-body leading-relaxed mt-6">
-                  Whether you're an athlete chasing peak performance, a desk-bound professional battling posture pain, or someone seeking to live pain-free, Kynexa is your partner in progress. We don't just treat symptoms—we target the source, educate our patients, and empower them to take charge of their health.
+                  Whether you're an athlete chasing peak performance, a desk-bound professional battling posture pain, or someone seeking to live pain-free, Kynexa is your partner in progress. We don’t just treat symptoms—we target the source, educate our patients, and empower them to take charge of their health.
                 </p>
               </div>
             </div>
@@ -165,8 +167,8 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <Badge className="bg-[#8f94fb]/20 text-[#4e54c8] hover:bg-[#8f94fb]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Core Values</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4e54c8] font-heading">What Drives Us Forward</h2>
+            <Badge className="bg-[#9d4ed8]/20 text-[#6c2c8b] hover:bg-[#9d4ed8]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Core Values</Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What Drives Us Forward</h2>
             <p className="text-lg text-gray-600 font-body max-w-2xl mx-auto">
               These principles guide our approach to delivering exceptional physiotherapy care.
             </p>
@@ -175,12 +177,12 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow">
-                <div className="h-1 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6 space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] rounded-full flex items-center justify-center mx-auto text-white">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-[#4e54c8] font-heading text-center">{value.title}</h3>
+                  <h3 className="text-xl font-bold text-[#6c2c8b] font-heading text-center">{value.title}</h3>
                   <p className="text-gray-600 font-body leading-relaxed text-center">{value.description}</p>
                 </CardContent>
               </Card>
@@ -193,15 +195,15 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <Badge className="bg-[#8f94fb]/20 text-[#4e54c8] hover:bg-[#8f94fb]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Our Leader</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4e54c8] font-heading">The Mind Behind Kynexa: Dr. Pravesh Kumar PT</h2>
-            <p className="text-xl text-[#8f94fb] font-body">Driven by Purpose. Defined by Precision</p>
+            <Badge className="bg-[#9d4ed8]/20 text-[#6c2c8b] hover:bg-[#9d4ed8]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Our Leader</Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">The Mind Behind Kynexa: Dr. Pravesh Kumar PT</h2>
+            <p className="text-xl text-[#9d4ed8] font-body">Driven by Purpose. Defined by Precision</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white">
-                <div className="h-2 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <p className="text-lg text-gray-700 font-body leading-relaxed">
@@ -211,7 +213,7 @@ export default function AboutPage() {
                       His journey began with a simple yet powerful belief: that movement is medicine. Over the years, he has worked with a diverse range of patients—from post-operative cases and chronic pain sufferers to elite athletes and weekend warriors—helping each one regain mobility, strength, and confidence.
                     </p>
                     <p className="text-lg text-gray-700 font-body leading-relaxed">
-                      Dr. Kumar's specialization in orthopedic and sports conditions means he understands the biomechanics of movement at a granular level. His treatments are not just reactive but proactive focused on preventing future injuries, correcting posture, and optimizing performance. He is known for his manual therapy skills, clinical precision, and ability to connect with patients on a human level.
+                      Dr. Kumar’s specialization in orthopedic and sports conditions means he understands the biomechanics of movement at a granular level. His treatments are not just reactive but proactive focused on preventing future injuries, correcting posture, and optimizing performance. He is known for his manual therapy skills, clinical precision, and ability to connect with patients on a human level.
                     </p>
                     <p className="text-lg text-gray-700 font-body leading-relaxed">
                       Beyond the clinic, Dr. Kumar is a passionate educator and advocate for physiotherapy awareness. He regularly conducts workshops, contributes to wellness blogs, and stays updated with the latest advancements in rehabilitation science.
@@ -227,17 +229,17 @@ export default function AboutPage() {
             <div className="order-1 lg:order-2">
               <div className="relative mx-auto max-w-md">
                 <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4e54c8]/10 to-[#8f94fb]/10 rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/10 to-[#9d4ed8]/10 rounded-3xl"></div>
                   <Image
-                    src="/placeholder.svg?height=400&width=350"
+                    src="/placeholder.svg?height=500&width=450"
                     alt="Dr. Pravesh Kumar"
-                    width={350}
-                    height={400}
+                    width={450}
+                    height={500}
                     className="w-full h-auto rounded-2xl relative z-10"
                   />
                 </div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#8f94fb] rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#4e54c8] rounded-full opacity-10 animate-pulse delay-1000"></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-10 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
@@ -250,19 +252,19 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
             {/* Qualifications */}
             <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white">
-              <div className="h-2 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center">
                       <Award className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#4e54c8] font-heading">Qualifications & Expertise</h3>
+                    <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading">Qualifications & Expertise</h3>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4 pl-4 mt-6">
                     {qualifications.map((qualification, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-[#8f94fb] mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
                         <p className="text-gray-700 font-body">{qualification}</p>
                       </div>
                     ))}
@@ -275,7 +277,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] text-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Ready to Begin Your Healing Journey?</h2>
@@ -285,7 +287,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Book Consultation
             </Button>

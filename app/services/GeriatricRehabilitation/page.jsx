@@ -1,13 +1,19 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Phone, Calendar, Home, CheckCircle, ArrowLeft, Clock, MapPin, Mail, Accessibility, ShieldCheck, Brain, Activity, Users, Shield } from "lucide-react"
-import Link from "next/link"
+import { Phone, Calendar, Clock, MapPin, Mail, Accessibility, ArrowUp, ArrowDown, CheckCircle } from "lucide-react"
+import { FaWalking, FaUserMd, FaBriefcaseMedical, FaRegChartBar, FaHome } from "react-icons/fa"
 import Image from "next/image"
 
 export default function GeriatricRehabilitationPage() {
+  const [expandedFaq, setExpandedFaq] = useState(null)
+
+  const toggleFaq = (index) => {
+    setExpandedFaq(expandedFaq === index ? null : index)
+  }
+
   const benefits = [
     "Enhanced walking speed and coordination",
     "Reduced fear and risk of falls",
@@ -22,7 +28,7 @@ export default function GeriatricRehabilitationPage() {
     "Have a history of falls or fear of falling",
     "Experience poor balance, dizziness, or unsteady gait",
     "Are recovering from hip, knee, or spinal surgery",
-    "Suffer from arthritis, Parkinson's, or stroke after-effects",
+    "Suffer from arthritis, Parkinson’s, or stroke after-effects",
     "Deal with age-related muscle weakness (sarcopenia)",
     "Have difficulty walking, climbing stairs, or standing for long",
     "Live with conditions like osteoporosis, neuropathy, or vertigo",
@@ -31,21 +37,58 @@ export default function GeriatricRehabilitationPage() {
 
   const whyChooseUs = [
     "Experienced Geriatric Physiotherapists trained in age-specific care",
-    "Compassionate, One-on-One Support tailored to each person's pace",
+    "Compassionate, One-on-One Support tailored to each person’s pace",
     "Holistic Treatment Approach that integrates mind, body, and function",
     "Home Safety & Fall Prevention Guidance beyond the clinic",
     "Modern Tools including balance systems, resistance bands, and sensor mats",
     "Education for Families & Caregivers to ensure support at home"
   ]
 
-  const programComponents = [
-    "Balance Training – Static and dynamic balance exercises with stability tools",
-    "Gait Training – Walking pattern correction and assistive device training",
-    "Strength Training – Progressive resistance exercises for legs, core, and upper body",
-    "Flexibility Training – Joint mobility and stretching programs",
-    "Fall Prevention – Risk assessment and environmental safety education",
-    "Functional Training – Practice of daily activities and movements",
-    "Cognitive Training – Dual-task exercises combining physical and mental challenges"
+  const balanceTraining = [
+    "Static and dynamic balance exercises",
+    "Perturbation training to improve reaction time",
+    "Use of stability cushions, balance boards, and parallel bars",
+    "Core activation for postural control",
+    "Weight-shifting and reaching drills for real-life movements"
+  ]
+
+  const gaitTraining = [
+    "Step pattern correction and walking mechanics",
+    "Supportive tools (walker, cane, or frame) guidance",
+    "Dual-task walking drills for cognitive-motor coordination",
+    "Obstacle course walking and safe stair navigation",
+    "Endurance walking and turning techniques"
+  ]
+
+  const additionalInterventions = [
+    "Strengthening for legs, hips, and back",
+    "Stretching to improve joint flexibility",
+    "Manual therapy to address tightness and pain",
+    "Education on home safety and fall-proofing",
+    "Breathing exercises and energy conservation for endurance"
+  ]
+
+  const whatToExpect = [
+    {
+      title: "Seated and standing balance drills",
+      icon: <Accessibility className="w-8 h-8" />
+    },
+    {
+      title: "Assisted walking and cue-based gait training",
+      icon: <FaWalking className="w-8 h-8" />
+    },
+    {
+      title: "Strengthening exercises using safe, low-resistance equipment",
+      icon: <FaBriefcaseMedical className="w-8 h-8" />
+    },
+    {
+      title: "Stretching for joints and muscles",
+      icon: <FaRegChartBar className="w-8 h-8" />
+    },
+    {
+      title: "Post-session feedback and home exercise review",
+      icon: <FaHome className="w-8 h-8" />
+    }
   ]
 
   const faqs = [
@@ -68,22 +111,22 @@ export default function GeriatricRehabilitationPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 font-sans">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-8">
-              <div className="space-y-4 mt-10">
-                <h1 className="text-4xl sm:text-5xl font-bold text-white font-heading leading-tight">
-                  Geriatric Rehabilitation in Delhi
+              <div className="space-y-5 mt-10">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
+                  Geriatric Rehabilitation <br />in Delhi
                 </h1>
+                <div className="h-1 w-20 bg-white/40 rounded"></div>
                 <p className="text-xl text-white/90 font-body">Strength. Stability. Safe Independence.</p>
-                <p className="text-lg text-white/80 font-body max-w-lg">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, our Geriatric Rehabilitation program in Delhi is thoughtfully designed to help older adults maintain independence, restore functional mobility, and prevent falls. With a structured blend of Balance Training and Gait Re-education, we address age-related physical decline and promote safe, confident movement for daily living.
+                <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
+                  Supporting Graceful Aging With Confidence
                 </p>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
@@ -93,21 +136,21 @@ export default function GeriatricRehabilitationPage() {
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
                 >
-                  <Home className="w-5 h-5 mr-2" />
+                  <FaHome className="w-5 h-5 mr-2" />
                   In-Home Therapy Available
                 </Button>
               </div>
             </div>
-
             <div className="relative">
-              <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
-                <div className="w-full h-96 bg-gradient-to-br from-[#6c2c8b]/10 to-[#9d4ed8]/10 rounded-2xl flex items-center justify-center">
-                  <div className="flex items-center space-x-4">
-                    <Accessibility className="w-16 h-16 text-[#6c2c8b]" />
-                    <Users className="w-16 h-16 text-[#9d4ed8]" />
-                  </div>
-                </div>
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Geriatric Rehabilitation"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-2xl relative z-10"
+                  priority
+                />
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
@@ -116,108 +159,245 @@ export default function GeriatricRehabilitationPage() {
         </div>
       </section>
 
-      {/* What is Geriatric Rehabilitation */}
+      {/* Our Geriatric Rehabilitation Program */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Geriatric Rehabilitation?</h2>
-          </div>
-
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
-              Geriatric Rehabilitation is a specialized branch of physiotherapy that focuses on helping older adults recover from injuries, adapt to age-related changes, and preserve their independence. As we age, issues like reduced balance, slower reaction time, joint degeneration, and chronic conditions can affect our ability to move safely and confidently.
-            </p>
-            <p className="text-lg text-gray-700 font-body leading-relaxed">
-              At Kynexa, we offer personalized rehabilitation plans that include strength training, balance enhancement, joint mobility, and gait improvement, aiming to reduce fall risk, support post-surgical recovery, and restore confidence in movement—at any age.
-            </p>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Geriatric Rehabilitation Program"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-2xl"
+                />
+                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
+                  <Accessibility className="w-6 h-6 text-[#6c2c8b]" />
+                </div>
+                <div className="absolute bottom-4 right-4 w-12 h-12 bg-[#6c2c8b]/20 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-[#9d4ed8]" />
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
+            <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2 lg:pl-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Our Geriatric Rehabilitation Program</h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg text-gray-700 font-body leading-relaxed">
+                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, our Geriatric Rehabilitation program in Delhi is thoughtfully designed to help older adults maintain independence, restore functional mobility, and prevent falls. With a structured blend of Balance Training and Gait Re-education, we address age-related physical decline and promote safe, confident movement for daily living. Whether you're facing joint stiffness, muscle weakness, or recovering from a fall or surgery, our physiotherapists provide one-on-one, compassionate care tailored to your goals, ensuring safety, dignity, and strength through every step.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Program Components */}
+      {/* What is Geriatric Rehabilitation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Our Comprehensive Program</h2>
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/placeholder.svg"
+                  alt="What is Geriatric Rehabilitation"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
+            <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2 lg:pl-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Geriatric Rehabilitation?</h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
+                  Geriatric Rehabilitation is a specialized branch of physiotherapy that focuses on helping older adults recover from injuries, adapt to age-related changes, and preserve their independence. As we age, issues like reduced balance, slower reaction time, joint degeneration, and chronic conditions (like arthritis or osteoporosis) can affect our ability to move safely and confidently.
+                </p>
+                <p className="text-lg text-gray-700 font-body leading-relaxed">
+                  At Kynexa, we offer personalized rehabilitation plans that include strength training, balance enhancement, joint mobility, and gait improvement, aiming to reduce fall risk, support post-surgical recovery, and restore confidence in movement—at any age.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programComponents.map((component, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
-                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+      {/* Who Can Benefit */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Who Can Benefit?</h2>
+            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+              This program is ideal for seniors who:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {conditions.map((condition, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">
-                      {index + 1}
-                    </div>
-                    <p className="text-gray-700 font-body text-sm leading-relaxed">{component}</p>
+                    <Accessibility className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body text-base leading-relaxed">{condition}</p>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-700 font-body">
+              Even individuals who are relatively healthy benefit from proactive rehabilitation focused on mobility preservation and fall prevention.
+            </p>
+          </div>
         </div>
       </section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center space-y-4 mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
+      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+        We begin with a comprehensive geriatric functional assessment including posture, balance, gait, flexibility, muscular strength, and overall coordination. Based on this, your therapist develops a progressive plan that may include:
+      </p>
+    </div>
+    <div className="space-y-12">
+      {/* Balance Training */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6 text-center">Balance Training</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {balanceTraining.map((item, index) => (
+            <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-3">
+                  <FaWalking className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                  <p className="text-gray-700 font-body text-base leading-relaxed">{item}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+      {/* Gait Training */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6 text-center">Gait Training</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gaitTraining.map((item, index) => (
+            <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-3">
+                  <FaWalking className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                  <p className="text-gray-700 font-body text-base leading-relaxed">{item}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+      {/* Additional Interventions */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6 text-center">Additional Interventions</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {additionalInterventions.map((item, index) => (
+            <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-3">
+                  <FaWalking className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                  <p className="text-gray-700 font-body text-base leading-relaxed">{item}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div className="text-center mt-8">
+      <p className="text-lg text-gray-700 font-body">
+        Every element is adapted to your current condition and gradually intensified as progress is achieved.
+      </p>
+    </div>
+  </div>
+</section>
 
-      {/* Benefits & Conditions */}
+      {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Benefits */}
-            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6">Benefits of Our Program</h3>
-                <div className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                      <p className="text-gray-700 font-body">{benefit}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Who Can Benefit */}
-            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading mb-6">Who Can Benefit?</h3>
-                <div className="space-y-4">
-                  {conditions.map((condition, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <Users className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                      <p className="text-gray-700 font-body">{condition}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Geriatric Rehabilitation</h2>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-lg text-gray-700 font-body mt-4">
+                We don’t just train muscles—we help you trust your body again.
+              </div>
+            </div>
+            <div className="relative order-1 lg:order-2">
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Benefits of Geriatric Rehabilitation"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Kynexa */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa Advanced Physiotherapy?</h2>
-          </div>
-
-          <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300">
-            <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-            <CardContent className="p-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Geriatric Rehabilitation Team"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
+            <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa for Senior Rehab?</h2>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body">{reason}</p>
+                  <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
+                    <div className="text-[#9d4ed8] flex-shrink-0">
+                      {index === 0 && <FaUserMd className="w-5 h-5" />}
+                      {index === 1 && <FaHome className="w-5 h-5" />}
+                      {index === 2 && <FaBriefcaseMedical className="w-5 h-5" />}
+                      {index === 3 && <FaRegChartBar className="w-5 h-5" />}
+                      {index === 4 && <Accessibility className="w-5 h-5" />}
+                      {index === 5 && <CheckCircle className="w-5 h-5" />}
+                    </div>
+                    <p className="text-gray-700 font-body text-lg leading-relaxed">{reason}</p>
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+              <div className="text-lg text-gray-700 font-body mt-4">
+                At Kynexa, we treat older adults with the warmth of family and the precision of science—empowering graceful, safe aging.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -225,61 +405,24 @@ export default function GeriatricRehabilitationPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During Your Session</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
+            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+              Each session runs 45–60 minutes and begins with a gentle warm-up. Your physiotherapist will guide you through:
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
-              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
-                  <ShieldCheck className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Balance Training</h3>
-                <p className="text-gray-600 font-body text-sm">
-                  Seated and standing balance exercises with stability tools and real-time feedback.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
-              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
-                  <Accessibility className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Gait Training</h3>
-                <p className="text-gray-600 font-body text-sm">
-                  Assisted walking and cue-based gait training with or without assistive devices.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
-              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
-                  <Activity className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Strengthening</h3>
-                <p className="text-gray-600 font-body text-sm">
-                  Progressive resistance exercises using safe, age-appropriate equipment.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300">
-              <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-6 space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center mx-auto text-white">
-                  <Brain className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Education</h3>
-                <p className="text-gray-600 font-body text-sm">
-                  Fall prevention education and home exercise program guidance.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {whatToExpect.map((step, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full ">
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6 flex flex-col items-center space-y-4">
+                  <div className="text-[#9d4ed8]">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
+                  <p className="text-gray-600 font-body text-base leading-relaxed ">{step.title}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -288,42 +431,41 @@ export default function GeriatricRehabilitationPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Embrace Active Aging with Confidence</h2>
-            <p className="text-lg text-white/80 font-body">
-              Age gracefully with our specialized geriatric rehabilitation program. Our compassionate team is dedicated to helping you maintain independence, prevent falls, and enjoy life to the fullest.
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Geriatric Rehab Consultation</h2>
+            <p className="text-lg text-white/80 font-body leading-relaxed">
+              Support yourself or a loved one in staying strong, upright, and independent with Kynexa’s expert geriatric rehabilitation in Delhi. In-home physiotherapy and caregiver training also available upon request.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
-              <p className="text-white/80 font-body">+91 9876543210</p>
+              <p className="text-white/80 font-body">[Phone Number]</p>
             </div>
-
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
-              <p className="text-white/80 font-body">info@kynexa.com</p>
+              <p className="text-white/80 font-body">[Email Address]</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
+                <MapPin className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">Visit Us</h3>
+              <p className="text-white/80 font-body">[Clinic Address]</p>
             </div>
           </div>
-
-          <div className="space-y-4 bg-white/10 p-6 rounded-2xl backdrop-blur-sm inline-block mx-auto">
-            <div className="flex items-center justify-center space-x-4">
-              <MapPin className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Delhi, India</p>
-            </div>
+          <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Mon-Sat: 9AM-7PM</p>
+              <p className="text-white/80 font-body">Timings: [Operating Hours]</p>
             </div>
           </div>
-
-          <div className="mt-8">
+          <div>
             <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
@@ -333,19 +475,37 @@ export default function GeriatricRehabilitationPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
           </div>
-
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300">
                 <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading mb-3">{index + 1}. {faq.question}</h3>
-                  <p className="text-gray-600 font-body">{faq.answer}</p>
+                  <div
+                    className="w-full text-left flex justify-between items-center cursor-pointer"
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading hover:text-[#9d4ed8]">
+                      <span className="inline-block w-7 h-7 bg-[#6c2c8b]/10 rounded-full text-center text-[#6c2c8b] mr-2">
+                        Q
+                      </span>
+                      {faq.question}
+                    </h3>
+                    {expandedFaq === index ? (
+                      <ArrowUp className="w-5 h-5 text-[#9d4ed8]" />
+                    ) : (
+                      <ArrowDown className="w-5 h-5 text-[#9d4ed8]" />
+                    )}
+                  </div>
+                  {expandedFaq === index && (
+                    <div className="mt-4 pl-9">
+                      <p className="text-gray-600 font-body text-base leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}

@@ -39,7 +39,7 @@ export default function CardioPulmonaryRehabPage() {
     "Experienced Physiotherapists trained in cardiopulmonary rehab protocols",
     "Evidence-Based Care with a focus on sustainable functional outcomes",
     "Comprehensive Monitoring with real-time feedback and safety protocols",
-    "Personalized Recovery Paths tailored to every patient's condition, age, and goal",
+    "Personalized Recovery Paths tailored to every patient’s condition, age, and goal",
     "Holistic Mind-Body Integration with emotional support and education at its core",
     "One-on-One Sessions in a calm, private setting with modern equipment"
   ]
@@ -112,11 +112,11 @@ export default function CardioPulmonaryRehabPage() {
     },
     {
       question: "How soon after a cardiac event can I start rehab?",
-      answer: "Typically within 1–2 weeks, but it depends on your doctor's clearance and stability."
+      answer: "Typically within 1–2 weeks, but it depends on your doctor’s clearance and stability."
     },
     {
       question: "Will I need equipment at home?",
-      answer: "Basic items like resistance bands or a stepper may be recommended. We'll guide you through setup."
+      answer: "Basic items like resistance bands or a stepper may be recommended. We’ll guide you through setup."
     },
     {
       question: "Can I join if I have both heart and lung issues?",
@@ -137,11 +137,7 @@ export default function CardioPulmonaryRehabPage() {
                 </h1>
                 <div className="h-1 w-20 bg-white/40 rounded"></div>
                 <p className="text-xl text-white/90 font-body">Breathe Freely. Move Confidently. Live Fully.</p>
-                <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  Integrated Care for Heart and Lung Health
-                </p>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
@@ -156,12 +152,11 @@ export default function CardioPulmonaryRehabPage() {
                 </Button>
               </div>
             </div>
-
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/placeholder.svg"
-                  alt="Cardiopulmonary Rehabilitation"
+                  alt="Cardio and Pulmonary Rehabilitation"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl relative z-10"
@@ -179,23 +174,19 @@ export default function CardioPulmonaryRehabPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#9d4ed8]/5 rounded-full -ml-40 -mb-40"></div>
-        
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-8 p-6 lg:p-0 order-2 lg:order-1 lg:pr-8">
               <div className="space-y-6">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 font-heading leading-tight">
-                  Comprehensive Care for <span className="text-[#6c2c8b]">Heart & Lung Health</span>
+                  Integrated Care for <span className="text-[#6c2c8b]">Heart and Lung Health</span>
                 </h2>
-                
                 <p className="text-lg text-gray-700 font-body leading-relaxed">
                   At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer specialized Cardio and Pulmonary Rehabilitation in Delhi to help individuals rebuild strength, improve breathing, and regain independence after heart and lung conditions. Our evidence-based, multidisciplinary approach is tailored to meet the physical and emotional challenges of recovery, ensuring each patient receives the support needed to return to an active, fulfilling lifestyle.
                 </p>
-                
                 <p className="text-lg text-gray-700 font-body leading-relaxed">
                   Whether you're recovering from a cardiac event, coping with chronic obstructive pulmonary disease (COPD), or managing post-COVID lung complications, our team will guide you every step of the way with personalized care and compassion.
                 </p>
-                
                 <div className="pt-4 flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
                     <Heart className="w-5 h-5 text-[#9d4ed8]" />
@@ -212,12 +203,11 @@ export default function CardioPulmonaryRehabPage() {
                 </div>
               </div>
             </div>
-            
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/placeholder.svg"
-                  alt="Cardiopulmonary Rehabilitation"
+                  alt="Cardio and Pulmonary Rehabilitation"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl"
@@ -230,7 +220,7 @@ export default function CardioPulmonaryRehabPage() {
           </div>
         </div>
       </section>
-     
+
       {/* What is Cardio-Pulmonary Rehabilitation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
@@ -239,7 +229,7 @@ export default function CardioPulmonaryRehabPage() {
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/placeholder.svg"
-                  alt="What is Cardiopulmonary Rehabilitation"
+                  alt="What is Cardio-Pulmonary Rehabilitation"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl"
@@ -263,7 +253,7 @@ export default function CardioPulmonaryRehabPage() {
         </div>
       </section>
 
-      {/* Who Can Benefit? */}
+      {/* Who Can Benefit */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
@@ -272,7 +262,6 @@ export default function CardioPulmonaryRehabPage() {
               This program is designed for individuals with:
             </p>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {conditions.map((condition, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
@@ -293,7 +282,7 @@ export default function CardioPulmonaryRehabPage() {
         </div>
       </section>
 
-      {/* Treatment Approach - How Does It Work? */}
+      {/* How Does It Work */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
@@ -302,24 +291,22 @@ export default function CardioPulmonaryRehabPage() {
               Our cardio-pulmonary rehab program begins with a comprehensive assessment of cardiovascular function, lung capacity, oxygen saturation, mobility, and lifestyle risks. Based on your health status and goals, our physiotherapists curate a progressive care plan that may include:
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {treatmentApproach.map((approach, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
                 <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
-                  <div className="flex flex-col space-y-4">
+                  <div className="flex items-center space-x-4">
                     <div className="text-[#9d4ed8]">
                       {approach.icon}
                     </div>
                     <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{approach.description}</p>
                   </div>
+                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
           <div className="text-center mt-8">
             <p className="text-lg text-gray-700 font-body">
               We collaborate with physicians and pulmonologists for an integrated, informed approach to your care.
@@ -343,12 +330,11 @@ export default function CardioPulmonaryRehabPage() {
                 ))}
               </div>
             </div>
-
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/placeholder.svg"
-                  alt="Benefits of Cardiopulmonary Rehabilitation"
+                  alt="Benefits of Cardio and Pulmonary Rehabilitation"
                   width={500}
                   height={400}
                   className="w-full h-auto rounded-2xl"
@@ -361,19 +347,18 @@ export default function CardioPulmonaryRehabPage() {
         </div>
       </section>
 
-      {/* Why Choose Kynexa */}
+      {/* What Makes Kynexa Different */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What Makes Kynexa Different?</h2>
           </div>
-
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/placeholder.svg"
-                  alt="Cardiopulmonary Rehabilitation Team"
+                  alt="Cardio and Pulmonary Rehabilitation Team"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl"
@@ -382,10 +367,9 @@ export default function CardioPulmonaryRehabPage() {
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
-
             <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2">
               <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
-                We understand that recovery from cardiac and respiratory conditions is not just about healing the body—it's about regaining independence, restoring confidence, and returning to the life you love.
+                We understand that recovery from cardiac and respiratory conditions is not just about healing the body—it’s about regaining independence, restoring confidence, and returning to the life you love.
               </p>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
@@ -407,7 +391,7 @@ export default function CardioPulmonaryRehabPage() {
         </div>
       </section>
 
-      {/* What to Expect */}
+      {/* What to Expect in a Session */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
@@ -416,7 +400,6 @@ export default function CardioPulmonaryRehabPage() {
               Each session is carefully structured around your capacity and goals. Here's what typically happens:
             </p>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {whatToExpect.map((step, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
@@ -431,27 +414,25 @@ export default function CardioPulmonaryRehabPage() {
               </Card>
             ))}
           </div>
-
           <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
             <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
-              You'll also receive home care strategies, self-monitoring tips, and exercises to maintain progress between sessions.
+              You’ll also receive home care strategies, self-monitoring tips, and exercises to maintain progress between sessions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Book Appointment */}
+      {/* Book Your Session */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Session Today</h2>
             <p className="text-lg text-white/80 font-body leading-relaxed">
-              If you or a loved one are navigating the challenges of heart or lung recovery, let Kynexa's compassionate team guide your path to strength, breath, and wellness.
+              If you or a loved one are navigating the challenges of heart or lung recovery, let Kynexa’s compassionate team guide your path to strength, breath, and wellness.
             </p>
             <p className="text-sm text-white/70 font-body">Online consultations available for eligible cases.</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
@@ -460,7 +441,6 @@ export default function CardioPulmonaryRehabPage() {
               <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
               <p className="text-white/80 font-body">[Phone Number]</p>
             </div>
-
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
@@ -468,7 +448,6 @@ export default function CardioPulmonaryRehabPage() {
               <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
               <p className="text-white/80 font-body">[Email Address]</p>
             </div>
-            
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <MapPin className="w-8 h-8" />
@@ -477,14 +456,12 @@ export default function CardioPulmonaryRehabPage() {
               <p className="text-white/80 font-body">[Clinic Address]</p>
             </div>
           </div>
-
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
               <p className="text-white/80 font-body">Hours: [Operating Hours]</p>
             </div>
           </div>
-
           <div>
             <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
@@ -500,7 +477,6 @@ export default function CardioPulmonaryRehabPage() {
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
           </div>
-
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300">
@@ -513,7 +489,7 @@ export default function CardioPulmonaryRehabPage() {
                     <h3 className="text-lg font-bold text-[#6c2c8b] font-heading hover:text-[#9d4ed8]">
                       <span className="inline-block w-7 h-7 bg-[#6c2c8b]/10 rounded-full text-center text-[#6c2c8b] mr-2">
                         Q
-                      </span> 
+                      </span>
                       {faq.question}
                     </h3>
                     {expandedFaq === index ? (
