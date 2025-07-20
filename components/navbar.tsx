@@ -25,7 +25,6 @@ export default function Navbar({ subServices }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
-  // All services with proper routing and specific icons
   const allServices = [
     { name: "Dry Needling Therapy", href: "/services/DryNiddle", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Cupping Therapy", href: "/services/cupping-therapy", icon: <Waves className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
@@ -50,13 +49,13 @@ export default function Navbar({ subServices }: NavbarProps) {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image src="/logo.png" alt="Kynexa Logo" width={120} height={30} className="h-12 w-auto" />
+              <Image src="/logo.png" alt="Kynexa Logo" width={120} height={30} className="h-10 w-auto sm:h-12" />
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 text-[#6c2c8b] font-medium relative group py-2">
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link href="/" className="text-gray-700 hover:text-[#6c2c8b] font-medium relative group py-2">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] group-hover:w-full transition-all duration-300"></span>
             </Link>
@@ -65,7 +64,7 @@ export default function Navbar({ subServices }: NavbarProps) {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] group-hover:w-full transition-all duration-300"></span>
             </Link>
             
-            {/* Services Dropdown */}
+            {/* Services Dropdown (Desktop only) */}
             <DropdownMenu open={isServicesOpen} onOpenChange={setIsServicesOpen}>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium focus:outline-none relative group py-2">
@@ -76,11 +75,15 @@ export default function Navbar({ subServices }: NavbarProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent 
                 align="center" 
-                className="w-[900px] bg-white shadow-xl p-6 rounded-xl mt-4 border border-gray-100"
+                className="w-full max-w-[900px] bg-white shadow-xl p-6 rounded-xl mt-4 border border-gray-100 lg:block hidden"
               >
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-[60vh] overflow-y-auto">
                   {allServices.map((service, i) => (
-                    <DropdownMenuItem key={i} asChild className="rounded-md hover:bg-gray-50 focus:bg-gray-50 transition-all duration-200 py-2.5 px-3">
+                    <DropdownMenuItem 
+                      key={i} 
+                      asChild 
+                      className="rounded-md hover:bg-gray-50 focus:bg-gray-50 transition-all duration-200 py-3 px-4"
+                    >
                       <Link href={service.href} className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium text-sm">
                         {service.icon}
                         {service.name}
@@ -102,12 +105,12 @@ export default function Navbar({ subServices }: NavbarProps) {
           </div>
           
           {/* Contact/Call buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" className="border-[#6c2c8b] text-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg transition-colors px-4">
+          <div className="hidden lg:flex items-center space-x-3">
+            <Button variant="outline" className="border-[#6c2c8b] text-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg transition-colors px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
               <PhoneCall className="w-4 h-4 mr-2" />
               +91 9876543210
             </Button>
-            <Button variant="outline" className=" bg-[#6c2c8b] text-white border-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg shadow-sm px-4">
+            <Button variant="outline" className="bg-[#6c2c8b] text-white border-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg shadow-sm px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
               <Home className="w-4 h-4 mr-2" />
               Home Visit
             </Button>
@@ -116,7 +119,7 @@ export default function Navbar({ subServices }: NavbarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -125,7 +128,7 @@ export default function Navbar({ subServices }: NavbarProps) {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 bg-white">
+          <div className="lg:hidden py-4 border-t border-gray-100 bg-white">
             <div className="flex flex-col space-y-3">
               <Link 
                 href="/" 
@@ -153,13 +156,16 @@ export default function Navbar({ subServices }: NavbarProps) {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="mt-2 pl-4 space-y-2 border-l-2 border-[#6c2c8b]/20 max-h-80 overflow-y-auto">
+                  <div className="mt-2 pl-4 space-y-2 border-l-2 border-[#6c2c8b]/20 max-h-[50vh] overflow-y-auto">
                     {allServices.map((service, i) => (
                       <Link 
                         key={i}
                         href={service.href}
                         className="flex items-center text-gray-700 hover:text-[#6c2c8b] transition-colors text-sm py-2"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                          setIsMenuOpen(false)
+                          setIsServicesOpen(false)
+                        }}
                       >
                         {service.icon}
                         {service.name}
@@ -184,11 +190,11 @@ export default function Navbar({ subServices }: NavbarProps) {
                 Contact
               </Link>
               <div className="flex flex-col gap-3 mt-4 px-4 py-2">
-                <Button variant="outline" className="w-full border-[#6c2c8b] text-[#6c2c8b] hover:bg-[#6c2c8b]/5 rounded-lg">
+                <Button variant="outline" className="w-full border-[#6c2c8b] text-[#6c2c8b] hover:bg-[#6c2c8b]/5 rounded-lg text-sm py-2.5">
                   <PhoneCall className="w-4 h-4 mr-2" />
                   +91 9876543210
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-90 rounded-lg">
+                <Button className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-90 rounded-lg text-sm py-2.5">
                   <Home className="w-4 h-4 mr-2" />
                   Home Visit
                 </Button>
