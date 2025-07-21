@@ -299,13 +299,6 @@ export default function AboutPage() {
               Contact Us Now
             </Button>
           </div>
-          
-          <div className="pt-8 flex justify-center items-center">
-            <Link href="/services" className="text-white/90 hover:text-white flex items-center group transition-all duration-300">
-              <span className="mr-2">Explore Our Services</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </div>
         </div>
       </section>
     </div>
