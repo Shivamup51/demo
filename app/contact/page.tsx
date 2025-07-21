@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -49,40 +50,36 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["[Phone Number]"],
+      details: ["+91 8868879387"],
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["[Email Address]"],
+      details: ["info@kynexaphysio.com"],
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
       details: [
-        "Kynexa Advanced Physiotherapy and Manual Therapy Clinic",
-        "[Full Address]",
-        "Delhi, India"
+        "D 16, Basement, Hauz Khas, New Delhi - 110016",
       ],
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Clinic Hours",
       details: [
-        "Monday to Saturday: 9:00 AM – 7:00 PM",
-        "Sunday: Closed"
+        "Monday to Saturday: 10:00 AM – 07:00 PM",
       ],
     },
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#4e54c8] to-[#8f94fb] text-white">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge className="bg-white/20 text-white hover:bg-white/30 border-none px-4 py-1.5 text-sm rounded-full">Contact Us</Badge>
               <h1 className="text-4xl sm:text-5xl font-bold text-white font-heading leading-tight">
                 Let's Start Your Healing Journey
               </h1>
@@ -94,7 +91,7 @@ export default function ContactPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Consultation
                 </Button>
@@ -110,7 +107,7 @@ export default function ContactPage() {
 
             <div className="relative hidden lg:block">
               <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4e54c8]/5 to-[#8f94fb]/5 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
                 <Image
                   src="/placeholder.svg?height=500&width=400"
                   alt="Contact Us"
@@ -119,8 +116,8 @@ export default function ContactPage() {
                   className="w-full h-auto rounded-2xl relative z-10"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#8f94fb] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#4e54c8] rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>
@@ -132,15 +129,17 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow">
-                <div className="h-1 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6 space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] rounded-full flex items-center justify-center mx-auto text-white">
-                    {info.icon}
+                  <div className="flex items-center justify-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center text-white">
+                      {info.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-sans">{info.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold text-[#4e54c8] text-center font-heading">{info.title}</h3>
                   <div className="space-y-1 text-center">
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-gray-700 font-medium">
+                      <p key={detailIndex} className="text-gray-700 font-bold text-xs">
                         {detail}
                       </p>
                     ))}
@@ -151,8 +150,8 @@ export default function ContactPage() {
           </div>
           <div className="text-center mt-8">
             <p className="text-lg text-gray-700 font-medium flex items-center justify-center">
-              <Phone className="w-5 h-5 mr-2 text-[#4e54c8]" />
-              WhatsApp: [WhatsApp Number]
+              <FaWhatsapp className="w-5 h-5 mr-2 text-green-500" />
+              WhatsApp: +91 8868879387
             </p>
           </div>
         </div>
@@ -165,15 +164,15 @@ export default function ContactPage() {
             {/* Quick Contact Form - Redesigned and Compact */}
             <div className="lg:col-span-5">
               <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white h-full">
-                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="space-y-5">
                     <div className="space-y-1.5">
                       <div className="flex items-center">
-                        <div className="bg-[#4e54c8]/10 p-2 rounded-full mr-3">
-                          <MessageSquare className="w-5 h-5 text-[#4e54c8]" />
+                        <div className="bg-[#6c2c8b]/10 p-2 rounded-full mr-3">
+                          <MessageSquare className="w-5 h-5 text-[#6c2c8b]" />
                         </div>
-                        <h2 className="text-xl font-bold text-[#4e54c8] font-heading">Quick Contact Form</h2>
+                        <h2 className="text-xl font-bold text-[#6c2c8b] font-heading">Quick Contact Form</h2>
                       </div>
                       <p className="text-gray-600 text-sm font-body">
                         Not sure where to begin? Tell us what's troubling you, and we'll point you toward the right solution.
@@ -182,10 +181,10 @@ export default function ContactPage() {
 
                     {isSubmitted ? (
                       <div className="text-center py-10 space-y-4">
-                        <div className="w-16 h-16 bg-[#4e54c8]/10 rounded-full flex items-center justify-center mx-auto">
-                          <CheckCircle className="w-8 h-8 text-[#4e54c8]" />
+                        <div className="w-16 h-16 bg-[#6c2c8b]/10 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle className="w-8 h-8 text-[#6c2c8b]" />
                         </div>
-                        <h3 className="text-lg font-bold text-[#4e54c8]">Message Sent Successfully!</h3>
+                        <h3 className="text-lg font-bold text-[#6c2c8b]">Message Sent Successfully!</h3>
                         <p className="text-gray-600 text-sm">We'll get back to you within 24 hours.</p>
                       </div>
                     ) : (
@@ -196,7 +195,7 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="border-gray-200  rounded-md h-10 text-sm"
+                          className="border-gray-200 rounded-md h-10 text-sm"
                         />
                         <Input
                           name="email"
@@ -205,7 +204,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="border-gray-200  rounded-md h-10 text-sm"
+                          className="border-gray-200 rounded-md h-10 text-sm"
                         />
                         <Input
                           name="phone"
@@ -213,7 +212,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          className="border-gray-200   rounded-md h-10 text-sm"
+                          className="border-gray-200 rounded-md h-10 text-sm"
                         />
                         <Textarea
                           name="message"
@@ -227,7 +226,7 @@ export default function ContactPage() {
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] text-white hover:opacity-80 py-2 rounded-md transition-all duration-200 text-sm"
+                          className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-80 py-2 rounded-md transition-all duration-200 text-sm"
                         >
                           {isSubmitting ? (
                             "Sending..."
@@ -249,14 +248,14 @@ export default function ContactPage() {
             <div className="lg:col-span-7 space-y-6">
               {/* Face-to-Face Chat */}
               <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
-                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#4e54c8]/10 p-2 rounded-full mt-0.5">
-                      <Headphones className="w-5 h-5 text-[#4e54c8]" />
+                    <div className="bg-[#6c2c8b]/10 p-2 rounded-full mt-0.5">
+                      <Headphones className="w-5 h-5 text-[#6c2c8b]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#4e54c8] font-heading mb-2">Prefer a Face-to-Face Chat?</h3>
+                      <h3 className="text-lg font-bold text-[#6c2c8b] font-heading mb-2">Prefer a Face-to-Face Chat?</h3>
                       <p className="text-gray-600 text-sm font-body">
                         We offer free 10-minute consultations to help you understand which therapy suits you best. Just mention it when you reach out!
                       </p>
@@ -267,38 +266,42 @@ export default function ContactPage() {
 
               {/* Map Integration */}
               <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
-                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-0">
-                  <div className="h-[220px] bg-gradient-to-br from-slate-50 to-gray-100 rounded-b-xl flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <MapPin className="w-10 h-10 text-[#4e54c8] mx-auto opacity-80" />
-                      <p className="text-[#4e54c8] font-medium text-sm">Find Us On Map</p>
-                    </div>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.03550782994446!2d77.19877459431524!3d28.552698080165765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce20b4aa993fb%3A0x730903fb40df2441!2sd!5e0!3m2!1sen!2sin!4v1753126526937!5m2!1sen!2sin"
+                    width="100%"
+                    height="220"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Kynexa Advanced Physiotherapy Location"
+                  ></iframe>
                 </CardContent>
               </Card>
 
               {/* Stay Connected */}
               <Card className="overflow-hidden border-none rounded-xl shadow-md bg-white">
-                <div className="h-1.5 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#4e54c8]/10 p-2 rounded-full mt-0.5">
-                      <Users className="w-5 h-5 text-[#4e54c8]" />
+                    <div className="bg-[#6c2c8b]/10 p-2 rounded-full mt-0.5">
+                      <Users className="w-5 h-5 text-[#6c2c8b]" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-[#4e54c8] font-heading mb-2">Stay Connected</h3>
+                      <h3 className="text-lg font-bold text-[#6c2c8b] font-heading mb-2">Stay Connected</h3>
                       <p className="text-gray-600 text-sm font-body mb-4">
-                        Healing never goes out of style—follow Kynexa for a daily dose of movement, motivation, and momentum.
+                        Healing never goes out of style. Follow Kynexa for a daily dose of movement, motivation, and momentum.
                       </p>
                       <div className="flex space-x-4">
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
                           <Instagram className="w-4 h-4" />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
                           <Facebook className="w-4 h-4" />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
                           <Twitter className="w-4 h-4" />
                         </Link>
                       </div>
@@ -312,7 +315,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] text-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Ready to Take the First Step?</h2>
@@ -322,7 +325,7 @@ export default function ContactPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-[#4e54c8] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Book Your Appointment Now
             </Button>
@@ -333,13 +336,6 @@ export default function ContactPage() {
               <Send className="w-5 h-5 mr-2" />
               Or just drop us a message
             </Button>
-          </div>
-          
-          <div className="pt-8 flex justify-center items-center">
-            <Link href="/services" className="text-white/90 hover:text-white flex items-center group transition-all duration-300">
-              <span className="mr-2">Explore Our Services</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
           </div>
         </div>
       </section>

@@ -240,64 +240,34 @@ export default function NeuroRehabilitationPage() {
       </section>
 
       {/* How Does It Work */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
-        Each journey begins with a neurological assessment covering strength, tone, reflexes, balance, gait, coordination, and cognitive integration. Based on findings, we design a goal-oriented rehabilitation plan that may include:
-      </p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {treatmentApproach.map((approach, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
-          <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-4">
-              <div className="text-[#9d4ed8]">
-                {approach.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
-            </div>
-            <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
+            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+              Each journey begins with a neurological assessment covering strength, tone, reflexes, balance, gait, coordination, and cognitive integration. Based on findings, we design a goal-oriented rehabilitation plan that may include:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {treatmentApproach.map((approach, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      {approach.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
+                  </div>
+                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-{/* Benefits */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-  <div className="max-w-7xl mx-auto">
-    <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-      <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Neuro Rehabilitation</h2>
-        <div className="space-y-4">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-start space-x-3">
-              <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
-              <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="relative order-1 lg:order-2">
-        <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-          <Image
-            src="/placeholder.svg"
-            alt="Benefits of Neuro Rehabilitation"
-            width={500}
-            height={400}
-            className="w-full h-auto rounded-2xl"
-          />
-        </div>
-        <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
       {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -388,12 +358,14 @@ export default function NeuroRehabilitationPage() {
             {whatToExpect.map((step, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center space-y-4">
-                  <div className="text-[#9d4ed8]">
-                    {step.icon}
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  <p className="text-gray-600 font-body text-base leading-relaxed">{step.title}</p>
+                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
                 </CardContent>
               </Card>
             ))}
@@ -425,27 +397,27 @@ export default function NeuroRehabilitationPage() {
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
-              <p className="text-white/80 font-body">[Phone Number]</p>
+              <p className="text-white/80 font-body">+91 8868879387</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
-              <p className="text-white/80 font-body">[Email Address]</p>
+              <p className="text-white/80 font-body">info@kynexaphysio.com</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Visit Us</h3>
-              <p className="text-white/80 font-body">[Clinic Address]</p>
+              <p className="text-white/80 font-body">D 16 , Basement , Hauz Khas , New Delhi - 110016</p>
             </div>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Timings: [Operating Hours]</p>
+              <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
             </div>
           </div>
           <div>

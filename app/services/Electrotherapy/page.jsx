@@ -161,13 +161,14 @@ export default function ElectrotherapyPage() {
       {benefits.map((benefit, index) => (
         <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
           <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6">
+          <CardContent className="p-6 flex flex-col items-center">
             <div className="flex items-center space-x-4">
               <div className="text-[#9d4ed8]">
                 <FaBolt className="w-7 h-7" />
               </div>
-              <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
-            </div>
+              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
+              </div>
+              <p className="text-gray-600 font-body text-base leading-relaxed mt-4  ">{benefit}</p>
           </CardContent>
         </Card>
       ))}
@@ -283,27 +284,27 @@ export default function ElectrotherapyPage() {
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
-              <p className="text-white/80 font-body">[Phone Number]</p>
+              <p className="text-white/80 font-body">+91 8868879387</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
-              <p className="text-white/80 font-body">[Email Address]</p>
+              <p className="text-white/80 font-body">info@kynexaphysio.com</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading mb-2">Visit Us</h3>
-              <p className="text-white/80 font-body">[Clinic Address]</p>
+              <p className="text-white/80 font-body">D 16 , Basement , Hauz Khas , New Delhi - 110016</p>
             </div>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Operating Hours: [Operating Hours]</p>
+              <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
             </div>
           </div>
           <div>
