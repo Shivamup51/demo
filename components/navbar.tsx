@@ -74,7 +74,7 @@ export default function Navbar({ subServices }: NavbarProps) {
   }
 
   const allServices = [
-    { name: "Dry Needling Therapy", href: "/services/DryNiddling", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Dry Needling Therapy", href: "/services/DryNeedling", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Cupping Therapy", href: "/services/cupping-therapy", icon: <Waves className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Kinesio Taping", href: "/services/KinesioTapingTherapy", icon: <Bandage className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Laser Therapy", href: "/services/LaserTherapy", icon: <Zap className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
