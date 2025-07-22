@@ -7,10 +7,11 @@ import { Phone, Calendar, CheckCircle, Clock, MapPin, Mail, Bone, ArrowUp, Arrow
 import { FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import { IoFitnessOutline } from "react-icons/io5"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"  
+import Link from "next/link"
 export default function ChiropracticCarePage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -128,17 +129,19 @@ export default function ChiropracticCarePage() {
                 <p className="text-xl text-white/90 font-body">Realign. Rebalance. Restore.</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)}   className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -158,7 +161,7 @@ export default function ChiropracticCarePage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* Unlock Natural Healing Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
@@ -276,7 +279,7 @@ export default function ChiropracticCarePage() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+      <p className="text-xl text-gray-700 font-body max-w-6xl mx-auto">
         After a thorough spinal assessment and postural analysis, our chiropractor identifies joint misalignments or movement restrictions. Based on your findings and history, we perform controlled, precise manual adjustments to restore normal motion and relieve nerve pressure.
       </p>
     </div>
@@ -297,8 +300,8 @@ export default function ChiropracticCarePage() {
       ))}
     </div>
   </div>
-  <div className="bg-slate-50 py-8 px-4 sm:px-6 lg:px-8 rounded-xl shadow-md ">
-    <div className="text-center mt-8">
+  <div className="bg-slate-50 py-8 px-4 sm:px-6 lg:px-8 rounded-xl shadow-md">
+    <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
       <p className="text-xl text-gray-700 font-semibold">
         Your care plan evolves session by session based on how your body responds, with constant feedback and education.
       </p>
@@ -386,7 +389,7 @@ export default function ChiropracticCarePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-6xl mx-auto">
               Your first chiropractic session will begin with a detailed assessment including posture screening, spinal motion tests, and functional movement analysis. Based on findings, we will:
             </p>
           </div>
@@ -456,7 +459,7 @@ export default function ChiropracticCarePage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

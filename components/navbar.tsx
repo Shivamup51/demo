@@ -74,7 +74,7 @@ export default function Navbar({ subServices }: NavbarProps) {
   }
 
   const allServices = [
-    { name: "Dry Needling Therapy", href: "/services/DryNiddle", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
+    { name: "Dry Needling Therapy", href: "/services/DryNiddling", icon: <Syringe className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Cupping Therapy", href: "/services/cupping-therapy", icon: <Waves className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Kinesio Taping", href: "/services/KinesioTapingTherapy", icon: <Bandage className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
     { name: "Laser Therapy", href: "/services/LaserTherapy", icon: <Zap className="w-4 h-4 mr-2 text-[#6c2c8b]" /> },
@@ -158,128 +158,15 @@ export default function Navbar({ subServices }: NavbarProps) {
               <PhoneCall className="w-4 h-4 mr-2" />
               +91 9876543210
             </Button>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="bg-[#6c2c8b] text-white border-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg shadow-sm px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base"
-                >
-                  <Home className="w-4 h-4 mr-2" />
-                  Home Visit
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-white rounded-xl border-none shadow-xl">
-                <DialogHeader>
-                  <DialogTitle className="text-xl font-bold text-[#6c2c8b] font-heading">Request a Home Visit</DialogTitle>
-                </DialogHeader>
-                {isSubmitted ? (
-                  <div className="text-center py-8 space-y-4">
-                    <div className="w-16 h-16 bg-[#6c2c8b]/10 rounded-full flex items-center justify-center mx-auto">
-                      <CheckCircle className="w-8 h-8 text-[#6c2c8b]" />
-                    </div>
-                    <h3 className="text-lg font-bold text-[#6c2c8b]">Request Sent Successfully!</h3>
-                    <p className="text-gray-600 text-sm">We'll contact you within 24 hours to confirm your home visit.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <Input
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-200 rounded-md h-10 text-sm"
-                    />
-                    <Input
-                      name="email"
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-200 rounded-md h-10 text-sm"
-                    />
-                    <Input
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-200 rounded-md h-10 text-sm"
-                    />
-                    <Input
-                      name="address"
-                      placeholder="Your Address for Home Visit"
-                      value={formData.address}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-200 rounded-md h-10 text-sm"
-                    />
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-start text-left font-normal border-gray-200 rounded-md h-10 text-sm",
-                            !formData.preferredDateTime && "text-muted-foreground"
-                          )}
-                        >
-                          <Calendar className="mr-2 h-4 w-4 text-[#6c2c8b]" />
-                          {formData.preferredDateTime ? format(formData.preferredDateTime, "PPP HH:mm") : <span>Pick a date & time</span>}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0 bg-white border-gray-200 rounded-md shadow-xl">
-                        <CalendarComponent
-                          mode="single"
-                          selected={formData.preferredDateTime || undefined}
-                          onSelect={handleDateChange}
-                          disabled={(date) => date < new Date()}
-                          initialFocus
-                          className="rounded-md border-gray-200"
-                        />
-                        <div className="p-3 border-t border-gray-200">
-                          <Input
-                            type="time"
-                            value={formData.preferredDateTime ? format(formData.preferredDateTime, "HH:mm") : ""}
-                            onChange={(e) => {
-                              if (formData.preferredDateTime) {
-                                const [hours, minutes] = e.target.value.split(":")
-                                const newDate = new Date(formData.preferredDateTime)
-                                newDate.setHours(parseInt(hours), parseInt(minutes))
-                                handleDateChange(newDate)
-                              }
-                            }}
-                            className="border-gray-200 rounded-md h-10 text-sm"
-                          />
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message / Specific Needs"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="border-gray-200 rounded-md resize-none text-sm"
-                    />
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-80 py-2 rounded-md transition-all duration-200 text-sm"
-                    >
-                      {isSubmitting ? (
-                        "Sending..."
-                      ) : (
-                        <>
-                          <Send className="w-4 h-4 mr-2" />
-                          Submit Request
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                )}
-              </DialogContent>
-            </Dialog>
+            <div className="flex justify-center">
+                 <Link href="/home-visit">
+                 <Button 
+                  className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-90 rounded-lg text-sm py-2.5">
+                    <Home className="w-4 h-4 mr-2" />
+                    Home Visit
+                  </Button>
+                 </Link>
+                </div>  
           </div>
 
           {/* Mobile Menu Button */}

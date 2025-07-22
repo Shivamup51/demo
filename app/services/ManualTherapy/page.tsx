@@ -6,10 +6,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Calendar, Clock, MapPin, Mail, Hand, ArrowUp, ArrowDown, CheckCircle } from "lucide-react"
 import { FaHandHoldingMedical, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"
+import Link from "next/link"  
 export default function ManualTherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-
+  const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -107,17 +108,19 @@ export default function ManualTherapyPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
+                <Link href="/contact">
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
                 >
-                  <FaHandHoldingMedical className="w-5 h-5 mr-2" />
-                  Online Consultations
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -137,7 +140,7 @@ export default function ManualTherapyPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* What is Manual Therapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -178,7 +181,7 @@ export default function ManualTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Manual Therapy Work?</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
               Manual therapy techniques work by physically mobilizing restricted joints and decompressing tight soft tissues. This encourages better blood flow, reduces pain signaling from nerves, and improves overall movement quality. Common techniques we use include:
             </p>
           </div>
@@ -278,7 +281,7 @@ export default function ManualTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions We Commonly Treat</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
               Manual therapy is ideal for:
             </p>
           </div>
@@ -344,7 +347,7 @@ export default function ManualTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During Your Session</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
               Your first appointment includes a comprehensive assessment of posture, mobility, and functional strength. Based on your condition, we apply a combination of manual techniques to target the root cause of discomfort—not just the symptoms. Expect:
             </p>
           </div>
@@ -406,7 +409,7 @@ export default function ManualTherapyPage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

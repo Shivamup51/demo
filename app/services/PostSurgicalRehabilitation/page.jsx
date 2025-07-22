@@ -8,10 +8,11 @@ import { Phone, Calendar, Home, CheckCircle, Clock, MapPin, Mail, ArrowUp, Arrow
 import { FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import { IoFitnessOutline } from "react-icons/io5"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"
+import Link from "next/link"
 export default function PostSurgicalRehabilitationPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false) 
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -150,10 +151,11 @@ export default function PostSurgicalRehabilitationPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
+                <Link href="/contact">
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
@@ -161,6 +163,7 @@ export default function PostSurgicalRehabilitationPage() {
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -180,7 +183,7 @@ export default function PostSurgicalRehabilitationPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* What is Post-Surgical Rehabilitation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
@@ -249,7 +252,7 @@ export default function PostSurgicalRehabilitationPage() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
         Our program begins with a detailed post-operative assessment, taking into account your surgical procedure, healing stage, swelling, joint range, pain level, and overall strength.
       </p>
     </div>
@@ -353,7 +356,7 @@ export default function PostSurgicalRehabilitationPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
               Your rehabilitation session may include:
             </p>
           </div>
@@ -424,7 +427,7 @@ export default function PostSurgicalRehabilitationPage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

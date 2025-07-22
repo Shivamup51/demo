@@ -7,10 +7,11 @@ import { Phone, Calendar, Home, CheckCircle, Clock, MapPin, Mail, Heart, ArrowUp
 import { FaLungs, FaHeartbeat, FaHospital, FaBriefcaseMedical, FaUserMd, FaRegChartBar } from "react-icons/fa"
 import { IoFitnessOutline, IoNutritionOutline } from "react-icons/io5"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"
+import Link from "next/link"
 export default function CardioPulmonaryRehabPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false) 
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -139,17 +140,20 @@ export default function CardioPulmonaryRehabPage() {
                 <p className="text-xl text-white/90 font-body">Breathe Freely. Move Confidently. Live Fully.</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)}
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -169,7 +173,7 @@ export default function CardioPulmonaryRehabPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* Integrated Care Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
@@ -287,7 +291,7 @@ export default function CardioPulmonaryRehabPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-6xl mx-auto">
               Our cardio-pulmonary rehab program begins with a comprehensive assessment of cardiovascular function, lung capacity, oxygen saturation, mobility, and lifestyle risks. Based on your health status and goals, our physiotherapists curate a progressive care plan that may include:
             </p>
           </div>
@@ -307,7 +311,8 @@ export default function CardioPulmonaryRehabPage() {
               </Card>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
               We collaborate with physicians and pulmonologists for an integrated, informed approach to your care.
             </p>
@@ -392,38 +397,38 @@ export default function CardioPulmonaryRehabPage() {
       </section>
 
       {/* What to Expect in a Session */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
-        Each session is carefully structured around your capacity and goals. Here's what typically happens:
-      </p>
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-      {whatToExpect.map((step, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
-          <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6 flex flex-col items-center">
-            <div className="flex items-center space-x-4">
-              <div className="text-[#9d4ed8]">
-                {step.icon}
-              </div>
-              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-            </div>
-            <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-    <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-      <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
-      <p className="text-lg text-gray-700 font-body">
-        You’ll also receive home care strategies, self-monitoring tips, and exercises to maintain progress between sessions.
-      </p>
-    </div>
-  </div>
-</section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
+            <p className="text-xl text-gray-700 font-body max-w-4xl mx-auto">
+              Each session is carefully structured around your capacity and goals. Here's what typically happens:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {whatToExpect.map((step, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
+                  </div>
+                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+            <p className="text-lg text-gray-700 font-body">
+              You’ll also receive home care strategies, self-monitoring tips, and exercises to maintain progress between sessions.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Book Your Session */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
@@ -460,12 +465,15 @@ export default function CardioPulmonaryRehabPage() {
           </div>
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
-              <Clock className="w-5 h-5 text-white" />  
+              <Clock className="w-5 h-5 text-white" />
               <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button 
+              onClick={() => setIsOpen(true)}
+              className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl"
+            >
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

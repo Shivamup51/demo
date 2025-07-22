@@ -3,13 +3,14 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Calendar, CheckCircle, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown } from "lucide-react"
+import { Phone, Calendar, CheckCircle, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, Info } from "lucide-react"
 import { FaBolt, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import Image from "next/image"
-
+import Link from "next/link"
+import FormDialog from "@/components/formDialog"
 export default function ElectrotherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -85,17 +86,19 @@ export default function ElectrotherapyPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -115,7 +118,7 @@ export default function ElectrotherapyPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* What is Electrotherapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -153,7 +156,7 @@ export default function ElectrotherapyPage() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Electrotherapy Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
         Using devices that deliver low- to medium-frequency electrical impulses through surface electrodes, electrotherapy targets specific muscle groups or nerve pathways. These impulses mimic the body’s own bioelectric signals to:
       </p>
     </div>
@@ -171,7 +174,7 @@ export default function ElectrotherapyPage() {
               <p className="text-gray-600 font-body text-base leading-relaxed mt-4  ">{benefit}</p>
           </CardContent>
         </Card>
-      ))}
+      ))}   
     </div>
   </div>
 </section>
@@ -181,7 +184,7 @@ export default function ElectrotherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Shockwave Therapy: Precision Impact for Chronic Pain</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-9xl mx-auto">
               As part of our advanced electrotherapy options, Shockwave Therapy delivers high-energy acoustic waves directly to affected tissues. This non-invasive technique is ideal for breaking down calcific deposits, stimulating the body’s healing mechanisms, and relieving persistent musculoskeletal pain.
             </p>
           </div>
@@ -198,7 +201,8 @@ export default function ElectrotherapyPage() {
               </Card>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+          <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
               Patients often experience reduced pain and improved function after just a few sessions, making it a valuable addition to rehabilitation plans.
             </p>
@@ -308,7 +312,7 @@ export default function ElectrotherapyPage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

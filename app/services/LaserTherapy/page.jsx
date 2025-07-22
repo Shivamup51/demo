@@ -6,10 +6,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Calendar, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, CheckCircle } from "lucide-react"
 import { FaSpa, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"
+import Link from "next/link"
 export default function LaserTherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -116,17 +117,19 @@ export default function LaserTherapyPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
+                <Link href="/contact">
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
                 >
-                  <FaSpa className="w-5 h-5 mr-2" />
-                  Learn More
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -146,7 +149,7 @@ export default function LaserTherapyPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* What is Laser Therapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -183,7 +186,7 @@ export default function LaserTherapyPage() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Laser Therapy Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
         Laser therapy works through a process called photobiomodulation, where light energy is absorbed by the cells and converted into biochemical energy. Here's what happens:
       </p>
     </div>
@@ -246,7 +249,7 @@ export default function LaserTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated with Laser Therapy</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
               Our laser therapy in Delhi is effective for a wide range of conditions, including:
             </p>
           </div>
@@ -371,7 +374,7 @@ export default function LaserTherapyPage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>

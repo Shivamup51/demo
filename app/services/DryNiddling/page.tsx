@@ -7,10 +7,11 @@ import { Phone, Calendar, Home, CheckCircle, Clock, MapPin, Mail, Syringe, Arrow
 import { FaSyringe, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import { IoFitnessOutline } from "react-icons/io5"
 import Image from "next/image"
-
+import FormDialog from "@/components/formDialog"
+import Link from "next/link"  
 export default function DryNeedlingTherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-
+  const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index: number | null) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
@@ -123,17 +124,20 @@ export default function DryNeedlingTherapyPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+                <Button onClick={() => setIsOpen(true)}
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -153,7 +157,7 @@ export default function DryNeedlingTherapyPage() {
           </div>
         </div>
       </section>
-
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
       {/* What is Dry Needling */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
@@ -192,7 +196,7 @@ export default function DryNeedlingTherapyPage() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+      <p className="text-xl text-gray-700 font-body max-w-7xl mx-auto">
         When a muscle is overused or injured, it can form tight bands of tissue that limit blood flow and reduce oxygen supply. This creates an "energy crisis" within the muscle, leading to pain and impaired function. By inserting a needle directly into the trigger point, we:
       </p>
     </div>
@@ -321,7 +325,7 @@ export default function DryNeedlingTherapyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During Your Session</h2>
-            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 font-body max-w-7xl mx-auto">
               Your first session begins with a comprehensive assessment of your condition, posture, and movement patterns. Based on this, we identify the trigger points contributing to your pain and dysfunction.
             </p>
           </div>
@@ -389,7 +393,7 @@ export default function DryNeedlingTherapyPage() {
             </div>
           </div>
           <div>
-            <Button className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>
