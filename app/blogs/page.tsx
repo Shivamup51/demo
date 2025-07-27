@@ -123,9 +123,6 @@ export default function BlogsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold text-[#111827] font-heading">Featured Articles</h2>
-              <p className="text-lg text-[#6B7280] font-body">
-                Our most popular and impactful health and wellness content.
-              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -151,26 +148,12 @@ export default function BlogsPage() {
                     </div>
                   </div>
                   <CardContent className="p-6 space-y-4">
-                    <div className="flex items-center space-x-4 text-sm text-[#6B7280]">
-                      <div className="flex items-center space-x-1">
-                        <User className="w-4 h-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
                     <h3 className="text-xl font-bold text-[#111827] font-heading line-clamp-2">{post.title}</h3>
                     <p className="text-[#6B7280] font-body leading-relaxed line-clamp-3">{post.excerpt}</p>
                     <Link href={`/blogs/${post.content}`}>
                       <Button
                         variant="ghost"
-                        className="text-[#A259FF] hover:text-[#2E3A59] p-0 h-auto font-medium group"
+                        className="text-[#A259FF] hover:text-[#2E3A59] p-1 h-auto font-medium group"
                       >
                         Read Full Article
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
