@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Phone, Menu, X, ChevronDown, Heart, Brain, Activity, Dumbbell, Users, Home, PhoneCall, Syringe, Waves, Zap, Bone, Bandage, Accessibility, Send, CheckCircle, Calendar } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -41,6 +41,18 @@ export default function Navbar({ subServices }: NavbarProps) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+
+  // Manage body scroll lock
+  useEffect(() => {
+    if (isMenuOpen || isSubmitted) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [isMenuOpen, isSubmitted])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -209,12 +221,12 @@ export default function Navbar({ subServices }: NavbarProps) {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="mt-2 pl-4 space-y-2 border-l-2 border-[#6c2c8b]/20 max-h-[50vh] overflow-y-auto">
+                  <div className="mt-2 pl-4 space-y-2 max-h-[50vh] overflow-y-auto" style={{ WebkitOverflowScrolling  : "touch" }}>
                     {allServices.map((service, i) => (
                       <Link 
                         key={i}
                         href={service.href}
-                        className="flex items-center text-gray-700 hover:text-[#6c2c8b] transition-colors text-sm py-2"
+                        className="flex items-center text-gray-700 hover:text-[#6c2c8b] transition-colors text-sm py-2 block"
                         onClick={() => {
                           setIsMenuOpen(false)
                           setIsServicesOpen(false)

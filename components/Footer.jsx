@@ -8,9 +8,9 @@ export default function Component() {
     const [isOpen, setIsOpen] = useState(false)
   return (
     <footer className="bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Branding Section */}
           <div className="lg:col-span-1">
             <h3 className="text-xl font-bold mb-2">Kynexa Physiotherapy by <br />Dr. Pravesh Kumar</h3>
@@ -108,7 +108,7 @@ export default function Component() {
         </div>
 
         {/* Book Appointment Section */}
-        <div className="bg-white/10 rounded-lg p-6 mb-8">
+        <div className="bg-white/10 rounded-lg p-6 mt-8 mb-12">
           <div className="text-center flex flex-col items-center justify-center md:text-left md:flex md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
             <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 font-semibold px-6 py-2">
@@ -118,14 +118,13 @@ export default function Component() {
                 Schedule a physiotherapy session with Dr. Pravesh Kumar at our clinic or your home.
               </p>
             </div>
-            
           </div>
         </div>
 
-        <Separator className="bg-white/20 mb-6" />
+        <Separator className="bg-white/20 my-6" />
 
         {/* Copyright */}
-        <div className="text-center">
+        <div className="text-center py-4">
           <p className="text-white/70 text-sm">
             © 2025 Kynexa Advanced Physiotherapy and Manual Therapy Clinic. All rights reserved.
           </p>
