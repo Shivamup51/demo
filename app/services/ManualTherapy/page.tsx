@@ -26,7 +26,8 @@ export default function ManualTherapyPage() {
     "Restore tissue elasticity",
     "Relieve referred pain",
     "Improve muscle performance",
-    "Support natural alignment"
+    "Support natural alignment",
+    
   ]
 
   const benefits = [
@@ -35,7 +36,10 @@ export default function ManualTherapyPage() {
     "Enhanced athletic performance",
     "Better posture and body awareness",
     "Quicker recovery from injuries or surgeries",
-    "Reduced tension, stress, and muscular fatigue"
+    "Reduced tension, stress, and muscular fatigue",
+    "Increased circulation for faster tissue healing",
+    "Restored range of motion in restricted areas",
+    "Improved nervous system regulation and relaxation"
   ]
 
   const conditions = [
@@ -45,7 +49,8 @@ export default function ManualTherapyPage() {
     "Sciatica and nerve compression",
     "Headaches and TMJ disorders",
     "Sports injuries and repetitive strain issues",
-    "Post-operative joint stiffness"
+    "Post-operative joint stiffness",
+    "Arthritic joint pain and mobility limitations"
   ]
 
   const whyChooseUs = [

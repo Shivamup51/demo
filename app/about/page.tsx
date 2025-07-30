@@ -22,6 +22,7 @@ import Image from "next/image"
 import { useState } from "react"
 import FormDialog from "@/components/formDialog"
 import Footer from "@/components/Footer"
+
 export default function AboutPage() {
   const values = [
     {
@@ -53,6 +54,15 @@ export default function AboutPage() {
     "Specialization in Orthopedic and Sports Rehabilitation",
     "Expert in Manual Therapy, Dry Needling, and Kinesio Taping",
     "Continuing Education in Rehabilitation Science",
+  ]
+
+  const awardsAndCertifications = [
+    "Best Physiotherapist Award, Delhi Healthcare Excellence Awards 2023",
+    "Certified Dry Needling Practitioner (CDNP)",
+    "Advanced Kinesio Taping Certification (CKTC)",
+    "Excellence in Sports Rehabilitation, Indian Physiotherapy Association 2022",
+    "Certified Cupping Therapy Specialist",
+    "Outstanding Contribution to Physiotherapy Education, 2024",
   ]
 
   const [isOpen, setIsOpen] = useState(false)
@@ -273,6 +283,29 @@ export default function AboutPage() {
                       <div key={index} className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
                         <p className="text-gray-700 font-body">{qualification}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Awards and Certifications */}
+            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white">
+              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading">Awards & Certifications</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-4 pl-4 mt-6">
+                    {awardsAndCertifications.map((award, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                        <p className="text-gray-700 font-body">{award}</p>
                       </div>
                     ))}
                   </div>

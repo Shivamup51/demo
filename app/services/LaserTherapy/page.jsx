@@ -3,11 +3,12 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Calendar, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, CheckCircle } from "lucide-react"
+import { Phone, Calendar, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, CheckCircle, Info } from "lucide-react"
 import { FaSpa, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import Image from "next/image"
 import FormDialog from "@/components/formDialog"
 import Link from "next/link"
+
 export default function LaserTherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -18,84 +19,84 @@ export default function LaserTherapyPage() {
   // How Does It Work
   const howItWorksTitle = [
     "Photon Absorption",
-    "ATP Production",
-    "Improved Circulation",
+    "ATP Boost",
+    "Enhanced Circulation",
     "Cellular Repair",
     "Pain Modulation"
   ]
   const howItWorks = [
-    "The laser emits light at specific wavelengths (typically 600–1000 nm), which is absorbed by chromophores in the mitochondria of cells.",
-    "This stimulates the production of adenosine triphosphate (ATP), the energy currency of the cell, boosting cellular metabolism.",
-    "It increases blood flow and oxygen delivery to the tissues.",
-    "Enhances collagen synthesis, reduces inflammation, and promotes tissue regeneration.",
-    "Alters nerve conduction and reduces pain signals by stimulating endorphin release."
+    "Light at targeted wavelengths (600–1064 nm) is absorbed by mitochondrial chromophores.",
+    "Energy conversion promotes ATP production, fuelling faster cellular activity.",
+    "Promotes better oxygen and nutrient flow to support faster healing.",
+    "Enhances collagen synthesis, reduces oxidative stress, and improves regeneration.",
+    "Influences nerve signal transmission and stimulates endorphin release for natural pain relief."
   ]
 
   const benefits = [
-    "Reduces inflammation and swelling",
-    "Accelerates tissue repair and cell growth",
-    "Relieves pain without medication",
-    "Enhances wound healing and scar tissue remodeling",
-    "Improves joint flexibility and mobility",
-    "Stimulates nerve regeneration",
-    "Shortens recovery time post-injury or surgery"
+    "Rapid reduction in pain and inflammation",
+    "Accelerated tissue and nerve regeneration",
+    "Enhanced flexibility and joint function",
+    "Medication-free pain relief",
+    "Improved wound healing and scar remodelling",
+    "Faster post-injury and post-surgical recovery",
+    "Safe for repetitive use with no downtime"
   ]
 
   const conditions = [
-    "Arthritis and joint pain",
-    "Tendonitis and bursitis",
-    "Sciatica and nerve pain",
-    "Frozen shoulder",
-    "Plantar fasciitis",
-    "Carpal tunnel syndrome",
-    "Sports injuries and muscle strains",
-    "Post-surgical recovery",
-    "Chronic back and neck pain"
+    "Arthritis and joint degeneration",
+    "Sciatica and nerve compression",
+    "Tendonitis, bursitis, and repetitive strain injuries",
+    "Plantar fasciitis and carpal tunnel syndrome",
+    "Frozen shoulder and rotator cuff issues",
+    "Muscular strains and sports injuries",
+    "Post-surgical stiffness and scarring",
+    "Cervical and lumbar spine dysfunction",
+    "Chronic neck, back, and soft tissue pain"
   ]
 
   const whyChooseUs = [
-    "Certified physiotherapists trained in laser therapy",
-    "Integrated care with manual therapy, dry needling, and rehab",
-    "Modern clinic with advanced laser equipment",
-    "Evidence-based protocols for faster, safer recovery",
-    "Trusted provider of physiotherapy services in Delhi"
+    "Certified Physiotherapists trained in both LLLT and High Power Laser application",
+    "Advanced Laser Systems approved for deep tissue treatment",
+    "Integrated Care Plans combining manual therapy, dry needling, rehab, and laser",
+    "Evidence-Based Protocols for improved recovery metrics",
+    "Clean, Modern Facility focused on comfort, safety, and healing outcomes"
   ]
 
   const whatToExpect = [
     {
-      title: "Assessment: We evaluate your condition and determine the appropriate laser settings.",
+      title: "Evaluation – We assess your symptoms, diagnosis, and tissue depth to determine laser modality.",
       icon: <FaUserMd className="w-8 h-8" />
     },
     {
-      title: "Application: The laser device is applied to the affected area for 5–15 minutes.",
+      title: "Application – The laser is applied to target zones using clinically set parameters for 5–15 minutes.",
       icon: <FaSpa className="w-8 h-8" />
     },
     {
-      title: "Sensation: Most patients feel a gentle warmth or tingling—no pain or discomfort.",
+      title: "Sensation – Patients may feel a gentle warmth; there is no pain or irritation.",
       icon: <FaBriefcaseMedical className="w-8 h-8" />
     },
     {
-      title: "Post-Care: You can resume normal activities immediately after the session.",
+      title: "Aftercare – No restrictions post-session; you can resume daily activities immediately.",
       icon: <FaRegChartBar className="w-8 h-8" />
     }
   ]
 
   const faqs = [
     {
-      question: "Is laser therapy safe?",
-      answer: "Yes. It’s FDA-approved, non-invasive, and has no known side effects when administered by trained professionals."
+      question: "What’s the difference between low-level and high-power laser therapy?",
+      answer: "Low-level laser is ideal for mild or superficial conditions, while high power laser penetrates deeper tissues and offers quicker results for chronic or complex issues."
     },
     {
-      question: "How many sessions will I need?",
-      answer: "It varies. Some conditions improve in 3–5 sessions, while chronic issues may require 8–10."
-    },
-    {
-      question: "Does laser therapy hurt?",
-      answer: "Not at all. Most patients feel a mild warmth or tingling during treatment."
+      question: "How many sessions are needed?",
+      answer: "Acute conditions may improve in 3–5 sessions; deeper or long-standing issues may require 8–10, especially when using high power modalities."
     },
     {
       question: "Can laser therapy be combined with other treatments?",
-      answer: "Absolutely. At Kynexa, we often combine it with manual therapy, dry needling, and rehab for optimal results."
+      answer: "Absolutely. It complements manual therapy, exercise rehab, dry needling, and spinal alignment for comprehensive recovery."
+    },
+    {
+      question: "Is it safe?",
+      answer: "Yes, both LLLT and HPLT are FDA-approved and safe when administered by certified professionals."
     }
   ]
 
@@ -113,7 +114,10 @@ export default function LaserTherapyPage() {
                 <div className="h-1 w-20 bg-white/40 rounded"></div>
                 <p className="text-xl text-white/90 font-body">Light-Powered Healing for Pain-Free Living</p>
                 <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer advanced laser therapy in Delhi to accelerate healing, reduce pain, and restore function. This non-invasive, scientifically backed treatment uses focused light energy to stimulate cellular repair and improve tissue health—making it a powerful tool in modern physiotherapy services in Delhi.
+                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer both Low-Level Laser Therapy (LLLT) and High-Power Laser Therapy (HPLT) in Delhi to accelerate healing, reduce pain, and restore mobility. These non-invasive, scientifically backed treatments use therapeutic light energy to stimulate cellular regeneration, improve tissue health, and reduce inflammation—making laser therapy a cornerstone of modern rehabilitation care.
+                </p>
+                <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
+                  Our High-Power Laser Therapy offers deeper tissue penetration and faster energy delivery, resulting in quicker relief, shorter recovery time, and more pronounced effects—especially for chronic or deep-tissue conditions.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -174,43 +178,47 @@ export default function LaserTherapyPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Laser Therapy?</h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Laser therapy, also known as Low-Level Laser Therapy (LLLT) or Photobiomodulation, involves the application of low-intensity laser light to injured or painful areas of the body. Unlike surgical lasers, low-level laser therapy (LLLT) does not cut, burn, or damage tissue. Instead, it penetrates the skin to stimulate healing at the cellular level—without any discomfort or downtime.
+                  Laser therapy involves the application of medical-grade laser light to injured or painful areas to stimulate healing from within. While LLLT uses low-intensity light ideal for surface tissues and mild conditions, HPLT emits powerful wavelengths that reach deeper muscle, ligament, and joint tissues, making it a more efficient solution for advanced musculoskeletal concerns.
+                </p>
+                <p className="text-lg text-gray-700 font-body leading-relaxed py-2">
+                  Unlike surgical lasers, both forms of therapy are non-destructive and do not involve cutting or burning. They work by stimulating natural cellular functions without pain, side effects, or downtime.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-{/* How Does It Work */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Laser Therapy Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-        Laser therapy works through a process called photobiomodulation, where light energy is absorbed by the cells and converted into biochemical energy. Here's what happens:
-      </p>
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {howItWorks.map((item, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
-          <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-4">
-              <Zap className="w-6 h-6 text-[#9d4ed8] flex-shrink-0" />
-              <p className="text-gray-700 font-semibold text-lg">{howItWorksTitle[index]}</p>
-            </div>
-            <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{item}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-    <div className="text-center mt-8">
-      <p className="text-lg text-gray-700 font-body">
-        This makes laser therapy a cornerstone of physiotherapy in Delhi for treating both acute and chronic conditions.
-      </p>
-    </div>
-  </div>
-</section>
+      {/* How Does It Work */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Laser Therapy Work?</h2>
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+              Laser therapy functions through photobiomodulation, a cellular process where light energy is absorbed and converted into biological repair signals. Here’s how:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {howItWorks.map((item, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <Zap className="w-6 h-6 text-[#9d4ed8] flex-shrink-0" />
+                    <p className="text-gray-700 font-semibold text-lg">{howItWorksTitle[index]}</p>
+                  </div>
+                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{item}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+            <p className="text-lg text-gray-700 font-body">
+              High Power Laser Therapy offers enhanced outcomes in fewer sessions by delivering more energy per minute, especially beneficial for chronic pain, deep-seated injuries, and post-operative recovery.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -248,9 +256,9 @@ export default function LaserTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated with Laser Therapy</h2>
-              <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Our laser therapy in Delhi is effective for a wide range of conditions, including:
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated</h2>
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+              Laser therapy at Kynexa is effective for a wide spectrum of conditions, including:
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -314,20 +322,20 @@ export default function LaserTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During Your Session</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During a Session</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-[220px] w-full flex flex-col justify-between">
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center">
-                  <div className="flex items-center space-x-4">
-                  <div className="text-[#9d4ed8]">
-                    {step.icon}
+                <CardContent className="p-6 flex flex-col items-center justify-center">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="text-[#9d4ed8]">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>
-                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
+                  <p className="text-gray-600 font-body text-base leading-relaxed">{step.title}</p>
                 </CardContent>
               </Card>
             ))}
@@ -339,9 +347,9 @@ export default function LaserTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Appointment Today</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Laser Therapy Appointment</h2>
             <p className="text-lg text-white/80 font-body leading-relaxed">
-              If you're looking for laser therapy in Delhi that delivers real results, trust the experts at Kynexa Advanced Physiotherapy and Manual Therapy Clinic. Let us help you heal faster, move better, and live pain-free.
+              Explore the benefits of High-Power Laser Therapy with Kynexa’s expert physiotherapy team. Experience faster healing, deeper relief, and better mobility—powered by light.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -386,7 +394,7 @@ export default function LaserTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions (FAQs)</h2>
           </div>
           <div className="space-y-6">
             {faqs.map((faq, index) => (

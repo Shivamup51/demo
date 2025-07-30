@@ -24,6 +24,9 @@ export default function KinesioTapingTherapyPage() {
     "Enhanced athletic performance and recovery",
     "Postural correction and joint alignment",
     "Non-restrictive—allows full range of motion",
+    "Reduced muscle fatigue during prolonged activity",
+    "Accelerated healing by improving microcirculation",
+    "Provides psychological confidence and body awareness",
   ]
 
   const conditions = [
@@ -35,6 +38,7 @@ export default function KinesioTapingTherapyPage() {
     "Carpal tunnel syndrome",
     "Postural imbalances",
     "Sports injuries and overuse syndromes",
+    "Chronic neck and back pain"
   ]
 
   const whyChooseUs = [
@@ -71,6 +75,11 @@ export default function KinesioTapingTherapyPage() {
       description: "The tape may reduce pain by altering the way pain signals are transmitted through the nervous system.",
       icon: <FaRegChartBar className="w-7 h-7" />
     },
+    {
+      title: "Fascial Release",
+      description: "Kinesio tape gently lifts the skin, helping release fascial tension and adhesions for smoother movement and reduced stiffness.",
+      icon: <FaRegChartBar className="w-7 h-7" />
+    }
   ]
 
   const whatToExpect = [

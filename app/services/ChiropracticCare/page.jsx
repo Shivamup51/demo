@@ -37,7 +37,9 @@ export default function ChiropracticCarePage() {
     "Scoliosis and postural asymmetries",
     "Jaw pain (TMJ dysfunction)",
     "Sports-related misalignments and overuse stress",
-    "Joint restrictions or stiffness due to sedentary lifestyle or injury"
+    "Joint restrictions or stiffness due to sedentary lifestyle or injury",
+    "Desk-related postural strain",
+    "Leg length imbalance affecting gait"
   ]
 
   const whyChooseUs = [
@@ -72,6 +74,10 @@ export default function ChiropracticCarePage() {
     {
       title: "Lifestyle & Movement Coaching",
       description: "Teaching safe lifting, walking, and movement habits",
+      icon: <FaRegChartBar className="w-7 h-7" />
+    },{
+      title: "Mind-Body Integration",
+      description: "Breathing drills or relaxation cues to support pain relief and nervous system balance.",
       icon: <FaRegChartBar className="w-7 h-7" />
     }
   ]
@@ -125,7 +131,7 @@ export default function ChiropracticCarePage() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
                   Chiropractic <span className="text-white/90">Care</span> <br />in Delhi
                 </h1>
-                <div className="h-1 w-20 bg-white/40 rounded"></div>
+              <p className="text-white/90 font-body">At Kynexa, we provide Chiropractic Care in Delhi to relieve pain and restore musculoskeletal health. Our hands-on spinal and joint adjustments help improve posture, nerve function, and natural healing. From chronic back pain to mobility issues, our certified chiropractors offer safe, personalized care to help you move better and feel your best.</p>
                 <p className="text-xl text-white/90 font-body">Realign. Rebalance. Restore.</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -162,54 +168,7 @@ export default function ChiropracticCarePage() {
         </div>
       </section>
       <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      {/* Unlock Natural Healing Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#9d4ed8]/5 rounded-full -ml-40 -mb-40"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="space-y-8 p-6 lg:p-0 order-2 lg:order-1 lg:pr-8">
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 font-heading leading-tight">
-                  Unlock Natural Healing Through <span className="text-[#6c2c8b]">Structural Balance</span>
-                </h2>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer Chiropractic Care in Delhi as part of our integrative approach to long-term pain relief and musculoskeletal wellness. This hands-on technique focuses on spinal adjustments and joint realignment to restore nerve function, correct posture, and enhance the body’s self-healing ability. Whether you’re struggling with chronic back pain, tension headaches, or restricted mobility, our certified chiropractors provide safe, personalized care to help you move and live better—naturally.
-                </p>
-                <div className="pt-4 flex flex-wrap gap-4">
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <Bone className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Chiropractic Adjustments</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <FaBriefcaseMedical className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Physiotherapy</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Pain Relief</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Chiropractic Care"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-2xl"
-                  priority
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* What is Chiropractic Care */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">

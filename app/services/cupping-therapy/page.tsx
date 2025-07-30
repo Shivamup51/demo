@@ -35,7 +35,9 @@ export default function CuppingTherapyPage() {
     "Headaches and migraines",
     "Postural imbalances",
     "Muscle spasms and knots",
-    "Anxiety and fatigue"
+    "Anxiety and fatigue",
+    "Plantar Fasciitis",
+    "Digestive Distress"
   ]
 
   const whyChooseUs = [

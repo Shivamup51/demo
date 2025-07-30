@@ -8,7 +8,7 @@ import { FaLungs, FaHeartbeat, FaHospital, FaBriefcaseMedical, FaUserMd } from "
 import { IoFitnessOutline } from "react-icons/io5"
 import Image from "next/image"
 import FormDialog from "@/components/formDialog"
-import Link from "next/link"  
+import Link from "next/link"
 export default function PreAndPostNatalPhysiotherapyPage() {
   const [isOpen, setIsOpen] = useState(false)
   const [expandedFaq, setExpandedFaq] = useState(null)
@@ -65,7 +65,9 @@ export default function PreAndPostNatalPhysiotherapyPage() {
     "Faster post-delivery recovery",
     "Prevention or correction of diastasis recti",
     "Improved sleep, energy, and confidence",
-    "Safer return to fitness or daily tasks"
+    "Safer return to fitness or daily tasks",
+    "Improved bladder control",
+    "Stronger bonding through pain-free movement"
   ]
 
   const conditions = [
@@ -144,7 +146,7 @@ export default function PreAndPostNatalPhysiotherapyPage() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
                   Pre and <span className="text-white/90">Post Natal</span> <br />Physiotherapy <span className="text-xl sm:text-2xl font-medium block mt-2">in Delhi</span>
                 </h1>
-                <div className="h-1 w-20 bg-white/40 rounded"></div>
+                <p className="text-white/90 font-body">At Kynexa in Delhi, we offer expert Pre and Post Natal Physiotherapy to support women through pregnancy and postpartum recovery. Our personalized care relieves pain, improves posture, and strengthens the core and pelvic floor. Whether expecting or healing post-birth, our therapists provide tailored guidance to help you feel stronger, more balanced, and confident throughout your motherhood journey.  </p>
                 <p className="text-xl text-white/90 font-body">Empowering Mothers Through Every Stage of Motherhood</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -153,15 +155,15 @@ export default function PreAndPostNatalPhysiotherapyPage() {
                   Book Appointment
                 </Button>
                 <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
                 </Link>
-                </div>
+              </div>
             </div>
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
@@ -181,56 +183,6 @@ export default function PreAndPostNatalPhysiotherapyPage() {
         </div>
       </section>
 
-      {/* Integrated Care Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#9d4ed8]/5 rounded-full -ml-40 -mb-40"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="space-y-8 p-6 lg:p-0 order-2 lg:order-1 lg:pr-8">
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 font-heading leading-tight">
-                  Specialized Care for <span className="text-[#6c2c8b]">Pregnancy and Postpartum</span>
-                </h2>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer specialized Pre and Post Natal Physiotherapy in Delhi to support women through the physical demands of pregnancy and the recovery that follows. Our personalized, evidence-based care helps reduce pain, improve posture, and strengthen the core and pelvic floor during this transformative period.
-                </p>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Whether you're expecting your first baby or navigating postpartum recovery, our therapists provide compassionate, tailored support that evolves with your needs, ensuring you feel stronger, more balanced, and fully empowered during your motherhood journey.
-                </p>
-                <div className="pt-4 flex flex-wrap gap-4">
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <Heart className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Pregnancy Support</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <FaUserMd className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Postpartum Recovery</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Women’s Health</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Pre and Post Natal Physiotherapy"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-2xl"
-                  priority
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
       <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       {/* What is Pre and Post Natal Physiotherapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
@@ -301,39 +253,39 @@ export default function PreAndPostNatalPhysiotherapyPage() {
         </div>
       </section>
 
- {/* How Does It Work */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-        Our Pre and Postnatal Physiotherapy programs begin with a comprehensive assessment of your posture, pelvic alignment, core strength, and any areas of discomfort or mobility restriction. Based on this, our experienced physiotherapists design a customized care plan that prioritizes safety, function, and confidence.
-      </p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {howItWorks.map((approach, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
-          <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-4">
-              <div className="text-[#9d4ed8]">
-                {approach.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
-            </div>
-            <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-    <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-    <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
-      <p className="text-lg text-gray-700 font-body">
-        Each program is paced according to your trimester or healing phase and evolves with your goals.
-      </p>
-    </div>
-  </div>
-</section>
+      {/* How Does It Work */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+              Our Pre and Postnatal Physiotherapy programs begin with a comprehensive assessment of your posture, pelvic alignment, core strength, and any areas of discomfort or mobility restriction. Based on this, our experienced physiotherapists design a customized care plan that prioritizes safety, function, and confidence.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {howItWorks.map((approach, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      {approach.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
+                  </div>
+                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+            <p className="text-lg text-gray-700 font-body">
+              Each program is paced according to your trimester or healing phase and evolves with your goals.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -414,27 +366,63 @@ export default function PreAndPostNatalPhysiotherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              What to Expect in a Session
+            </h2>
             <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Each session is carefully structured around your capacity and goals. Here's what typically happens:
+              Your rehabilitation session may include:
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
-                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center">
-                  <div className="flex items-center space-x-4">
-                  <div className="text-[#9d4ed8]">
-                    {step.icon}
+
+          {/* First Row of 3 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {whatToExpect.slice(0, 3).map((step, index) => (
+              <Card
+                key={index}
+                className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+              >
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+                <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+                  <div className="flex flex-col items-center space-y-2 mb-4">
+                    <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                      Step {index + 1}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>
-                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
+                  <p className="text-gray-600 font-body text-base leading-relaxed">
+                    {step.title}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          {/* Second Row of 2 Cards */}
+          <div className="flex justify-center mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl w-full">
+              {whatToExpect.slice(3).map((step, index) => (
+                <Card
+                  key={index + 3}
+                  className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+                  <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+                    <div className="flex flex-col items-center space-y-2 mb-4">
+                      <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                      <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                        Step {index + 4}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 font-body text-base leading-relaxed">
+                      {step.title}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Info Box */}
           <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
             <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
@@ -443,6 +431,7 @@ export default function PreAndPostNatalPhysiotherapyPage() {
           </div>
         </div>
       </section>
+
 
       {/* Book Your Session */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">

@@ -23,7 +23,7 @@ export default function CardioPulmonaryRehabPage() {
     "Reduced breathlessness, fatigue, and risk of relapse",
     "Stronger muscles and better energy utilization",
     "Decreased hospital readmissions and medication dependency",
-    "Empowerment through knowledge, self-monitoring, and confidence"
+    "Empowerment through knowledge, self-monitoring, and confidence",
   ]
 
   const conditions = [
@@ -33,7 +33,8 @@ export default function CardioPulmonaryRehabPage() {
     "Pulmonary fibrosis or interstitial lung disease",
     "Bronchiectasis or cystic fibrosis",
     "Post-COVID respiratory complications",
-    "General deconditioning from prolonged illness or hospitalization"
+    "General deconditioning from prolonged illness or hospitalization",
+    "Hypertension-related complications affecting cardiac function"
   ]
 
   const whyChooseUs = [
@@ -80,6 +81,16 @@ export default function CardioPulmonaryRehabPage() {
       title: "Lifestyle Counseling & Nutritional Support",
       description: "Manage risk factors and build healthy habits for long-term heart-lung health",
       icon: <IoNutritionOutline className="w-7 h-7" />
+    },
+    {
+      title: "Education & Self-Management",
+      description: "Equip patients to manage symptoms, meds, and activity levels",
+      icon: <FaRegChartBar className="w-7 h-7" />
+    },
+    {
+      title: "Balance & Gait Training",
+      description: "Improve mobility and lower fall risk through targeted rehab",
+      icon: <FaRegChartBar className="w-7 h-7" />
     }
   ]
 
@@ -136,7 +147,7 @@ export default function CardioPulmonaryRehabPage() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
                   Cardio and <span className="text-white/90">Pulmonary</span> <br />Rehabilitation <span className="text-xl sm:text-2xl font-medium block mt-2">in Delhi</span>
                 </h1>
-                <div className="h-1 w-20 bg-white/40 rounded"></div>
+                <p className="text-white/90 font-body">At Kynexa Advanced Physiotherapy and Manual Therapy Clinic in Delhi, we offer expert Cardio and Pulmonary Rehabilitation to help patients regain strength, improve breathing, and restore independence after heart or lung conditions. Using a tailored, evidence-based approach, we support recovery from cardiac events, COPD, and post-COVID complications. Our compassionate team ensures both physical and emotional care, helping you return to a more active, fulfilling lifestyle.</p>
                 <p className="text-xl text-white/90 font-body">Breathe Freely. Move Confidently. Live Fully.</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -174,57 +185,7 @@ export default function CardioPulmonaryRehabPage() {
         </div>
       </section>
       <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      {/* Integrated Care Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#6c2c8b]/5 rounded-full -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#9d4ed8]/5 rounded-full -ml-40 -mb-40"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="space-y-8 p-6 lg:p-0 order-2 lg:order-1 lg:pr-8">
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 font-heading leading-tight">
-                  Integrated Care for <span className="text-[#6c2c8b]">Heart and Lung Health</span>
-                </h2>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer specialized Cardio and Pulmonary Rehabilitation in Delhi to help individuals rebuild strength, improve breathing, and regain independence after heart and lung conditions. Our evidence-based, multidisciplinary approach is tailored to meet the physical and emotional challenges of recovery, ensuring each patient receives the support needed to return to an active, fulfilling lifestyle.
-                </p>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Whether you're recovering from a cardiac event, coping with chronic obstructive pulmonary disease (COPD), or managing post-COVID lung complications, our team will guide you every step of the way with personalized care and compassion.
-                </p>
-                <div className="pt-4 flex flex-wrap gap-4">
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <Heart className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Cardiac Rehabilitation</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <FaLungs className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Pulmonary Care</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#9d4ed8]" />
-                    <span className="text-gray-700 text-sm font-medium">Post-COVID Recovery</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Cardio and Pulmonary Rehabilitation"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-2xl"
-                  priority
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* What is Cardio-Pulmonary Rehabilitation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
@@ -397,38 +358,77 @@ export default function CardioPulmonaryRehabPage() {
       </section>
 
       {/* What to Expect in a Session */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
-            <p className="text-xl text-gray-700 font-body max-w-4xl mx-auto">
-              Each session is carefully structured around your capacity and goals. Here's what typically happens:
+      {/* What to Expect */}
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center space-y-4 mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+        What to Expect in a Session
+      </h2>
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+        Your rehabilitation session may include:
+      </p>
+    </div>
+
+    {/* First Row of 3 Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {whatToExpect.slice(0, 3).map((step, index) => (
+        <Card
+          key={index}
+          className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+        >
+          <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+          <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+            <div className="flex flex-col items-center space-y-2 mb-4">
+              <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                Step {index + 1}
+              </h3>
+            </div>
+            <p className="text-gray-600 font-body text-base leading-relaxed">
+              {step.title}
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
-                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-[#9d4ed8]">
-                      {step.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>
-                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
-            <p className="text-lg text-gray-700 font-body">
-              You’ll also receive home care strategies, self-monitoring tips, and exercises to maintain progress between sessions.
-            </p>
-          </div>
-        </div>
-      </section>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+
+    {/* Second Row of 2 Cards */}
+    <div className="flex justify-center mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl w-full">
+        {whatToExpect.slice(3).map((step, index) => (
+          <Card
+            key={index + 3}
+            className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+            <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+              <div className="flex flex-col items-center space-y-2 mb-4">
+                <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                  Step {index + 4}
+                </h3>
+              </div>
+              <p className="text-gray-600 font-body text-base leading-relaxed">
+                {step.title}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+
+    {/* Info Box */}
+    <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+      <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+      <p className="text-lg text-gray-700 font-body">
+        Every session is goal-driven, adapted to how your body is responding, and geared
+        toward helping you resume your lifestyle—safely and effectively.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Book Your Session */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">

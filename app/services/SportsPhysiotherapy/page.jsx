@@ -24,6 +24,9 @@ export default function SportsPhysiotherapyPage() {
     "Reduced injury recurrence",
     "Enhanced posture and neuromuscular coordination",
     "Sport-specific training for peak conditioning",
+    "Sharper body awareness",
+    "Faster rehab for chronic stress injuries",
+    "Boosted confidence through tailored plans"
   ]
 
   const conditions = [
@@ -34,6 +37,8 @@ export default function SportsPhysiotherapyPage() {
     "Groin pulls and hamstring injuries",
     "Concussions and post-impact rehabilitation",
     "Post-operative orthopedic recovery",
+    "Tennis and golfer’s elbow due to repetitive arm movements",
+    "Back and neck strains from poor training posture or overuse"
   ]
 
   const whyChooseUs = [

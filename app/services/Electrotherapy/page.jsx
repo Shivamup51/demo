@@ -20,7 +20,8 @@ export default function ElectrotherapyPage() {
     "Stimulate circulation and cellular healing",
     "Improve muscle strength and endurance",
     "Break muscle spasms and joint stiffness",
-    "Facilitate faster recovery from injury or surgery"
+    "Facilitate faster recovery from injury or surgery",
+    "Re-educate muscles after neurological impairment or disuse"
   ]
 
   const conditions = [
@@ -30,7 +31,8 @@ export default function ElectrotherapyPage() {
     "Neuropathy and nerve compression",
     "Muscle weakness and post-fracture stiffness",
     "Chronic inflammatory conditions like fibromyalgia",
-    "Sports injuries and repetitive strain syndromes"
+    "Sports injuries and repetitive strain syndromes",
+    "Post-surgical pain and soft tissue healing support"
   ]
 
   const whyChooseUs = [
@@ -46,7 +48,8 @@ export default function ElectrotherapyPage() {
     "Achilles tendinopathy",
     "Calcific shoulder tendonitis",
     "Tennis/golfer's elbow",
-    "Trigger point release and chronic scar tissue breakdown"
+    "Trigger point release and chronic scar tissue breakdown",
+    "Patellar tendinopathy (jumper’s knee)"
   ]
 
   const faqs = [

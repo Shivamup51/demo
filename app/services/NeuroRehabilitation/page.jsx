@@ -85,6 +85,11 @@ export default function NeuroRehabilitationPage() {
       description: "Relieving tone, improving joint mobility, and addressing muscle imbalances",
       icon: <FaUserMd className="w-7 h-7" />
     },
+    {
+      title: "Cognitive-Motor Integration",
+      description: "Exercises that merge physical movement with mental tasks to rebuild attention, memory, and decision-making during activity",
+      icon: <FaRegChartBar className="w-7 h-7" />
+    },
   ]
 
   const whatToExpect = [
@@ -268,6 +273,12 @@ export default function NeuroRehabilitationPage() {
               </Card>
             ))}
           </div>
+          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+            <p className="text-lg text-gray-700 font-body">
+            Cognitive-Motor Integration – Exercises that merge physical movement with mental tasks to rebuild attention, memory, and decision-making during activity
+            </p>
+          </div>
         </div>
       </section>
 
@@ -350,38 +361,75 @@ export default function NeuroRehabilitationPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
-               <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Each session typically lasts 45–60 minutes and includes:
+      {/* What to Expect */}
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center space-y-4 mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+        What to Expect in a Session
+      </h2>
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+        Your rehabilitation session may include:
+      </p>
+    </div>
+
+    {/* First Row of 3 Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {whatToExpect.slice(0, 3).map((step, index) => (
+        <Card
+          key={index}
+          className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+        >
+          <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+          <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+            <div className="flex flex-col items-center space-y-2 mb-4">
+              <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                Step {index + 1}
+              </h3>
+            </div>
+            <p className="text-gray-600 font-body text-base leading-relaxed">
+              {step.title}
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
-                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-[#9d4ed8]">
-                      {step.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>
-                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
-            <p className="text-lg text-gray-700 font-body">
-              As your function improves, we incorporate greater complexity to keep progress moving forward.
-            </p>
-          </div>
-        </div>
-      </section>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+
+    {/* Second Row of 2 Cards */}
+    <div className="flex justify-center mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl w-full">
+        {whatToExpect.slice(3).map((step, index) => (
+          <Card
+            key={index + 3}
+            className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+            <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+              <div className="flex flex-col items-center space-y-2 mb-4">
+                <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                  Step {index + 4}
+                </h3>
+              </div>
+              <p className="text-gray-600 font-body text-base leading-relaxed">
+                {step.title}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+
+    {/* Info Box */}
+    <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
+      <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+      <p className="text-lg text-gray-700 font-body">
+      As your function improves, we incorporate greater complexity to keep progress moving forward.      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Book Appointment */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">

@@ -37,6 +37,7 @@ export default function SpineAlignmentTherapyPage() {
     "Reduced flexibility or range of motion",
     "Uneven gait or weight distribution",
     "Recurrent headaches or tension-related discomfort",
+    'Limited spinal mobility affecting daily activities'
   ]
 
   const whyChooseUs = [
@@ -146,13 +147,13 @@ export default function SpineAlignmentTherapyPage() {
                   Book Appointment
                 </Button>
                 <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -238,32 +239,32 @@ export default function SpineAlignmentTherapyPage() {
       </section>
 
       {/* How Does It Work */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-        We begin with a comprehensive spinal and postural assessment, including visual analysis, palpation, and mobility testing. Based on your findings, we create a personalized treatment plan that may include:
-      </p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {treatmentApproach.map((approach, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
-          <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-4">
-              <div className="text-[#9d4ed8]">
-                {approach.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
-            </div>
-            <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does It Work?</h2>
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+              We begin with a comprehensive spinal and postural assessment, including visual analysis, palpation, and mobility testing. Based on your findings, we create a personalized treatment plan that may include:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {treatmentApproach.map((approach, index) => (
+              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      {approach.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#6c2c8b]">{approach.title}</h3>
+                  </div>
+                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{approach.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -342,30 +343,67 @@ export default function SpineAlignmentTherapyPage() {
       </section>
 
       {/* What to Expect */}
+      {/* What to Expect */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect in a Session</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              What to Expect in a Session
+            </h2>
             <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Each session typically includes:
+              Your rehabilitation session may include:
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-full">
-                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-[#9d4ed8]">
-                    {step.icon}
+
+          {/* First Row of 3 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {whatToExpect.slice(0, 3).map((step, index) => (
+              <Card
+                key={index}
+                className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+              >
+                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+                <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+                  <div className="flex flex-col items-center space-y-2 mb-4">
+                    <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                      Step {index + 1}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>  
-                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4">{step.title}</p>
+                  <p className="text-gray-600 font-body text-base leading-relaxed">
+                    {step.title}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          {/* Second Row of 2 Cards */}
+          <div className="flex justify-center mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl w-full">
+              {whatToExpect.slice(3).map((step, index) => (
+                <Card
+                  key={index + 3}
+                  className="flex flex-col h-full min-h-[280px] rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]" />
+                  <CardContent className="p-6 flex flex-col items-center justify-between flex-grow text-center">
+                    <div className="flex flex-col items-center space-y-2 mb-4">
+                      <div className="text-[#9d4ed8] text-3xl">{step.icon}</div>
+                      <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                        Step {index + 4}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 font-body text-base leading-relaxed">
+                      {step.title}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Info Box */}
           <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
             <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
@@ -374,6 +412,7 @@ export default function SpineAlignmentTherapyPage() {
           </div>
         </div>
       </section>
+
 
       {/* Book Appointment */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
