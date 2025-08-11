@@ -107,7 +107,7 @@ export default function AboutPage() {
               <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
                 <Image
-                  src="/placeholder.svg?height=500&width=400"
+                  src="/about/About-Us-Main.jpg"
                   alt="Kynexa Clinic"
                   width={400}
                   height={500}
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="bg-slate-50 rounded-3xl p-6 shadow-lg">
                 <Image
-                  src="/placeholder.svg?height=400&width=500"
+                  src="/about/About-Us-Approach.jpg"
                   alt="Our Story"
                   width={500}
                   height={400}
@@ -244,14 +244,14 @@ export default function AboutPage() {
             </div>
             
             <div className="order-1 lg:order-2">
-              <div className="relative mx-auto max-w-md">
+              <div className="relative">
                 <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/10 to-[#9d4ed8]/10 rounded-3xl"></div>
                   <Image
-                    src="/placeholder.svg?height=500&width=450"
+                    src="/why.png"
                     alt="Dr. Pravesh Kumar"
-                    width={450}
-                    height={500}
+                    width={1000}
+                    height={600}
                     className="w-full h-auto rounded-2xl relative z-10"
                   />
                 </div>

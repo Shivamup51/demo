@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Kynexa Physio",
   description: "Physiotherapy and rehabilitation services",
   generator: "v0.dev",
+  icons: {
+    icon: "/favi.jpg",
+  },
 }
 
 export default function RootLayout({

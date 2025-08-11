@@ -18,6 +18,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { format } from "date-fns"
 import { cn } from "@/lib/utils"
+import { ScrollArea } from "./ui/scroll-area"
 
 interface NavbarProps {
   subServices: Array<{
@@ -42,29 +43,14 @@ export default function Navbar({ subServices }: NavbarProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  // Manage body scroll lock
-  useEffect(() => {
-    if (isMenuOpen || isSubmitted) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
-    return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [isMenuOpen, isSubmitted])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     setIsSubmitting(false)
     setIsSubmitted(true)
-
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false)
       setFormData({ name: "", email: "", phone: "", address: "", preferredDateTime: null, message: "" })
@@ -112,7 +98,6 @@ export default function Navbar({ subServices }: NavbarProps) {
               <Image src="/logo.png" alt="Kynexa Logo" width={120} height={30} className="h-10 w-auto sm:h-12" />
             </Link>
           </div>
-
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             <Link href="/" className="text-gray-700 hover:text-[#6c2c8b] font-medium relative group py-2">
@@ -221,7 +206,7 @@ export default function Navbar({ subServices }: NavbarProps) {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="mt-2 pl-4 space-y-2 max-h-[50vh] overflow-y-auto" style={{ WebkitOverflowScrolling  : "touch" }}>
+                  <ScrollArea className="mt-2 pl-4 space-y-2 max-h-[50vh] overflow-y-auto">
                     {allServices.map((service, i) => (
                       <Link 
                         key={i}
@@ -236,7 +221,7 @@ export default function Navbar({ subServices }: NavbarProps) {
                         {service.name}
                       </Link>
                     ))}
-                  </div>
+                  </ScrollArea>
                 )}
               </div>
               

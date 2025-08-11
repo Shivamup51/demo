@@ -69,7 +69,7 @@ export default function ContactPage() {
       icon: <Clock className="w-6 h-6" />,
       title: "Clinic Hours",
       details: [
-        "Monday to Saturday: 10:00 AM – 07:00 PM",
+        "Monday to Saturday: 08:00 AM – 08:00 PM",
       ],
     },
   ]
@@ -113,7 +113,7 @@ export default function ContactPage() {
               <div className="relative z-10 bg-white rounded-3xl p-6 shadow-xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6c2c8b]/5 to-[#9d4ed8]/5 rounded-3xl"></div>
                 <Image
-                  src="/placeholder.svg?height=500&width=400"
+                  src="/contact-us.jpg"
                   alt="Contact Us"
                   width={400}
                   height={500}

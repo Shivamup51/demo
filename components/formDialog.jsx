@@ -59,7 +59,7 @@ export default function FormDialog({ isOpen, onClose }) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] bg-white rounded-xl border-none shadow-xl">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-[#6c2c8b] font-heading">Request a Cardio-Pulmonary Rehab Session</DialogTitle>
+          <DialogTitle className="text-xl text-center font-bold text-[#6c2c8b] font-heading">Provide Your Information</DialogTitle>
         </DialogHeader>
         {isSubmitted ? (
           <div className="text-center py-8 space-y-4">

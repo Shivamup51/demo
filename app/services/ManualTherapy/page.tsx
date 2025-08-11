@@ -131,7 +131,7 @@ export default function ManualTherapyPage() {
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/manual/Manual-Therapy-Main.jpg"
                   alt="Manual Therapy"
                   width={400}
                   height={300}
@@ -153,7 +153,7 @@ export default function ManualTherapyPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/manual/Manual-Therapy-What.jpg"
                   alt="What is Manual Therapy"
                   width={400}
                   height={300}
@@ -208,46 +208,30 @@ export default function ManualTherapyPage() {
 
       {/* Myofascial Release */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Myofascial Release: A Core Component</h2>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  One of the cornerstones of our manual therapy approach is Myofascial Release, a technique designed to stretch and release tension in the fascia—the connective tissue that surrounds your muscles and organs.
-                </p>
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Tight fascia can restrict movement, create chronic pain patterns, and affect posture. Through slow, sustained pressure, we target specific myofascial restrictions, helping to:
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {myofascialRelease.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
-                    <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Myofascial Release"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-2xl"
-                />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
-                  <FaHandHoldingMedical className="w-6 h-6 text-[#6c2c8b]" />
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col items-center">
+      <div className="space-y-6 p-6 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Myofascial Release: A Core Component</h2>
+        <div className="prose prose-lg max-w-none mx-auto">
+          <p className="text-lg text-gray-700 font-body leading-relaxed">
+            One of the cornerstones of our manual therapy approach is Myofascial Release, a technique designed to stretch and release tension in the fascia—the connective tissue that surrounds your muscles and organs.
+          </p>
+          <p className="text-lg text-gray-700 font-body leading-relaxed">
+            Tight fascia can restrict movement, create chronic pain patterns, and affect posture. Through slow, sustained pressure, we target specific myofascial restrictions, helping to:
+          </p>
         </div>
-      </section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mt-8">
+          {myofascialRelease.map((item, index) => (
+            <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm text-left">
+              <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
+              <p className="text-gray-700 font-body text-base leading-relaxed">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
@@ -267,7 +251,7 @@ export default function ManualTherapyPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/manual/Manual-Therapy-Benefits.jpg"
                   alt="Benefits of Manual Therapy"
                   width={500}
                   height={400}
@@ -313,7 +297,7 @@ export default function ManualTherapyPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/manual/Manual-Therapy-Why.jpg"
                   alt="Manual Therapy Team"
                   width={400}
                   height={300}
@@ -410,7 +394,7 @@ export default function ManualTherapyPage() {
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
+              <p className="text-white/80 font-body">Timings: Monday to Saturday 08:00 AM - 08:00 PM</p>
             </div>
           </div>
           <div>

@@ -25,7 +25,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "8 min read",
       category: "Exercise & Fitness",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/blog.png",
       featured: true,
     },
     {
@@ -37,7 +37,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "7 min read",
       category: "Pelvic Health",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/b.jpg",
       featured: true,
     },
     {

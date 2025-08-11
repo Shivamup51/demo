@@ -12,7 +12,7 @@ import FormDialog from "@/components/formDialog"
 import Link from "next/link"
 export default function NeuroRehabilitationPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false) 
 
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
@@ -170,7 +170,7 @@ export default function NeuroRehabilitationPage() {
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/neuro/Neuro Rehabilitation main.jpg"
                   alt="Neuro Rehabilitation Therapy"
                   width={400}
                   height={300}
@@ -192,7 +192,7 @@ export default function NeuroRehabilitationPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/neuro/Neuro Rehabilitation What.jpg"
                   alt="What is Neuro Rehabilitation"
                   width={400}
                   height={300}
@@ -302,7 +302,7 @@ export default function NeuroRehabilitationPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/neuro/Neuro Rehabilitation Benefit.jpg"
                   alt="Benefits of Neuro Rehabilitation"
                   width={500}
                   height={400}
@@ -326,7 +326,7 @@ export default function NeuroRehabilitationPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="/neuro/Neuro Rehabilitation why.jpg"
                   alt="Neuro Rehabilitation Team"
                   width={400}
                   height={300}
@@ -469,7 +469,7 @@ export default function NeuroRehabilitationPage() {
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
+              <p className="text-white/80 font-body">Timings: Monday to Saturday 08:00 AM - 08:00 PM</p>
             </div>
           </div>
           <div>
