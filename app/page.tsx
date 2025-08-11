@@ -202,9 +202,9 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {[
-            { icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Working Hours", lines: ["Mon-Fri: 8am - 8pm", "Sat: 9am - 5pm"] },
-            { icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Contact Us", lines: ["+91 8868879383", "info@kynexa.com"] },
-            { icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Our Location", lines: ["123 Medical Plaza,", "New Delhi, India"] }
+            { icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Working Hours", lines: ["Mon-Sat: 8am - 8pm"] },
+            { icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white " />, title: "Contact Us", lines: ["+91 8868879387","info@kynexa.com"] },
+            { icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Our Location", lines: ["D 16, Basement, Hauz Khas , New Delhi-110016"] }
           ].map((item, index) => (
             <motion.div 
               key={index}

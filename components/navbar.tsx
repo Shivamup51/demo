@@ -153,7 +153,7 @@ export default function Navbar({ subServices }: NavbarProps) {
           <div className="hidden lg:flex items-center space-x-3">
             <Button variant="outline" className="border-[#6c2c8b] text-[#6c2c8b] hover:bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] hover:text-white rounded-lg transition-colors px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
               <PhoneCall className="w-4 h-4 mr-2" />
-              +91 8868879383
+              +91 8868879387
             </Button>
             <div className="flex justify-center">
                  <Link href="/home-visit">
@@ -242,7 +242,7 @@ export default function Navbar({ subServices }: NavbarProps) {
               <div className="flex flex-col gap-3 mt-4 px-4 py-2">
                 <Button variant="outline" className="w-full border-[#6c2c8b] text-[#6c2c8b] hover:bg-[#6c2c8b]/5 rounded-lg text-sm py-2.5">
                   <PhoneCall className="w-4 h-4 mr-2" />
-                  +91 8868879383
+                  +91 8868879387
                 </Button>
                 <Dialog>
                   <DialogTrigger asChild>

@@ -166,7 +166,7 @@ export default function DryNeedlingTherapyPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/dry/dry-needling-What.jpg"
+                  src="/dry/dry-needling-what.jpg"
                   alt="What is Dry Needling"
                   width={400}
                   height={300}
