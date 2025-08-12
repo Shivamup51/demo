@@ -3,9 +3,10 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Home, Send, CheckCircle, Calendar, MapPin, Clipboard, Hand, Zap, Activity, Brain, Footprints, Heart, Clock, Bandage } from "lucide-react"
+import { Home, Send, CheckCircle, Calendar, MapPin, Clipboard, Hand, Zap, Activity, Brain, Footprints, Heart, Clock, Bandage, PhoneCall, Mail } from "lucide-react"
 import Image from "next/image"
 import FormDialog from "@/components/formDialog"
+import Link from "next/link"
 
 export default function HomeVisitsPage() {
   const [isOpen, setIsOpen] = useState(false)
@@ -277,23 +278,23 @@ export default function HomeVisitsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+              className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full sm:w-auto"
             >
-              <Home className="w-5 h-5 mr-2" />
+              <PhoneCall className="w-5 h-5 mr-2 flex-shrink-0" />
               Call: +91 8868879387
             </Button>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+              className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full sm:w-auto"
             >
-              <Send className="w-5 h-5 mr-2" />
+              <Mail className="w-5 h-5 mr-2 flex-shrink-0" />
               Email: info@kynexaphysio.com
             </Button>
             <Button 
               onClick={() => setIsOpen(true)}
-              className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl"
+              className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto"
             >
-              <Calendar className="w-5 h-5 mr-2" />
+              <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
               Book Appointment
             </Button>
           </div>

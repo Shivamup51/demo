@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Physiotherapy and rehabilitation services",
   generator: "v0.dev",
   icons: {
-    icon: "/favi.jpg",
+    icon: "/favicon.png",
   },
 }
 

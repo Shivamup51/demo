@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users, PhoneCall, Home } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { FaWhatsapp } from "react-icons/fa"
@@ -93,17 +93,17 @@ export default function ContactPage() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={() => setIsOpen(true)}
-                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
-                  <Calendar className="w-5 h-5 mr-2" />
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+                  <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
                   Book Consultation
                 </Button>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Us Now
+                  <Phone className="w-5 h-5 mr-2 flex-shrink-0" />
+                  Contact Us
                 </Button>
                 </Link>
               </div>
@@ -329,16 +329,16 @@ export default function ContactPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
-              <Calendar className="w-5 h-5 mr-2" />
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+              <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
               Book Your Appointment Now
             </Button>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+              className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full sm:w-auto"
             >
-              <Send className="w-5 h-5 mr-2" />
-              Or just drop us a message
+              <PhoneCall className="w-5 h-5 mr-2 flex-shrink-0" />
+              Contact Us Now
             </Button>
           </div>
         </div>

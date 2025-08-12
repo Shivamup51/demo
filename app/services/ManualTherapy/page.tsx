@@ -113,29 +113,30 @@ export default function ManualTherapyPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
-                  <Calendar className="w-5 h-5 mr-2" />
+                <Button onClick={() => setIsOpen(true)}
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-4 py-3 sm:px-6 sm:py-6 text-sm sm:text-base md:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
                   Book Appointment
                 </Button>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  className="border-white text-white hover:bg-white/10 px-4 py-3 sm:px-6 sm:py-6 text-sm sm:text-base md:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
                   Call Now
                 </Button>
                 </Link>
               </div>
             </div>
             <div className="relative">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+              <div className="relative z-10 bg-white rounded-3xl p-3 sm:p-6 lg:p-0 shadow-lg">
                 <Image
                   src="/manual/Manual-Therapy-Main.jpg"
                   alt="Manual Therapy"
                   width={400}
                   height={300}
-                  className="w-full h-auto rounded-2xl relative z-10"
+                  className="w-full h-auto rounded-lg sm:rounded-2xl relative z-10"
                   priority
                 />
               </div>
@@ -159,9 +160,6 @@ export default function ManualTherapyPage() {
                   height={300}
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
-                  <Hand className="w-6 h-6 text-[#6c2c8b]" />
-                </div>
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
@@ -274,14 +272,14 @@ export default function ManualTherapyPage() {
               Manual therapy is ideal for:
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {conditions.map((condition, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6">
+                <CardContent className="p-3 sm:p-6">
                   <div className="flex items-start space-x-3">
-                    <Hand className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{condition}</p>
+                    <Hand className="w-5 h-5 sm:w-6 sm:h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body text-sm sm:text-base leading-relaxed">{condition}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -303,9 +301,7 @@ export default function ManualTherapyPage() {
                   height={300}
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
-                  <FaUserMd className="w-6 h-6 text-[#6c2c8b]" />
-                </div>
+                
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
@@ -368,27 +364,27 @@ export default function ManualTherapyPage() {
               Ready to move freely and painlessly again? Let Kynexa’s manual therapy experts guide your recovery journey. Also available for online consultations and treatment planning.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
-                <Phone className="w-8 h-8" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="bg-white/10 p-4 sm:p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-3 sm:mb-4">
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
-              <p className="text-white/80 font-body">+91 8868879387</p>
+              <h3 className="text-base sm:text-lg font-bold text-white font-heading mb-1 sm:mb-2">Call Us</h3>
+              <p className="text-white/80 font-body text-sm sm:text-base">+91 8868879387</p>
             </div>
-            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
-                <Mail className="w-8 h-8" />
+            <div className="bg-white/10 p-4 sm:p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-3 sm:mb-4">
+                <Mail className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
-              <p className="text-white/80 font-body">info@kynexaphysio.com</p>
+              <h3 className="text-base sm:text-lg font-bold text-white font-heading mb-1 sm:mb-2">Email Us</h3>
+              <p className="text-white/80 font-body text-sm sm:text-base">info@kynexaphysio.com</p>
             </div>
-            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
-                <MapPin className="w-8 h-8" />
+            <div className="bg-white/10 p-4 sm:p-6 rounded-2xl backdrop-blur-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-3 sm:mb-4">
+                <MapPin className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Visit Us</h3>
-              <p className="text-white/80 font-body">D 16 , Basement , Hauz Khas , New Delhi - 110016</p>
+              <h3 className="text-base sm:text-lg font-bold text-white font-heading mb-1 sm:mb-2">Visit Us</h3>
+              <p className="text-white/80 font-body text-sm sm:text-base">D 16 , Basement , Hauz Khas , New Delhi - 110016</p>
             </div>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
@@ -412,30 +408,30 @@ export default function ManualTherapyPage() {
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {faqs.map((faq, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300">
                 <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div
                     className="w-full text-left flex justify-between items-center cursor-pointer"
                     onClick={() => toggleFaq(index)}
                   >
-                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading hover:text-[#9d4ed8]">
-                      <span className="inline-block w-7 h-7 bg-[#6c2c8b]/10 rounded-full text-center text-[#6c2c8b] mr-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#6c2c8b] font-heading hover:text-[#9d4ed8]">
+                      <span className="inline-block w-6 h-6 sm:w-7 sm:h-7 bg-[#6c2c8b]/10 rounded-full text-center text-[#6c2c8b] mr-2">
                         Q
                       </span>
                       {faq.question}
                     </h3>
                     {expandedFaq === index ? (
-                      <ArrowUp className="w-5 h-5 text-[#9d4ed8]" />
+                      <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 text-[#9d4ed8] flex-shrink-0" />
                     ) : (
-                      <ArrowDown className="w-5 h-5 text-[#9d4ed8]" />
+                      <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-[#9d4ed8] flex-shrink-0" />
                     )}
                   </div>
                   {expandedFaq === index && (
-                    <div className="mt-4 pl-9">
-                      <p className="text-gray-600 font-body text-base leading-relaxed">{faq.answer}</p>
+                    <div className="mt-3 sm:mt-4 pl-6 sm:pl-9">
+                      <p className="text-gray-600 font-body text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   )}
                 </CardContent>

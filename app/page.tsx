@@ -632,7 +632,7 @@ export default function HomePage() {
                 >
                   <div className="bg-[#6c2c8b]/80 rounded-xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm h-full">
                     <div className="bg-[#6c2c8b]/80 p-2 sm:p-3 rounded-full mb-2 sm:mb-3">
-                      <Image src='/icon-1.png' alt={condition.name} width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <p className="text-white font-medium text-sm sm:text-base mb-2">{condition.name}</p>
                     <Badge className="bg-[#6c2c8b]/80 text-white border-none text-xs">

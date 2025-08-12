@@ -15,7 +15,9 @@ import {
   Heart,
   Users,
   BookOpen,
-  ArrowRight
+  ArrowRight,
+  PhoneCall,
+  Mail
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -87,16 +89,16 @@ export default function AboutPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={() => setIsOpen(true)}
-                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
-                  <Calendar className="w-5 h-5 mr-2" />
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+                  <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
                   Book Consultation
                 </Button>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+                  className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
+                  <Phone className="w-5 h-5 mr-2 flex-shrink-0" />
                   Contact Us
                 </Button>
                 </Link>
@@ -327,19 +329,17 @@ export default function AboutPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center">
               <Calendar className="w-5 h-5 mr-2" />
-              Book Consultation
+              Book Your Appointment Now
             </Button>
-            <Link href="/contact">
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
+              className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center"
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <PhoneCall className="w-5 h-5 mr-2" />
               Contact Us Now
             </Button>
-            </Link>
           </div>
         </div>
       </section>

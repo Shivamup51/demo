@@ -43,7 +43,6 @@ export default function Navbar({ subServices }: NavbarProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -121,21 +120,24 @@ export default function Navbar({ subServices }: NavbarProps) {
               <DropdownMenuContent 
                 align="center" 
                 className="w-full max-w-[900px] bg-white shadow-xl p-6 rounded-xl mt-4 border border-gray-100 lg:block hidden"
+                onCloseAutoFocus={(e) => e.preventDefault()}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-[60vh] overflow-y-auto">
-                  {allServices.map((service, i) => (
-                    <DropdownMenuItem 
-                      key={i} 
-                      asChild 
-                      className="rounded-md hover:bg-gray-50 focus:bg-gray-50 transition-all duration-200 py-3 px-4"
-                    >
-                      <Link href={service.href} className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium text-sm">
-                        {service.icon}
-                        {service.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </div>
+                <ScrollArea className="max-h-[60vh]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    {allServices.map((service, i) => (
+                      <div key={i} className="rounded-md hover:bg-gray-50 focus:bg-gray-50 transition-all duration-200 py-3 px-4">
+                        <Link 
+                          href={service.href} 
+                          className="flex items-center text-gray-700 hover:text-[#6c2c8b] font-medium text-sm cursor-pointer"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {service.icon}
+                          {service.name}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -206,12 +208,12 @@ export default function Navbar({ subServices }: NavbarProps) {
                 </button>
                 
                 {isServicesOpen && (
-                  <ScrollArea className="mt-2 pl-4 space-y-2 max-h-[50vh] overflow-y-auto">
+                  <ScrollArea className="mt-2 pl-4 space-y-2 max-h-[60vh] overflow-y-auto">
                     {allServices.map((service, i) => (
                       <Link 
                         key={i}
-                        href={service.href}
-                        className="flex items-center text-gray-700 hover:text-[#6c2c8b] transition-colors text-sm py-2 block"
+                        href={service.href} 
+                        className="flex items-center text-gray-700 hover:text-[#6c2c8b] transition-colors text-sm py-2  cursor-pointer"
                         onClick={() => {
                           setIsMenuOpen(false)
                           setIsServicesOpen(false)

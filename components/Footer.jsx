@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Twitter, Instagram, Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Facebook, Twitter, Instagram, Phone, Mail, MapPin, Clock, Calendar } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import FormDialog from "@/components/formDialog"
@@ -109,11 +109,12 @@ export default function Component() {
 
         {/* Book Appointment Section */}
         <div className="bg-white/10 rounded-lg p-6 mt-8 mb-12">
-          <div className="text-center flex flex-col items-center justify-center md:text-left md:flex md:items-center md:justify-between">
+          <div className="text-center flex flex-col items-center justify-center md:text-left md:flex md:flex-row md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
-            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 font-semibold px-6 py-2">
-              Book Appointment
-            </Button>
+              <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 font-semibold px-6 py-2">
+                <Calendar className="w-4 h-4 mr-2" />
+                Book Appointment
+              </Button>
               <p className="text-white/80 text-lg max-w-2xl mt-4">
                 Schedule a physiotherapy session with Dr. Pravesh Kumar at our clinic or your home.
               </p>
