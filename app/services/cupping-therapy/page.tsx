@@ -290,7 +290,7 @@ export default function CuppingTherapyPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/cupping/Cupping-Benefits.jpg"
+                  src="/cupping/Cupping-benefits.jpg"
                   alt="Benefits of Cupping Therapy"
                   width={500}
                   height={400}
