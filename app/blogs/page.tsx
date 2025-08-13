@@ -25,7 +25,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "8 min read",
       category: "Exercise & Fitness",
-      image: "/blog.png",
+      image: "/blog/Exercise and Fitness.jpg",
       featured: true,
     },
     {
@@ -37,7 +37,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "7 min read",
       category: "Pelvic Health",
-      image: "/b.jpg",
+      image: "/blog/Pelvic Floor Health.jpg",
       featured: true,
     },
     {
@@ -49,7 +49,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "6 min read",
       category: "Pain Management",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/blog/Pain Management.jpg",
       featured: true,
     },
     {
@@ -61,7 +61,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "7 min read",
       category: "Geriatric Rehabilitation",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/blog/Geriatric Rehabilitation.jpg",
       featured: true,
     },
     {
@@ -73,19 +73,19 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "6 min read",
       category: "Injury Prevention",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/blog/Injury Prevention.jpg",
       featured: true,
     },
     {
       id: 6,
-      title: "The Importance of Physiotherapy: The Role of Physiotherapy in Today’s Life",
+      title: "The Importance of Physiotherapy: The Role of Physiotherapy in Today's Life",
       excerpt: "Learn why physiotherapy is essential for holistic wellness, from injury recovery to preventive care.",
       content: "Physiotherapy",
       author: "Kynexa Team",
       date: "2025-07-27",
       readTime: "5 min read",
       category: "Physiotherapy",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/blog/Physiotherapy.jpg",
       featured: true,
     },
   ]
@@ -131,14 +131,15 @@ export default function BlogsPage() {
                   key={post.id}
                   className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden"
                 >
-                  <div className="relative overflow-hidden cursor-pointer">
+                  <div className="relative h-64 overflow-hidden cursor-pointer">
                     <Image
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
-                      width={500}
-                      height={300}
+                      width={600}
+                      height={400}
                       onClick={() => router.push(`/blogs/${post.content}`)}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
+                      priority
                     />
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-[#A259FF] text-white">Featured</Badge>

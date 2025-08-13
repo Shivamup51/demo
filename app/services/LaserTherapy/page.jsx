@@ -3,100 +3,83 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Calendar, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, CheckCircle, Info } from "lucide-react"
-import { FaSpa, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
+import { Phone, Calendar, CheckCircle, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, Info } from "lucide-react"
+import { FaBolt, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
 import Image from "next/image"
-import FormDialog from "@/components/formDialog"
 import Link from "next/link"
-
-export default function LaserTherapyPage() {
+import FormDialog from "@/components/formDialog"
+export default function ElectrotherapyPage() {
   const [expandedFaq, setExpandedFaq] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index)
   }
 
-  // How Does It Work
-  const howItWorksTitle = [
-    "Photon Absorption",
-    "ATP Boost",
-    "Enhanced Circulation",
-    "Cellular Repair",
-    "Pain Modulation"
-  ]
-  const howItWorks = [
-    "Light at targeted wavelengths (600–1064 nm) is absorbed by mitochondrial chromophores.",
-    "Energy conversion promotes ATP production, fuelling faster cellular activity.",
-    "Promotes better oxygen and nutrient flow to support faster healing.",
-    "Enhances collagen synthesis, reduces oxidative stress, and improves regeneration.",
-    "Influences nerve signal transmission and stimulates endorphin release for natural pain relief."
-  ]
-
   const benefits = [
-    "Rapid reduction in pain and inflammation",
-    "Accelerated tissue and nerve regeneration",
-    "Enhanced flexibility and joint function",
-    "Medication-free pain relief",
-    "Improved wound healing and scar remodelling",
-    "Faster post-injury and post-surgical recovery",
-    "Safe for repetitive use with no downtime"
+    "Decrease pain by blocking pain receptors",
+    "Stimulate circulation and cellular healing",
+    "Improve muscle strength and endurance",
+    "Break muscle spasms and joint stiffness",
+    "Facilitate faster recovery from injury or surgery",
+    "Re-educate muscles after neurological impairment or disuse"
+  ]
+  
+  const electrotherapyBenefits = [
+    "Non-invasive and drug-free pain management",
+    "Reduces inflammation and swelling",
+    "Accelerates tissue repair and cell regeneration",
+    "Stimulates muscle contraction to prevent atrophy",
+    "Enhances blood flow to promote healing",
+    "Relieves nerve-related pain and muscle spasms",
+    "Improves joint mobility and functional movement",
+    "Speeds up recovery after injury or surgery",
+    "Supports rehabilitation for chronic pain conditions"
   ]
 
   const conditions = [
-    "Arthritis and joint degeneration",
-    "Sciatica and nerve compression",
-    "Tendonitis, bursitis, and repetitive strain injuries",
-    "Plantar fasciitis and carpal tunnel syndrome",
-    "Frozen shoulder and rotator cuff issues",
-    "Muscular strains and sports injuries",
-    "Post-surgical stiffness and scarring",
-    "Cervical and lumbar spine dysfunction",
-    "Chronic neck, back, and soft tissue pain"
+    "Lower back pain and lumbar spondylosis",
+    "Osteoarthritis of the knees and spine",
+    "Cervical pain and radiating shoulder aches",
+    "Neuropathy and nerve compression",
+    "Muscle weakness and post-fracture stiffness",
+    "Chronic inflammatory conditions like fibromyalgia",
+    "Sports injuries and repetitive strain syndromes",
+    "Post-surgical pain and soft tissue healing support"
   ]
 
   const whyChooseUs = [
-    "Certified Physiotherapists trained in both LLLT and High Power Laser application",
-    "Advanced Laser Systems approved for deep tissue treatment",
-    "Integrated Care Plans combining manual therapy, dry needling, rehab, and laser",
-    "Evidence-Based Protocols for improved recovery metrics",
-    "Clean, Modern Facility focused on comfort, safety, and healing outcomes"
+    "Trained Professionals with hands-on experience in electro-modality protocols",
+    "Modern Equipment including TENS, IFT, EMS, Ultrasound, and Shockwave",
+    "Personalized therapies evolving with each stage of your recovery",
+    "Integrated Care combining electrotherapy with hands-on techniques and therapeutic movement",
+    "Transparent Guidance on safety, effectiveness, and home program integration"
   ]
 
-  const whatToExpect = [
-    {
-      title: "Evaluation – We assess your symptoms, diagnosis, and tissue depth to determine laser modality.",
-      icon: <FaUserMd className="w-8 h-8" />
-    },
-    {
-      title: "Application – The laser is applied to target zones using clinically set parameters for 5–15 minutes.",
-      icon: <FaSpa className="w-8 h-8" />
-    },
-    {
-      title: "Sensation – Patients may feel a gentle warmth; there is no pain or irritation.",
-      icon: <FaBriefcaseMedical className="w-8 h-8" />
-    },
-    {
-      title: "Aftercare – No restrictions post-session; you can resume daily activities immediately.",
-      icon: <FaRegChartBar className="w-8 h-8" />
-    }
+  const shockwaveConditions = [
+    "Plantar fasciitis",
+    "Achilles tendinopathy",
+    "Calcific shoulder tendonitis",
+    "Tennis/golfer's elbow",
+    "Trigger point release and chronic scar tissue breakdown",
+    "Patellar tendinopathy (jumper's knee)"
   ]
 
   const faqs = [
     {
-      question: "What’s the difference between low-level and high-power laser therapy?",
-      answer: "Low-level laser is ideal for mild or superficial conditions, while high power laser penetrates deeper tissues and offers quicker results for chronic or complex issues."
+      question: "Is electrotherapy painful?",
+      answer: "Not at all. Most patients feel mild tingling or warmth, but the sensation is generally soothing and non-invasive."
     },
     {
-      question: "How many sessions are needed?",
-      answer: "Acute conditions may improve in 3–5 sessions; deeper or long-standing issues may require 8–10, especially when using high power modalities."
+      question: "How long is each session?",
+      answer: "Sessions typically range between 15–30 minutes, depending on the treatment goal."
     },
     {
-      question: "Can laser therapy be combined with other treatments?",
-      answer: "Absolutely. It complements manual therapy, exercise rehab, dry needling, and spinal alignment for comprehensive recovery."
+      question: "Are there side effects?",
+      answer: "Side effects are rare and minimal. Our physiotherapists will assess your suitability before starting."
     },
     {
-      question: "Is it safe?",
-      answer: "Yes, both LLLT and HPLT are FDA-approved and safe when administered by certified professionals."
+      question: "Can electrotherapy be combined with other treatments?",
+      answer: "Yes, it's often most effective when used alongside manual therapy, dry needling, or corrective exercise."
     }
   ]
 
@@ -109,38 +92,36 @@ export default function LaserTherapyPage() {
             <div className="space-y-8">
               <div className="space-y-5 mt-10">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
-                  Laser Therapy <br />in Delhi
+                  Electrotherapy <br />in Delhi
                 </h1>
                 <div className="h-1 w-20 bg-white/40 rounded"></div>
-                <p className="text-xl text-white/90 font-body">Light-Powered Healing for Pain-Free Living</p>
+                <p className="text-xl text-white/90 font-body">Stimulating Recovery, Naturally and Effectively</p>
                 <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we offer both Low-Level Laser Therapy (LLLT) and High-Power Laser Therapy (HPLT) in Delhi to accelerate healing, reduce pain, and restore mobility. These non-invasive, scientifically backed treatments use therapeutic light energy to stimulate cellular regeneration, improve tissue health, and reduce inflammation—making laser therapy a cornerstone of modern rehabilitation care.
-                </p>
-                <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  Our High-Power Laser Therapy offers deeper tissue penetration and faster energy delivery, resulting in quicker relief, shorter recovery time, and more pronounced effects—especially for chronic or deep-tissue conditions.
+                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, our Electrotherapy services in Delhi offer a modern, non-invasive solution for pain relief and functional recovery. By using medically guided electrical impulses, we help stimulate muscles, improve circulation, and reduce inflammation—naturally and effectively. Whether you're coping with post-injury stiffness, chronic nerve pain, or muscular weakness, our physiotherapists personalize each electrotherapy session to accelerate healing and restore your body's optimal rhythm.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Book Appointment
+             <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={() => setIsOpen(true)}
+                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+                  <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
+                  Book Your Consultation
                 </Button>
-                <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10 px-6 py-6 text-lg font-medium transition-all duration-300 bg-transparent rounded-xl"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full"
+                  >
+                    <Phone className="w-5 h-5 mr-2 flex-shrink-0" />
+                    Contact Us
+                  </Button>
                 </Link>
               </div>
-            </div>
+              </div>
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Laser Therapy"
+                  src="/electro/Electrotherapy-main.jpg"
+                  alt="Electrotherapy"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl relative z-10"
@@ -154,111 +135,136 @@ export default function LaserTherapyPage() {
         </div>
       </section>
       <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      {/* What is Laser Therapy */}
+      {/* What is Electrotherapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="What is Laser Therapy"
+                  src="/electro/Electrotherapy-What.jpg"
+                  alt="What is Electrotherapy"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-[#6c2c8b]" />
-                </div>
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
             <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2 lg:pl-8">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Laser Therapy?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Electrotherapy?</h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Laser therapy involves the application of medical-grade laser light to injured or painful areas to stimulate healing from within. While LLLT uses low-intensity light ideal for surface tissues and mild conditions, HPLT emits powerful wavelengths that reach deeper muscle, ligament, and joint tissues, making it a more efficient solution for advanced musculoskeletal concerns.
+                <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
+                  Electrotherapy is a non-invasive, pain-relieving treatment method that uses carefully controlled electrical impulses to stimulate nerves and muscles. At Kynexa Advanced Physiotherapy and Manual Therapy Clinic in Delhi, we employ a range of clinically proven modalities to reduce inflammation, accelerate tissue repair, and improve muscle function—without the need for medication or surgery.
                 </p>
-                <p className="text-lg text-gray-700 font-body leading-relaxed py-2">
-                  Unlike surgical lasers, both forms of therapy are non-destructive and do not involve cutting or burning. They work by stimulating natural cellular functions without pain, side effects, or downtime.
+                <p className="text-lg text-gray-700 font-body leading-relaxed">
+                  Our expert physiotherapists customize electrotherapy treatments based on your diagnosis, lifestyle, and response to therapy, ensuring a safe and effective path to recovery.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* How Does It Work */}
+
+    {/* How Does Electrotherapy Work */}
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center space-y-4 mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Electrotherapy Work?</h2>
+      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+        Using devices that deliver low- to medium-frequency electrical impulses through surface electrodes, electrotherapy targets specific muscle groups or nerve pathways. These impulses mimic the body's own bioelectric signals to:
+      </p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {benefits.map((benefit, index) => (
+        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
+          <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+          <CardContent className="p-6 flex flex-col items-center">
+            <div className="flex items-center space-x-4">
+              <div className="text-[#9d4ed8]">
+                <FaBolt className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
+              </div>
+              <p className="text-gray-600 font-body text-base leading-relaxed mt-4  ">{benefit}</p>
+          </CardContent>
+        </Card>
+      ))}   
+    </div>
+  </div>
+</section>
+
+{/* Benefits of Electrotherapy */}
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Electrotherapy</h2>
+        <div className="space-y-4">
+          {electrotherapyBenefits.map((benefit, index) => (
+            <div key={index} className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
+              <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="relative order-1 lg:order-2">
+        <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+          <Image
+            src="/electro/Electrotherapy-Benefits.jpg"
+            alt="Benefits of Electrotherapy"
+            width={500}
+            height={400}
+            className="w-full h-auto rounded-2xl"
+          />
+        </div>
+        <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Shockwave Therapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Laser Therapy Work?</h2>
-            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Laser therapy functions through photobiomodulation, a cellular process where light energy is absorbed and converted into biological repair signals. Here’s how:
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Shockwave Therapy: Precision Impact for Chronic Pain</h2>
+            <p className="text-xl text-gray-700 font-body max-w-9xl mx-auto">
+              As part of our advanced electrotherapy options, Shockwave Therapy delivers high-energy acoustic waves directly to affected tissues. This non-invasive technique is ideal for breaking down calcific deposits, stimulating the body's healing mechanisms, and relieving persistent musculoskeletal pain.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {howItWorks.map((item, index) => (
+            {shockwaveConditions.map((condition, index) => (
               <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <Zap className="w-6 h-6 text-[#9d4ed8] flex-shrink-0" />
-                    <p className="text-gray-700 font-semibold text-lg">{howItWorksTitle[index]}</p>
+                  <div className="flex items-start space-x-3">
+                    <Zap className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body text-base leading-relaxed">{condition}</p>
                   </div>
-                  <p className="text-gray-700 font-body text-base leading-relaxed mt-4">{item}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+          <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
-              High Power Laser Therapy offers enhanced outcomes in fewer sessions by delivering more energy per minute, especially beneficial for chronic pain, deep-seated injuries, and post-operative recovery.
+              Patients often experience reduced pain and improved function after just a few sessions, making it a valuable addition to rehabilitation plans.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Conditions Treated */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Laser Therapy</h2>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Benefits of Laser Therapy"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Conditions Treated */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated</h2>
-            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-              Laser therapy at Kynexa is effective for a wide spectrum of conditions, including:
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated with Electrotherapy</h2>
+            <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
+              Our electrotherapy in Delhi is effective for a variety of conditions, including:
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -278,35 +284,32 @@ export default function LaserTherapyPage() {
       </section>
 
       {/* Why Choose Kynexa */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Laser Therapy Team"
+                  src="/electro/Electrotherapy-Why.jpg"
+                  alt="Electrotherapy Team"
                   width={400}
                   height={300}
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-[#9d4ed8]/20 rounded-full flex items-center justify-center">
-                  <FaUserMd className="w-6 h-6 text-[#6c2c8b]" />
-                </div>
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
             <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa for Electrotherapy?</h2>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
                   <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
                     <div className="text-[#9d4ed8] flex-shrink-0">
                       {index === 0 && <FaUserMd className="w-5 h-5" />}
                       {index === 1 && <FaBriefcaseMedical className="w-5 h-5" />}
-                      {index === 2 && <FaSpa className="w-5 h-5" />}
-                      {index === 3 && <FaRegChartBar className="w-5 h-5" />}
+                      {index === 2 && <FaRegChartBar className="w-5 h-5" />}
+                      {index === 3 && <Zap className="w-5 h-5" />}
                       {index === 4 && <CheckCircle className="w-5 h-5" />}
                     </div>
                     <p className="text-gray-700 font-body text-lg leading-relaxed">{reason}</p>
@@ -318,38 +321,13 @@ export default function LaserTherapyPage() {
         </div>
       </section>
 
-      {/* What to Expect */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What to Expect During a Session</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whatToExpect.map((step, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white text-center hover:shadow-lg transition-all duration-300 h-[220px] w-full flex flex-col justify-between">
-                <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-                <CardContent className="p-6 flex flex-col items-center justify-center">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="text-[#9d4ed8]">
-                      {step.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-                  </div>
-                  <p className="text-gray-600 font-body text-base leading-relaxed">{step.title}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Book Appointment */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Laser Therapy Appointment</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Appointment Today</h2>
             <p className="text-lg text-white/80 font-body leading-relaxed">
-              Explore the benefits of High-Power Laser Therapy with Kynexa’s expert physiotherapy team. Experience faster healing, deeper relief, and better mobility—powered by light.
+              Rediscover pain-free living with Kynexa's advanced electrotherapy in Delhi. We also offer virtual consultations and electrotherapy education for long-term support.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -378,7 +356,7 @@ export default function LaserTherapyPage() {
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Timings: Monday to Saturday 10:00 AM - 07:00 PM</p>
+              <p className="text-white/80 font-body">Timings: Monday to Saturday 08:00 AM - 08:00 PM</p>
             </div>
           </div>
           <div>
@@ -394,7 +372,7 @@ export default function LaserTherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions (FAQs)</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-6">
             {faqs.map((faq, index) => (

@@ -7,10 +7,10 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users, PhoneCall, Home } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Calendar, Instagram, Facebook, Twitter, Headphones, ArrowRight, MessageSquare, Users, PhoneCall, Home, Loader2, Linkedin } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { FaWhatsapp } from "react-icons/fa"
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import FormDialog from "@/components/formDialog"
 import Footer from "@/components/Footer"
 export default function ContactPage() {
@@ -23,22 +23,6 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: "", email: "", phone: "", message: "" })
-    }, 3000)
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -72,7 +56,42 @@ export default function ContactPage() {
         "Monday to Saturday: 08:00 AM – 08:00 PM",
       ],
     },
-  ]
+  ] 
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault()
+     setIsSubmitting(true)
+ 
+     try {
+       const payload = {
+         ...formData,
+         subject: `Contact Form Submission from ${formData.name}`,
+       }
+ 
+       const res = await fetch("/api/send-email", {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify(payload),
+       })
+ 
+       if (!res.ok) throw new Error("Failed to send email")
+ 
+       setIsSubmitted(true)
+       setTimeout(() => {
+         setIsSubmitted(false)
+         setFormData({
+           name: "",
+           email: "",
+           phone: "",
+           message: "",
+         })
+       }, 3000)
+     } catch (err) {
+       console.error(err)
+       alert("Something went wrong sending your request. Please try again.")
+     } finally {
+       setIsSubmitting(false)
+     }
+   }
 
   return (
     <div className="min-h-screen bg-white">
@@ -233,7 +252,7 @@ export default function ContactPage() {
                           className="w-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-80 py-2 rounded-md transition-all duration-200 text-sm"
                         >
                           {isSubmitting ? (
-                            "Sending..."
+                            <><Loader2 className="animate-spin w-4 h-4 mr-2" /><span>submitting...</span></>
                           ) : (
                             <>
                               <Send className="w-4 h-4 mr-2" />
@@ -299,14 +318,14 @@ export default function ContactPage() {
                         Healing never goes out of style. Follow Kynexa for a daily dose of movement, motivation, and momentum.
                       </p>
                       <div className="flex space-x-4">
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                        <Link href="https://www.instagram.com/kynexaphysio" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
                           <Instagram className="w-4 h-4" />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                        <Link href="https://www.facebook.com/kynexaphysio" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
                           <Facebook className="w-4 h-4" />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
-                          <Twitter className="w-4 h-4" />
+                        <Link href="https://www.linkedin.com/company/kynexa-advanced-physiotherapy-and-manual-therapy-clinic/" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                          <FaLinkedin className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>

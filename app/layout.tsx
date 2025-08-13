@@ -10,6 +10,7 @@ import {
   Waves 
 } from "lucide-react"
 import Navbar from "@/components/navbar"
+import { FaWhatsapp } from "react-icons/fa"
 
 export const metadata: Metadata = {
   title: "Kynexa Physio",
@@ -69,6 +70,16 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <Navbar subServices={services} />
         {children}
+
+        {/* Floating WhatsApp Button */}
+        <a
+          href="https://wa.me/918868879387?text=Hello%20I%20want%20to%20know%20more"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-5 right-5 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50"
+        >
+          <FaWhatsapp size={30} color="white" />
+        </a>
       </body>
     </html>
   )

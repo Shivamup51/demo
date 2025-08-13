@@ -71,18 +71,18 @@ export default function HomePage() {
   const Services = [
     { name: "Dry Needling", desc: "Relieves muscle tension and triggers natural healing using targeted needle points", href: "/services/DryNeedling", icon: <Syringe className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
     { name: "Cupping Therapy", desc: "Boosts circulation and eases pain through gentle suction-based decompression technique", href: "/services/cupping-therapy", icon: <Waves className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Kinesio Taping", desc: "Supports injured areas and improves movement without restricting active mobility or flow", href: "/services/kinesio-taping", icon: <Bandage className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Laser Therapy", desc: "Promotes deep tissue recovery using focused light energy for pain relief and repair", href: "/services/laser-therapy", icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Manual Therapy", desc: "Hands-on techniques including myofascial release to improve mobility and reduce stiffness", href: "/services/manual-therapy", icon: <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Electro Therapy", desc: "Stimulates healing with modalities like shockwave to treat chronic pain zones", href: "/services/electro-therapy", icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Sports Physiotherapy", desc: "Performance-based rehab for athletes recovering from injuries or movement imbalances", href: "/services/sports-physiotherapy", icon: <Dumbbell className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Pre & Post Natal Care", desc: "Specialized therapy to support women through pregnancy changes and recovery", href: "/services/prenatal-postnatal", icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Cardio & Pulmonary Rehab", desc: "Restores endurance and lung capacity after illness, surgery or inactivity", href: "/services/cardio-pulmonary", icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Neuro Rehabilitation", desc: "Enhances mobility and control after stroke, nerve injury or neurological disorders", href: "/services/neuro-rehab", icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Chiropractic", desc: "Realigns spine and joints using precision adjustments to reduce pain and improve function", href: "/services/chiropractic", icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Geriatric Rehabilitation", desc: "Rebuilds strength, balance, and gait for safer movement in aging bodies", href: "/services/geriatric-rehab", icon: <Accessibility className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Post Surgical Rehabilitation", desc: "Guided recovery plans to regain strength and prevent long-term complications", href: "/services/post-surgical", icon: <Thermometer className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
-    { name: "Spine Alignment", desc: "Relieves body stiffness by correcting posture and improving spinal mechanics holistically", href: "/services/spine-alignment", icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> }
+    { name: "Kinesio Taping", desc: "Supports injured areas and improves movement without restricting active mobility or flow", href: "/services/KinesioTapingTherapy", icon: <Bandage className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Laser Therapy", desc: "Promotes deep tissue recovery using focused light energy for pain relief and repair", href: "/services/LaserTherapy", icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Manual Therapy", desc: "Hands-on techniques including myofascial release to improve mobility and reduce stiffness", href: "/services/ManualTherapy", icon: <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Electro Therapy", desc: "Stimulates healing with modalities like shockwave to treat chronic pain zones", href: "/services/Electrotherapy", icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Sports Physiotherapy", desc: "Performance-based rehab for athletes recovering from injuries or movement imbalances", href: "/services/SportsPhysiotherapy", icon: <Dumbbell className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Pre & Post Natal Care", desc: "Specialized therapy to support women through pregnancy changes and recovery", href: "/services/PreAndPostNatalPhysiotherapy", icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Cardio & Pulmonary Rehab", desc: "Restores endurance and lung capacity after illness, surgery or inactivity", href: "/services/CardioPulmonaryRehab", icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Neuro Rehabilitation", desc: "Enhances mobility and control after stroke, nerve injury or neurological disorders", href: "/services/NeuroRehabilitation", icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Chiropractic", desc: "Realigns spine and joints using precision adjustments to reduce pain and improve function", href: "/services/ChiropracticCare", icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Geriatric Rehabilitation", desc: "Rebuilds strength, balance, and gait for safer movement in aging bodies", href: "/services/GeriatricRehabilitation", icon: <Accessibility className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Post Surgical Rehabilitation", desc: "Guided recovery plans to regain strength and prevent long-term complications", href: "/services/PostSurgicalRehabilitation", icon: <Thermometer className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> },
+    { name: "Spine Alignment", desc: "Relieves body stiffness by correcting posture and improving spinal mechanics holistically", href: "/services/SpineAlignmentTherapy", icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" /> }
   ]
 
   const conditionCategories = [
@@ -176,7 +176,6 @@ export default function HomePage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="absolute -z-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full bg-[#eaf5fb] right-0 top-0 transform translate-x-1/4 -translate-y-1/4"></div>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 sm:border-8 border-white">
               <Image
                 src="/home/main.jpg"
@@ -187,7 +186,6 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="absolute -z-10 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-[#f3eaf8] left-0 bottom-0 transform -translate-x-1/4 translate-y-1/4"></div>
           </motion.div>
         </div>
       </section>
@@ -386,20 +384,6 @@ export default function HomePage() {
               ))}
             </motion.div>
           </div>
-
-          <div className="text-center mt-8 sm:mt-12">
-            <Link href="/services">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button className="bg-[#6c2c8b] hover:bg-[#6c2c8b]/80 text-white px-6 sm:px-8 py-4 sm:py-6 rounded-xl shadow-md text-sm sm:text-base">
-                  See All Services <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
-              </motion.div>
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -557,7 +541,9 @@ export default function HomePage() {
               <Badge className="bg-[#f3eaf8] text-[#6c2c8b] border-none px-3 sm:px-4 py-1.5 text-xs sm:text-sm">Our Story</Badge>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading">About Kynexa</h2>
               <p className="text-sm sm:text-lg text-gray-700 font-body">
-                Your destination for evidence-based rehabilitation, expert-led care, and personalized recovery plans. From chronic pain to post-surgical healing, we help you move better, feel stronger, and live pain-free.
+              At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we believe healing is not just about recovery—it’s about rediscovering strength, restoring confidence, and reclaiming your life. Located in the heart of Delhi, our clinic offers a sanctuary for those seeking comprehensive, compassionate, and cutting-edge physiotherapy solutions.
+Whether you're navigating post-surgical rehabilitation, managing chronic pain, or recovering from sports injuries, our expert team combines advanced manual therapy with evidence-based techniques to create customized treatment plans tailored to your goals.
+With a strong emphasis on patient education, proactive care, and long-term wellness, we help you move better, feel stronger, and live pain-free , so you can return to the lifestyle you love with confidence and ease.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}

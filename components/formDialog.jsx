@@ -27,18 +27,41 @@ export default function FormDialog({ isOpen, onClose }) {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const payload = {
+        ...formData,
+        preferredDateTime: formData.preferredDateTime
+          ? formData.preferredDateTime.toISOString()
+          : null,
+      }
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
 
-    // Reset form after 3 seconds and close dialog
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: "", email: "", phone: "", address: "", preferredDateTime: null, message: "" })
-      onClose()
-    }, 3000)
+      if (!res.ok) throw new Error("Failed to send email")
+
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          address: "",
+          preferredDateTime: null,
+          message: "",
+        })
+        onClose()
+      }, 3000)
+    } catch (err) {
+      console.error(err)
+      alert("Something went wrong sending your request. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {

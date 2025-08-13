@@ -7,6 +7,7 @@ import { Home, Send, CheckCircle, Calendar, MapPin, Clipboard, Hand, Zap, Activi
 import Image from "next/image"
 import FormDialog from "@/components/formDialog"
 import Link from "next/link"
+import Footer from "@/components/Footer"
 
 export default function HomeVisitsPage() {
   const [isOpen, setIsOpen] = useState(false)
@@ -74,7 +75,7 @@ export default function HomeVisitsPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=500"
+                  src="/homevisit/Home visit main.jpg"
                   alt="Physiotherapist treating patient at home"
                   width={500}
                   height={400}
@@ -96,7 +97,7 @@ export default function HomeVisitsPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="/homevisit/Home visit what.jpg"
                   alt="Home physiotherapy session"
                   width={400}
                   height={300}
@@ -179,7 +180,7 @@ export default function HomeVisitsPage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="/homevisit/Home visit benefit.jpg"
                   alt="Patient exercising at home with physiotherapist"
                   width={400}
                   height={300}
@@ -223,7 +224,7 @@ export default function HomeVisitsPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="/homevisit/Home visit why.jpg"
                   alt="Physiotherapist explaining treatment plan at home"
                   width={400}
                   height={300}
@@ -260,15 +261,6 @@ export default function HomeVisitsPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="flex justify-center">
-            <Image
-              src="/placeholder.svg?height=100&width=100"
-              alt="Physiotherapy tool for home visits"
-              width={100}
-              height={100}
-              className="rounded-full shadow-md object-cover"
-            />
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">
             Schedule Your Home Session Today
           </h2>
@@ -301,13 +293,17 @@ export default function HomeVisitsPage() {
           <div className="flex justify-center">
             <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-flex items-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body text-sm">Hours: Monday to Saturday 10:00 AM - 07:00 PM</p>
+              <p className="text-white/80 font-body text-sm">Hours: Monday to Saturday 08:00 AM - 08:00 PM</p>
             </div>
           </div>
         </div>
       </section>
 
       <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <div className="mt-16">
+          <Footer/>
+        </div>
     </div>
+
   )
 }

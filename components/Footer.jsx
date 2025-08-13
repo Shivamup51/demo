@@ -4,8 +4,9 @@ import { Facebook, Twitter, Instagram, Phone, Mail, MapPin, Clock, Calendar } fr
 import Link from "next/link"
 import { useState } from "react"
 import FormDialog from "@/components/formDialog"
-export default function Component() {
-    const [isOpen, setIsOpen] = useState(false)
+import { FaLinkedin } from "react-icons/fa"
+export default function Footer() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <footer className="bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
       <div className="container mx-auto px-4 py-16">
@@ -18,14 +19,14 @@ export default function Component() {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              <Link href="#" className="text-white/80 hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
+              <Link href="https://www.instagram.com/kynexaphysio" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                <Instagram className="w-4 h-4" />
               </Link>
-              <Link href="#" className="text-white/80 hover:text-white transition-colors" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
+              <Link href="https://www.facebook.com/kynexaphysio" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                <Facebook className="w-4 h-4" />
               </Link>
-              <Link href="#" className="text-white/80 hover:text-white transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
+              <Link href="https://www.linkedin.com/company/kynexa-advanced-physiotherapy-and-manual-therapy-clinic/" className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                <FaLinkedin className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -40,7 +41,7 @@ export default function Component() {
               <Link href="/about" className="block text-white/80 hover:text-white transition-colors text-sm">
                 About Us
               </Link>
-              
+
               <Link href="/blogs" className="block text-white/80 hover:text-white transition-colors text-sm">
                 Blogs
               </Link>
@@ -88,7 +89,7 @@ export default function Component() {
                 <span className="text-white/80 text-sm">
                   Monday to Saturday
                   <br />
-                  10:00 AM - 07:00 PM
+                  08:00 AM - 08:00 PM
                 </span>
               </div>
             </div>

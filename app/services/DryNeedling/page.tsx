@@ -127,7 +127,7 @@ export default function DryNeedlingTherapyPage() {
                 <Button onClick={() => setIsOpen(true)}
                 className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
                   <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
-                  Schedule Your Appointment
+                  Book Your Consultation
                 </Button>
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button
@@ -393,8 +393,8 @@ export default function DryNeedlingTherapyPage() {
             </div>
           </div>
           <div>
-            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center">
-              <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
+            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+              <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>
           </div>
