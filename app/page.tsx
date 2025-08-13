@@ -11,6 +11,7 @@ import {
   Thermometer,
   Syringe
 } from "lucide-react";
+import { FaBone, FaBrain, FaHandHoldingMedical, FaChair } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -93,19 +94,68 @@ export default function HomePage() {
     "Common Pain"
   ];
 
+  // Modify the conditions array to include appropriate icons for each condition
   const conditions = [
-    { name: "Back Pain", category: "Spine & Joint" },
-    { name: "Cervical Pain", category: "Spine & Joint" },
-    { name: "Migraine", category: "Neurological" },
-    { name: "Shoulder Pain", category: "Spine & Joint" },
-    { name: "Knee Pain", category: "Spine & Joint" },
-    { name: "Hip Pain", category: "Spine & Joint" },
-    { name: "Joint Stiffness", category: "Spine & Joint" },
-    { name: "Headaches", category: "Neurological" },
-    { name: "Pain from Sedentary Lifestyle", category: "Common Pain" },
-    { name: "Post-Surgical Discomfort", category: "Post-Surgical" },
-    { name: "Muscle Imbalance", category: "Common Pain" },
-    { name: "Sprain", category: "Common Pain" },
+    { 
+      name: "Back Pain", 
+      category: "Spine & Joint",
+      icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Cervical Pain", 
+      category: "Spine & Joint",
+      icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white rotate-45" />
+    },
+    { 
+      name: "Migraine", 
+      category: "Neurological",
+      icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Shoulder Pain", 
+      category: "Spine & Joint",
+      icon: <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Knee Pain", 
+      category: "Spine & Joint",
+      icon: <Accessibility className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Hip Pain", 
+      category: "Spine & Joint",
+      icon: <FaBone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Joint Stiffness", 
+      category: "Spine & Joint",
+      icon: <FaHandHoldingMedical className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Headaches", 
+      category: "Neurological",
+      icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Pain from Sedentary Lifestyle", 
+      category: "Common Pain",
+      icon: <FaChair className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Post-Surgical Discomfort", 
+      category: "Post-Surgical",
+      icon: <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Muscle Imbalance", 
+      category: "Common Pain",
+      icon: <Dumbbell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
+    { 
+      name: "Sprain", 
+      category: "Common Pain",
+      icon: <Bandage className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    },
   ];
 
   const filteredConditions = activeConditionCategory === "All" 
@@ -148,13 +198,15 @@ export default function HomePage() {
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Book Your Consultation
               </Button>
+              <Link href="/contact" className="w-full sm:w-auto">
               <Button 
                 variant="outline" 
                 className="border-[#6c2c8b] text-[#6c2c8b] hover:bg-[#eaf5fb] px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg font-medium rounded-xl w-full sm:w-auto"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call Now
+                Contact Us
               </Button>
+              </Link>
             </motion.div>
             <motion.div 
               className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mt-4"
@@ -618,7 +670,7 @@ With a strong emphasis on patient education, proactive care, and long-term welln
                 >
                   <div className="bg-[#6c2c8b]/80 rounded-xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm h-full">
                     <div className="bg-[#6c2c8b]/80 p-2 sm:p-3 rounded-full mb-2 sm:mb-3">
-                    <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      {condition.icon}
                     </div>
                     <p className="text-white font-medium text-sm sm:text-base mb-2">{condition.name}</p>
                     <Badge className="bg-[#6c2c8b]/80 text-white border-none text-xs">
