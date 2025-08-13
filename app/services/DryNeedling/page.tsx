@@ -293,6 +293,7 @@ export default function DryNeedlingTherapyPage() {
                   height={300}
                   className="w-full h-auto rounded-2xl"
                 />
+                
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
