@@ -193,7 +193,7 @@ export default function PostSurgicalRehabilitationPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/post/Post-Surgical What.jpg"
+                  src="/post/Post-Surgical what.jpg"
                   alt="What is Post-Surgical Rehabilitation"
                   width={400}
                   height={300}
