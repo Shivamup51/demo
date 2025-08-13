@@ -24,6 +24,19 @@ export default function ElectrotherapyPage() {
     "Re-educate muscles after neurological impairment or disuse"
   ]
 
+  // New array for Benefits of Electrotherapy section
+  const electrotherapyBenefits = [
+    "Non-invasive and drug-free pain management",
+    "Reduces inflammation and swelling",
+    "Accelerates tissue repair and cell regeneration",
+    "Stimulates muscle contraction to prevent atrophy",
+    "Enhances blood flow to promote healing",
+    "Relieves nerve-related pain and muscle spasms",
+    "Improves joint mobility and functional movement",
+    "Speeds up recovery after injury or surgery",
+    "Supports rehabilitation for chronic pain conditions"
+  ]
+
   const conditions = [
     "Lower back pain and lumbar spondylosis",
     "Osteoarthritis of the knees and spine",
@@ -49,7 +62,7 @@ export default function ElectrotherapyPage() {
     "Calcific shoulder tendonitis",
     "Tennis/golfer's elbow",
     "Trigger point release and chronic scar tissue breakdown",
-    "Patellar tendinopathy (jumper’s knee)"
+    "Patellar tendinopathy (jumper's knee)"
   ]
 
   const faqs = [
@@ -161,7 +174,7 @@ export default function ElectrotherapyPage() {
     <div className="text-center space-y-4 mb-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Electrotherapy Work?</h2>
       <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-        Using devices that deliver low- to medium-frequency electrical impulses through surface electrodes, electrotherapy targets specific muscle groups or nerve pathways. These impulses mimic the body’s own bioelectric signals to:
+        Using devices that deliver low- to medium-frequency electrical impulses through surface electrodes, electrotherapy targets specific muscle groups or nerve pathways. These impulses mimic the body's own bioelectric signals to:
       </p>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -183,13 +196,45 @@ export default function ElectrotherapyPage() {
   </div>
 </section>
 
+{/* Benefits of Electrotherapy - NEW SECTION */}
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Electrotherapy</h2>
+        <div className="space-y-4">
+          {electrotherapyBenefits.map((benefit, index) => (
+            <div key={index} className="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
+              <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="relative order-1 lg:order-2">
+        <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+          <Image
+            src="/electro/Electrotherapy-Benefits.jpg"
+            alt="Benefits of Electrotherapy"
+            width={500}
+            height={400}
+            className="w-full h-auto rounded-2xl"
+          />
+        </div>
+        <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Shockwave Therapy */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Shockwave Therapy: Precision Impact for Chronic Pain</h2>
             <p className="text-xl text-gray-700 font-body max-w-9xl mx-auto">
-              As part of our advanced electrotherapy options, Shockwave Therapy delivers high-energy acoustic waves directly to affected tissues. This non-invasive technique is ideal for breaking down calcific deposits, stimulating the body’s healing mechanisms, and relieving persistent musculoskeletal pain.
+              As part of our advanced electrotherapy options, Shockwave Therapy delivers high-energy acoustic waves directly to affected tissues. This non-invasive technique is ideal for breaking down calcific deposits, stimulating the body's healing mechanisms, and relieving persistent musculoskeletal pain.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -215,7 +260,7 @@ export default function ElectrotherapyPage() {
       </section>
 
       {/* Conditions Treated */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated with Electrotherapy</h2>
@@ -240,7 +285,7 @@ export default function ElectrotherapyPage() {
       </section>
 
       {/* Why Choose Kynexa */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative order-2 lg:order-1">
@@ -283,7 +328,7 @@ export default function ElectrotherapyPage() {
           <div className="space-y-4 mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Appointment Today</h2>
             <p className="text-lg text-white/80 font-body leading-relaxed">
-              Rediscover pain-free living with Kynexa’s advanced electrotherapy in Delhi. We also offer virtual consultations and electrotherapy education for long-term support.
+              Rediscover pain-free living with Kynexa's advanced electrotherapy in Delhi. We also offer virtual consultations and electrotherapy education for long-term support.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

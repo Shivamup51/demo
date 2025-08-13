@@ -193,7 +193,7 @@ export default function NeuroRehabilitationPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
-                  src="/neuro/Neuro Rehabilitation What.jpg"
+                  src="/neuro/Neuro Rehabilitation what.jpg"
                   alt="What is Neuro Rehabilitation"
                   width={400}
                   height={300}
