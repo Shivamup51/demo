@@ -141,62 +141,62 @@ export default function HomePage() {
     { 
       name: "Back Pain", 
       category: "Spine & Joint",
-      icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-01.png"
     },
     { 
       name: "Cervical Pain", 
       category: "Spine & Joint",
-      icon: <Bone className="w-5 h-5 sm:w-6 sm:h-6 text-white rotate-45" />
+      icon: "/icons/Icons-02.png"
     },
     { 
       name: "Migraine", 
       category: "Neurological",
-      icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-03.png"
     },
     { 
       name: "Shoulder Pain", 
       category: "Spine & Joint",
-      icon: <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-04.png"
     },
     { 
       name: "Knee Pain", 
       category: "Spine & Joint",
-      icon: <Accessibility className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-05.png"
     },
     { 
       name: "Hip Pain", 
       category: "Spine & Joint",
-      icon: <FaBone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-06.png"
     },
     { 
       name: "Joint Stiffness", 
       category: "Spine & Joint",
-      icon: <FaHandHoldingMedical className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-07.png"
     },
     { 
       name: "Headaches", 
       category: "Neurological",
-      icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-08.png"
     },
     { 
       name: "Pain from Sedentary Lifestyle", 
       category: "Common Pain",
-      icon: <FaChair className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-09.png"
     },
     { 
       name: "Post-Surgical Discomfort", 
       category: "Post-Surgical",
-      icon: <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-10.png"
     },
     { 
       name: "Muscle Imbalance", 
       category: "Common Pain",
-      icon: <Dumbbell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-11.png"
     },
     { 
       name: "Sprain", 
       category: "Common Pain",
-      icon: <Bandage className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      icon: "/icons/Icons-12.png"
     },
   ];
 
@@ -798,7 +798,13 @@ With a strong emphasis on patient education, proactive care, and long-term welln
                   <Card className="border-none rounded-xl shadow-sm hover:shadow-md transition-shadow bg-[#6c2c8b]/80 h-full">
                     <CardContent className="p-4 sm:p-5 flex items-center gap-3">
                       <div className="bg-[#6c2c8b]/80 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                        {condition.icon}
+                        <Image
+                          src={condition.icon}
+                          alt={condition.name}
+                          width={24}
+                          height={24}
+                          className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                        />
                       </div>
                       <h3 className="text-sm sm:text-base font-medium text-white text-left flex-grow">{condition.name}</h3>
                     </CardContent>
