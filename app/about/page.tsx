@@ -68,6 +68,107 @@ export default function AboutPage() {
   ]
 
   const [isOpen, setIsOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0)
+
+  // Certificate groups for pagination
+  const certificateGroups = [
+    // Page 1: First 4 groups
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151309.png",
+        alt: "Physio Connect 2018 Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151303.png",
+        alt: "Physio Olympiad 2020 Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151243.png",
+        alt: "Resource Person Award"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151232.png",
+        alt: "5th Annual Conference Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151227.png",
+        alt: "Delhi Physio Cricket League Award"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151220.png",
+        alt: "National Conference Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151213.png",
+        alt: "Physio Connect 2018 Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151206.png",
+        alt: "Best Women Physiotherapist Award 2019"
+      }
+    ]
+  ]
+
+  // Page 2: Additional certificates
+  const certificateGroupsPage2 = [
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151159.png",
+        alt: "Additional Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151154.png",
+        alt: "Additional Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151148.png",
+        alt: "Additional Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151137.png",
+        alt: "Additional Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 150932.png",
+        alt: "Additional Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 150820.png",
+        alt: "Additional Certificate"
+      }
+    ],
+    [
+      {
+        src: "/certificates/Screenshot 2025-08-16 151309.png",
+        alt: "Physio Connect 2018 Certificate"
+      },
+      {
+        src: "/certificates/Screenshot 2025-08-16 151303.png",
+        alt: "Physio Olympiad 2020 Certificate"
+      }
+    ]
+  ]
+
+  const allPages = [certificateGroups, certificateGroupsPage2]
+  const totalPages = allPages.length
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages)
+  }
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages)
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -314,6 +415,87 @@ export default function AboutPage() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Recognition - With Pagination */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <Badge className="bg-[#9d4ed8]/20 text-[#6c2c8b] hover:bg-[#9d4ed8]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Recognition</Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Awards & Recognition</h2>
+            <p className="text-lg text-gray-600 font-body max-w-2xl mx-auto">
+              Celebrating excellence and professional achievements in physiotherapy.
+            </p>
+          </div>
+
+          {/* Certificate Gallery with Pagination */}
+          <div className="relative">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevPage}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all opacity-80 hover:opacity-100"
+              aria-label="Previous page"
+            >
+              <svg className="w-6 h-6 text-[#6c2c8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextPage}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all opacity-80 hover:opacity-100"
+              aria-label="Next page"
+            >
+              <svg className="w-6 h-6 text-[#6c2c8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Certificate Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 px-12">
+              {allPages[currentPage].map((group, groupIndex) => (
+                <div key={groupIndex} className="flex flex-col space-y-4">
+                  {group.map((certificate, certIndex) => (
+                    <div key={certIndex} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden h-80 flex items-center justify-center">
+                      <div className="p-3 w-full h-full flex items-center justify-center">
+                        <Image
+                          src={certificate.src}
+                          alt={certificate.alt}
+                          width={200}
+                          height={280}
+                          className="max-w-full max-h-full object-contain rounded-lg"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentPage === index
+                      ? 'bg-[#6c2c8b] scale-110'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to page ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Page Indicator */}
+            <div className="text-center mt-4">
+              <span className="text-sm text-gray-600">
+                Page {currentPage + 1} of {totalPages}
+              </span>
+            </div>
           </div>
         </div>
       </section>

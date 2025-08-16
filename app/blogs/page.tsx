@@ -37,7 +37,7 @@ export default function BlogsPage() {
       date: "2025-07-27",
       readTime: "7 min read",
       category: "Pelvic Health",
-      image: "/blog/Pelvic Floor Health.jpg",
+      image: "/Pelvic-Floor.jpg",
       featured: true,
     },
     {

@@ -35,7 +35,7 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 8868879387"],
+      details: ["+91 8868879387", "+91 1145545245"],
     },
     {
       icon: <Mail className="w-6 h-6" />,

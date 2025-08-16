@@ -60,9 +60,14 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <Phone className="h-4 w-4 mt-0.5 text-white/80" />
-                <Link href="tel:+918868879387" className="text-white/80 hover:text-white transition-colors text-sm">
-                  +91 8868879387
-                </Link>
+                <div className="text-white/80 text-sm">
+                  <Link href="tel:+918868879387" className="hover:text-white transition-colors block">
+                    +91 8868879387
+                  </Link>
+                  <Link href="tel:+911145545245" className="hover:text-white transition-colors block">
+                    +91 1145545245
+                  </Link>
+                </div>
               </div>
 
               <div className="flex items-start space-x-3">
@@ -116,8 +121,8 @@ export default function Footer() {
                 <Calendar className="w-4 h-4 mr-2" />
                 Book Appointment
               </Button>
-              <p className="text-white/80 text-lg max-w-2xl mt-4">
-                Schedule a physiotherapy session with Dr. Pravesh Kumar at our clinic or your home.
+              <p className="text-white/80 text-lg max-w-3xl mt-4">
+                Schedule a physiotherapy session with our expert physiotherapists at clinic or your home
               </p>
             </div>
           </div>

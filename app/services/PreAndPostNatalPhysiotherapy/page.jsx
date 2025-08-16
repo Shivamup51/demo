@@ -77,7 +77,8 @@ export default function PreAndPostNatalPhysiotherapyPage() {
     "Diastasis recti and core weakness",
     "Post-surgical (C-section) recovery",
     "Fatigue, swelling, and deconditioning",
-    "Postural adaptations for feeding, lifting, and carrying"
+    "Postural adaptations for feeding, lifting, and carrying",
+    "Breathing pattern correction and rib cage mobility"
   ]
 
   const whyChooseUs = [

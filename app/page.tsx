@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import FormDialog from "@/components/formDialog";
 import Footer from "@/components/Footer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; // Added useRef
 import { 
   Calendar, Heart, Award, Users, CheckCircle, ArrowRight, Star, Phone, MapPin, Clock,
   Activity, Waves, Bandage, Zap, Dumbbell, Brain, Bone, Accessibility, Stethoscope,
   Thermometer,
-  Syringe
+  Syringe,
+  ChevronLeft, // Added ChevronLeft
+  ChevronRight // Added ChevronRight
 } from "lucide-react";
 import { FaBone, FaBrain, FaHandHoldingMedical, FaChair } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,6 +25,46 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeConditionCategory, setActiveConditionCategory] = useState("All");
+
+  // Refs and logic for the interactive marquee
+  const marqueeContainerRef = useRef<HTMLDivElement | null>(null);
+  const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  const handleManualScroll = (scrollOffset: number) => {
+    if (marqueeContainerRef.current) {
+      marqueeContainerRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+    }
+  };
+
+  const startScrolling = () => {
+    stopScrolling(); // Ensure no multiple intervals are running
+    scrollIntervalRef.current = setInterval(() => {
+      if (marqueeContainerRef.current) {
+        const container = marqueeContainerRef.current;
+        // When the scroll position reaches the start of the duplicated content
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          // Silently reset to the beginning to create a seamless loop
+          container.scrollLeft = 0;
+        } else {
+          // Scroll by 1 pixel for a smooth effect
+          container.scrollLeft += 1;
+        }
+      }
+    }, 20); // Interval time in ms (lower is faster)
+  };
+
+  const stopScrolling = () => {
+    if (scrollIntervalRef.current) {
+      clearInterval(scrollIntervalRef.current);
+    }
+  };
+
+  useEffect(() => {
+    startScrolling();
+    // Clean up the interval when the component unmounts
+    return () => stopScrolling();
+  }, []);
+
 
   // Animation variants
   const fadeInUp = {
@@ -165,9 +207,55 @@ export default function HomePage() {
   // Duplicate services for the marquee effect
   const marqueeServices = [...Services, ...Services];
 
+  const testimonials = [
+    {
+      name: "Rahul Khurana",
+      content: "I've been seeing Dr. Pravesh for back and sciatica pain and can say without doubt that he is absolutely fantastic. From the very first session, he took the time to understand the root cause of my pain - his approach is professional, knowledgeable, and always reassuring. I've seen a significant improvement in my mobility and reduction in pain. Wish I'd known of him earlier in my life. Great doctor and a wonderful human ",
+      rating: 5
+    },
+    {
+      name: "Narinder Bajaj",
+      content: "Dr. Pravesh Kumar helped me overcome muscle soreness, joint pain, and a shoulder injury with great skill and care. Within a few sessions, I experienced noticeable relief and improved mobility. His approach is professional, effective, and reassuring. Highly recommended for anyone seeking quality physiotherapy support.",
+      rating: 5
+    },
+    {
+      name: "Chitra Apte",
+      content: "I sent Mr Rajesh Sharma to Dr. Pravesh Kumar for knee pain which was constant, acute and debilitating. It's been 3 months and the pain has come down significantly and with regular physio for strengthening muscles and gait, mobility and balance have improved making Mr Sharma feel much more confident. Dr. Pravesh is excellent and works sincerely, serving from the heart. In the patients own words, \"zameen asmaan ka farak hua hai\"!",
+      rating: 5
+    },
+    {
+      name: "Bhavna Ramanlal",
+      content: "Dr. Pravesh has magic in his hands! He has always come to my rescue for the many knee and back issues I have had. His therapy is always spot on and every single session leads to a marked improvement in mobility, healing and recovery. He is also extremely knowledgeable and explains issues clearly. He is a dedicated physiotherapist who is invested in the recovery and healing of his patients. I highly recommend him",
+      rating: 5
+    },
+    {
+      name: "Dhriti Agarwalla",
+      content: "Dr. Pravesh has been of great help to me over the years. Whether it be in achieving my fitness goals or helping me with certain specific muscle/mobility recovery - he has been my go to person for all my physical injuries . He is extremely calm and polite, and explains the functionality of each of his exercises that he prescribes. Moreover, what I really appreciate is that he always answers all my questions with the backing of scientific knowledge of the body and experience.",
+      rating: 5
+    },
+    {
+      name: "Hitesh Kashyap",
+      content: "Absolutely outstanding experience with Dr. Pravesh Kumar....!! Their knowledge and passion for physiotherapy shine through in every session. They took the time to understand my needs and tailored a treatment plan that has made a significant difference in my recovery. Grateful for their expertise and compassionate care, Highly Recommended....!!",
+      rating: 5
+    },
+    
+  ];
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Navbar subServices={[]} />
+      
+      {/* CSS for hiding the scrollbar */}
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+      `}</style>
+
 
       {/* Hero Section - Updated with Animations */}
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f0f7fa] to-white text-gray-800">
@@ -180,7 +268,7 @@ export default function HomePage() {
           >
             <Badge className="bg-[#eaf5fb] text-[#6c2c8b] border-none mb-4 text-xs sm:text-sm">Your Health, Our Priority</Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight text-[#6c2c8b]">
-              Recover. Rebuild. <span className="text-[#6c2c8b]">Return Stronger.</span>
+              Recover , Rebuild <span className="text-[#6c2c8b]">Return Stronger.</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-700 font-body max-w-lg mx-auto lg:mx-0">
               Accelerate your healing with expert physiotherapy and manual therapy designed for lasting results.
@@ -207,19 +295,6 @@ export default function HomePage() {
                 Contact Us
               </Button>
               </Link>
-            </motion.div>
-            <motion.div 
-              className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
-                ))}
-                <span className="ml-2 text-xs sm:text-sm text-gray-600">5.0 (200+ Reviews)</span>
-              </div>
             </motion.div>
           </motion.div>
           <motion.div 
@@ -378,10 +453,10 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Services - Infinite Marquee */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa]">
+      {/* Services - Interactive Marquee */}
+      <section className="py-12 sm:py-16 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-12 px-4 sm:px-6 lg:px-8">
             <Badge className="bg-[#f3eaf8] text-[#6c2c8b] border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Specialized Care</Badge>
             <motion.h2 
               className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4"
@@ -392,49 +467,64 @@ export default function HomePage() {
             >
               Our Medical Services
             </motion.h2>
-            <p className="text-sm sm:text-lg text-gray-700 font-body max-w-2xl mx-auto px-4">
+            <p className="text-sm sm:text-lg text-gray-700 font-body max-w-2xl mx-auto">
               Comprehensive therapeutic solutions delivered by experienced healthcare professionals.
             </p>
           </div>
           
           {/* Marquee Container */}
-          <div className="relative overflow-hidden w-full py-6 sm:py-8">
-            {/* First Marquee Row */}
-            <motion.div 
-              className="flex whitespace-nowrap"
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 30, 
-                ease: "linear",
-                repeatType: "loop"
-              }}
+          <div 
+            className="relative w-full group"
+            onMouseEnter={stopScrolling}
+            onMouseLeave={startScrolling}
+          >
+            {/* Left Chevron Button */}
+            <button
+              onClick={() => handleManualScroll(-300)}
+              aria-label="Scroll Left"
+              className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
             >
-              {/* Duplicate the content for seamless looping */}
-              {[...marqueeServices, ...marqueeServices].map((service, index) => (
-                <Link 
-                  key={index} 
-                  href={service.href}
-                  className="mx-2 sm:mx-3 min-w-[240px] sm:min-w-[280px] no-underline group"
-                >
-                  <Card className="border-none rounded-xl shadow-md group-hover:shadow-lg transition-shadow overflow-hidden h-full bg-[#6c2c8b]/80">
-                    <CardContent className="p-4 sm:p-6 flex flex-col h-full">
-                      <div className="bg-[#6c2c8b]/80 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300">
-                        <div className="text-white transition-colors duration-300">
-                          {service.icon}
+              <ChevronLeft className="w-6 h-6 text-[#6c2c8b]" />
+            </button>
+            
+            {/* Right Chevron Button */}
+            <button
+              onClick={() => handleManualScroll(300)}
+              aria-label="Scroll Right"
+              className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+            >
+              <ChevronRight className="w-6 h-6 text-[#6c2c8b]" />
+            </button>
+
+            <div
+              ref={marqueeContainerRef}
+              className="flex overflow-x-auto whitespace-nowrap scrollbar-hide py-6 sm:py-8 px-2 sm:px-3"
+            >
+              {marqueeServices.map((service, index) => (
+                <div key={index} className="flex-shrink-0 mx-2 sm:mx-3 w-[240px] sm:w-[280px]">
+                  <Link 
+                    href={service.href}
+                    className="no-underline group/card block h-full"
+                  >
+                    <Card className="border-none rounded-xl shadow-md group-hover/card:shadow-lg transition-shadow overflow-hidden h-full bg-[#6c2c8b]/80">
+                      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+                        <div className="bg-[#6c2c8b]/80 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300">
+                          <div className="text-white transition-colors duration-300">
+                            {service.icon}
+                          </div>
                         </div>
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 transition-colors">{service.name}</h3>
-                      <p className="text-white font-body text-sm sm:text-base flex-grow leading-relaxed">{service.desc}</p>
-                      <div className="mt-3 sm:mt-4 flex items-center text-white font-medium text-sm sm:text-base">
-                        Learn more 
-                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:ml-3 transition-all" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 transition-colors">{service.name}</h3>
+                        <p className="text-white font-body text-sm sm:text-base flex-grow leading-relaxed">{service.desc}</p>
+                        <div className="mt-3 sm:mt-4 flex items-center text-white font-medium text-sm sm:text-base">
+                          Learn more 
+                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/card:ml-3 transition-all" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -511,7 +601,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Testimonials Placeholder */}
+      {/* Testimonials Section - Updated */}
       <motion.section 
         className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white"
         initial={{ opacity: 0 }}
@@ -519,16 +609,55 @@ export default function HomePage() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto text-center">
-          <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Patient Stories</Badge>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-6 sm:mb-8">What Our Patients Say</h2>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Patient Stories</Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4">What Our Patients Say</h2>
+            <p className="text-sm sm:text-lg text-gray-700 max-w-2xl mx-auto px-4">
+              Real stories from real patients who have experienced the Kynexa difference.
+            </p>
+          </div>
+          
           <motion.div 
-            className="bg-[#6c2c8b]/80 rounded-xl p-6 sm:p-8 max-w-2xl mx-auto shadow-sm"
-            whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
-            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            <p className="text-white font-body italic mb-4 sm:mb-6 text-sm sm:text-base">Testimonials to be provided by the client.</p>
-            <div className="w-12 sm:w-16 h-1 bg-white mx-auto"></div>
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card className="border-none rounded-xl shadow-md hover:shadow-lg transition-shadow bg-white h-full">
+                  <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                    {/* Rating Stars */}
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    
+                    {/* Testimonial Content */}
+                    <div className="flex-grow">
+                      <p className="text-gray-700 font-body text-sm sm:text-base leading-relaxed mb-4 italic">
+                        "{testimonial.content}"
+                      </p>
+                    </div>
+                    
+                    {/* Patient Name */}
+                    <div className="mt-auto pt-4 border-t border-gray-100">
+                      <p className="font-semibold text-[#6c2c8b] text-sm sm:text-base">
+                        — {testimonial.name}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </motion.section>
@@ -595,7 +724,7 @@ export default function HomePage() {
               <p className="text-sm sm:text-lg text-gray-700 font-body">
               At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we believe healing is not just about recovery—it’s about rediscovering strength, restoring confidence, and reclaiming your life. Located in the heart of Delhi, our clinic offers a sanctuary for those seeking comprehensive, compassionate, and cutting-edge physiotherapy solutions.
 Whether you're navigating post-surgical rehabilitation, managing chronic pain, or recovering from sports injuries, our expert team combines advanced manual therapy with evidence-based techniques to create customized treatment plans tailored to your goals.
-With a strong emphasis on patient education, proactive care, and long-term wellness, we help you move better, feel stronger, and live pain-free , so you can return to the lifestyle you love with confidence and ease.
+With a strong emphasis on patient education, proactive care, and long-term wellness, we help you move better, feel stronger, and live pain-free , so you can return to the lifestyle you love with confidence and ease.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -663,20 +792,17 @@ With a strong emphasis on patient education, proactive care, and long-term welln
                   variants={fadeInUp}
                   layout
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
+                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.4 } }}
+                  exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
                 >
-                  <div className="bg-[#6c2c8b]/80 rounded-xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm h-full">
-                    <div className="bg-[#6c2c8b]/80 p-2 sm:p-3 rounded-full mb-2 sm:mb-3">
-                      {condition.icon}
-                    </div>
-                    <p className="text-white font-medium text-sm sm:text-base mb-2">{condition.name}</p>
-                    <Badge className="bg-[#6c2c8b]/80 text-white border-none text-xs">
-                      {condition.category}
-                    </Badge>
-                  </div>
+                  <Card className="border-none rounded-xl shadow-sm hover:shadow-md transition-shadow bg-[#6c2c8b]/80 h-full">
+                    <CardContent className="p-4 sm:p-5 flex items-center gap-3">
+                      <div className="bg-[#6c2c8b]/80 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                        {condition.icon}
+                      </div>
+                      <h3 className="text-sm sm:text-base font-medium text-white text-left flex-grow">{condition.name}</h3>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -684,8 +810,8 @@ With a strong emphasis on patient education, proactive care, and long-term welln
         </div>
       </motion.section>
 
-      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
       <Footer />
+      <FormDialog isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 }

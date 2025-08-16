@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Home, Send, CheckCircle, Calendar, MapPin, Clipboard, Hand, Zap, Activity, Brain, Footprints, Heart, Clock, Bandage, PhoneCall, Mail } from "lucide-react"
+import { Home, Send, CheckCircle, Calendar, MapPin, Clipboard, Hand, Zap, Activity, Brain, Footprints, Heart, Clock, Bandage, PhoneCall, Mail, Waves } from "lucide-react"
 import Image from "next/image"
 import FormDialog from "@/components/formDialog"
 import Link from "next/link"
@@ -21,6 +21,7 @@ export default function HomeVisitsPage() {
     { name: "Neurological rehabilitation (stroke, Parkinson’s, etc.)", icon: <Brain className="w-6 h-6 text-[#6c2c8b]" />, alt: "Neurological rehab session" },
     { name: "Gait training and balance exercises", icon: <Footprints className="w-6 h-6 text-[#6c2c8b]" />, alt: "Gait training" },
     { name: "Kinesio taping and posture correction techniques", icon: <Bandage className="w-6 h-6 text-[#6c2c8b]" />, alt: "Kinesio taping application" },
+    {name:"Cupping therapy", icon: <Waves className="w-6 h-6 text-[#6c2c8b]" />, alt: "Cupping therapy session" }
   ]
 
   const benefits = [
