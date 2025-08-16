@@ -50,7 +50,7 @@ export default function HomePage() {
           container.scrollLeft += 1;
         }
       }
-    }, 20); // Interval time in ms (lower is faster)
+    }, 5); // Interval time in ms (lower is faster)
   };
 
   const stopScrolling = () => {
