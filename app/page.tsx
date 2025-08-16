@@ -268,7 +268,7 @@ export default function HomePage() {
           >
             <Badge className="bg-[#eaf5fb] text-[#6c2c8b] border-none mb-4 text-xs sm:text-sm">Your Health, Our Priority</Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight text-[#6c2c8b]">
-              Recover , Rebuild <span className="text-[#6c2c8b]">Return Stronger.</span>
+              Recover,Rebuild <span className="text-[#6c2c8b]">Return Stronger.</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-700 font-body max-w-lg mx-auto lg:mx-0">
               Accelerate your healing with expert physiotherapy and manual therapy designed for lasting results.
