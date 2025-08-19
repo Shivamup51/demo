@@ -28,7 +28,6 @@ export default function HomePage() {
 
   // Refs and logic for the interactive marquee
   const marqueeContainerRef = useRef<HTMLDivElement | null>(null);
-  const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const handleManualScroll = (scrollOffset: number) => {
     if (marqueeContainerRef.current) {
@@ -36,34 +35,10 @@ export default function HomePage() {
     }
   };
 
-  const startScrolling = () => {
-    stopScrolling(); // Ensure no multiple intervals are running
-    scrollIntervalRef.current = setInterval(() => {
-      if (marqueeContainerRef.current) {
-        const container = marqueeContainerRef.current;
-        // When the scroll position reaches the start of the duplicated content
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-          // Silently reset to the beginning to create a seamless loop
-          container.scrollLeft = 0;
-        } else {
-          // Scroll by 1 pixel for a smooth effect
-          container.scrollLeft += 1;
-        }
-      }
-    }, 5); // Interval time in ms (lower is faster)
-  };
-
-  const stopScrolling = () => {
-    if (scrollIntervalRef.current) {
-      clearInterval(scrollIntervalRef.current);
-    }
-  };
-
-  useEffect(() => {
-    startScrolling();
-    // Clean up the interval when the component unmounts
-    return () => stopScrolling();
-  }, []);
+  // Remove the auto-scrolling functions since you don't want the marquee effect
+  // const startScrolling = () => { ... }
+  // const stopScrolling = () => { ... }
+  // useEffect(() => { ... }, []);
 
 
   // Animation variants
@@ -268,7 +243,7 @@ export default function HomePage() {
           >
             <Badge className="bg-[#eaf5fb] text-[#6c2c8b] border-none mb-4 text-xs sm:text-sm">Your Health, Our Priority</Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight text-[#6c2c8b]">
-              Recover,Rebuild <span className="text-[#6c2c8b]">Return Stronger.</span>
+            Recover, Rebuild, <span className="text-[#6c2c8b]">Return Stronger</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-700 font-body max-w-lg mx-auto lg:mx-0">
               Accelerate your healing with expert physiotherapy and manual therapy designed for lasting results.
@@ -327,8 +302,8 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {[
-            { icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Working Hours", lines: ["Mon-Sat: 8am - 8pm"] },
-            { icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white " />, title: "Contact Us", lines: ["+91 8868879387","info@kynexa.com"] },
+            { icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Working Hours", lines: ["Monday to Saturday 08:00 AM - 08:00 PM"] },
+            { icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white " />, title: "Contact Us", lines: ["+91 8868879387","info@kynexaphysio.com"] },
             { icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Our Location", lines: ["D 16, Basement, Hauz Khas , New Delhi-110016"] }
           ].map((item, index) => (
             <motion.div 
@@ -465,19 +440,15 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Our Medical Services
+              Our Services
             </motion.h2>
             <p className="text-sm sm:text-lg text-gray-700 font-body max-w-2xl mx-auto">
               Comprehensive therapeutic solutions delivered by experienced healthcare professionals.
             </p>
           </div>
           
-          {/* Marquee Container */}
-          <div 
-            className="relative w-full group"
-            onMouseEnter={stopScrolling}
-            onMouseLeave={startScrolling}
-          >
+          {/* Services Container */}
+          <div className="relative w-full group">
             {/* Left Chevron Button */}
             <button
               onClick={() => handleManualScroll(-300)}
@@ -500,7 +471,7 @@ export default function HomePage() {
               ref={marqueeContainerRef}
               className="flex overflow-x-auto whitespace-nowrap scrollbar-hide py-6 sm:py-8 px-2 sm:px-3"
             >
-              {marqueeServices.map((service, index) => (
+              {Services.map((service : any, index : number) => (
                 <div key={index} className="flex-shrink-0 mx-2 sm:mx-3 w-[240px] sm:w-[280px]">
                   <Link 
                     href={service.href}
@@ -755,12 +726,12 @@ With a strong emphasis on patient education, proactive care, and long-term welln
             <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Comprehensive Care</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4">Conditions We Treat</h2>
             <p className="text-sm sm:text-lg text-gray-700 max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
-              Our medical professionals are experienced in treating a wide range of conditions.
+            Our Physiotherapists are experienced in treating a wide range of conditions.
             </p>
             
             {/* Category Filters */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-4">
-              {conditionCategories.map((category) => (
+              {conditionCategories.map((category : any) => (
                 <motion.button
                   key={category}
                   onClick={() => setActiveConditionCategory(category)}

@@ -352,6 +352,7 @@ export default function ContactPage() {
               <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
               Book Your Appointment Now
             </Button>
+            <Link href="/contact" className="w-full sm:w-auto">
             <Button
               variant="outline"
               className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center w-full sm:w-auto"
@@ -359,6 +360,7 @@ export default function ContactPage() {
               <PhoneCall className="w-5 h-5 mr-2 flex-shrink-0" />
               Contact Us Now
             </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -366,59 +366,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Qualifications */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
-            {/* Qualifications */}
-            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white">
-              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading">Qualifications & Expertise</h3>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4 pl-4 mt-6">
-                    {qualifications.map((qualification, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                        <p className="text-gray-700 font-body">{qualification}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Awards and Certifications */}
-            <Card className="overflow-hidden border-none rounded-xl shadow-lg bg-white">
-              <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#6c2c8b] font-heading">Awards & Certifications</h3>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4 pl-4 mt-6">
-                    {awardsAndCertifications.map((award, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                        <p className="text-gray-700 font-body">{award}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Awards & Recognition - With Pagination */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -426,7 +373,7 @@ export default function AboutPage() {
             <Badge className="bg-[#9d4ed8]/20 text-[#6c2c8b] hover:bg-[#9d4ed8]/30 border-none px-4 py-1.5 text-sm rounded-full mb-2 inline-flex">Recognition</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Awards & Recognition</h2>
             <p className="text-lg text-gray-600 font-body max-w-2xl mx-auto">
-              Celebrating excellence and professional achievements in physiotherapy.
+              Celebrating excellence and professional achievements in Physiotherapy.
             </p>
           </div>
 
@@ -515,6 +462,7 @@ export default function AboutPage() {
               <Calendar className="w-5 h-5 mr-2" />
               Book Your Appointment Now
             </Button>
+            <Link href="/contact" className="w-full sm:w-auto">
             <Button
               variant="outline"
               className="border-white text-white hover:bg-white/10 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 bg-transparent rounded-xl flex items-center justify-center"
@@ -522,6 +470,7 @@ export default function AboutPage() {
               <PhoneCall className="w-5 h-5 mr-2" />
               Contact Us Now
             </Button>
+            </Link>
           </div>
         </div>
       </section>

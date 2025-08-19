@@ -25,7 +25,7 @@ export default function HomeVisitsPage() {
   ]
 
   const benefits = [
-    "Expert physiotherapy care by Dr. Pravesh Kumar",
+    "Expert physiotherapy care by Dr. Pravesh Kumar's Team",
     "Flexible scheduling across Delhi",
     "Privacy and comfort in your own space",
     "Customized treatment based on your surroundings",
@@ -59,12 +59,14 @@ export default function HomeVisitsPage() {
                 Physiotherapy Home Visits in Delhi
               </h1>
               <p className="text-xl text-white/90 font-body">Healing That Comes to You</p>
-              <p className="text-lg text-white/80 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we understand that recovery should never be restricted by distance, mobility, or comfort. That’s why Dr. Pravesh Kumar; PT now offers personalized physiotherapy sessions at home across Delhi—delivering expert care right to your doorstep.
-                <p className="text-white/80 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0 mt-4"> 
-                Whether you're recovering from surgery, managing chronic pain, or seeking postnatal support, our in-home sessions are designed to deliver the same precision, compassion, and clinical excellence you'd expect inside our clinic—without you needing to travel.
+              <div className="space-y-4">
+                <p className="text-lg text-white/80 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, we understand that recovery should never be restricted by distance, mobility, or comfort. That's why Dr. Pravesh Kumar; PT now offers personalized physiotherapy sessions at home across Delhi—delivering expert care right to your doorstep.
                 </p>
-              </p>
+                <p className="text-white/80 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0"> 
+                  Whether you're recovering from surgery, managing chronic pain, or seeking postnatal support, our in-home sessions are designed to deliver the same precision, compassion, and clinical excellence you'd expect inside our clinic—without you needing to travel.
+                </p>
+              </div>
               <Button 
                 onClick={() => setIsOpen(true)}
                 className="mt-6 bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl"
