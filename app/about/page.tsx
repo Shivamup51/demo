@@ -365,6 +365,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+            
 
       {/* Awards & Recognition - With Pagination */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">

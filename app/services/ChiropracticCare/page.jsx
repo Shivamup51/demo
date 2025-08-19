@@ -28,18 +28,18 @@ export default function ChiropracticCarePage() {
   ]
 
   const conditions = [
-    "Chronic lower back or neck pain",
+    "Jaw pain (TMJ dysfunction)",
+    "Desk-related postural strain",
     "Herniated or slipped discs",
-    "Cervical and lumbar spondylosis",
     "Sciatica or radiating leg pain",
+    "Chronic lower back or neck pain",
+    "Cervical and lumbar spondylosis",
     "Migraine and tension-type headaches",
     "Poor posture and tech-neck syndrome",
     "Scoliosis and postural asymmetries",
-    "Jaw pain (TMJ dysfunction)",
     "Sports-related misalignments and overuse stress",
-    "Joint restrictions or stiffness due to sedentary lifestyle or injury",
-    "Desk-related postural strain",
-    "Leg length imbalance affecting gait"
+    "Leg length imbalance affecting gait",
+    "Joint restrictions or stiffness due to sedentary lifestyle or injury"
   ]
 
   const whyChooseUs = [
