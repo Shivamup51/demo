@@ -53,9 +53,9 @@ export default function Navbar({ subServices }: NavbarProps) {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-between items-center h-20 w-full">
           <div className="flex items-center">
             <Link href="/" aria-label="Kynexa Home" className="flex items-center">
               <Image src="/logo.png" alt="Kynexa Logo" width={120} height={30} className="h-10 w-auto sm:h-12" />

@@ -105,10 +105,9 @@ export default function FormDialog({ isOpen, onClose }) {
             <Input
               name="email"
               type="email"
-              placeholder="Email Address"
+              placeholder="Email Address (Optional)"
               value={formData.email}
               onChange={handleChange}
-              required
               className="border-gray-200 rounded-md h-10 text-sm"
             />
             <Input
@@ -121,10 +120,9 @@ export default function FormDialog({ isOpen, onClose }) {
             />
             <Input
               name="address"
-              placeholder="Your Address"
+              placeholder="Your Address (Optional)"
               value={formData.address}
               onChange={handleChange}
-              required
               className="border-gray-200 rounded-md h-10 text-sm"
             />
             <Popover>

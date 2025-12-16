@@ -217,7 +217,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Navbar subServices={[]} />
       
       {/* CSS for hiding the scrollbar */}
@@ -233,8 +233,8 @@ export default function HomePage() {
 
 
       {/* Hero Section - Updated with Animations */}
-      <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f0f7fa] to-white text-gray-800">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f0f7fa] to-white text-gray-800 overflow-x-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-12 w-full">
           <motion.div 
             className="space-y-4 sm:space-y-6 text-center lg:text-left lg:w-1/2"
             initial={{ opacity: 0, x: -50 }}
@@ -294,13 +294,13 @@ export default function HomePage() {
 
       {/* Quick Info Section */}
       <motion.section 
-        className="py-6 sm:py-8 px-4 bg-white"
+        className="py-6 sm:py-8 px-4 bg-white overflow-x-hidden"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full">
           {[
             { icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />, title: "Working Hours", lines: ["Monday to Saturday 08:00 AM - 08:00 PM"] },
             { icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white " />, title: "Contact Us", lines: ["+91 8868879387","info@kynexaphysio.com"] },
@@ -328,13 +328,13 @@ export default function HomePage() {
 
       {/* Numbers That Matter */}
       <motion.section 
-        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa]"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa] overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center w-full">
           <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Your Progress, Our Promise</Badge>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4 sm:mb-6">Our Experience By The Numbers</h2>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
@@ -383,13 +383,13 @@ export default function HomePage() {
 
       {/* Why Choose Us */}
       <motion.section 
-        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa]"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa] overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-8 sm:mb-12">
             <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Expert Care</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa</h2>
@@ -429,8 +429,8 @@ export default function HomePage() {
       </motion.section>
 
       {/* Services - Interactive Marquee */}
-      <section className="py-12 sm:py-16 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12 sm:py-16 bg-[#f8f9fa] overflow-x-hidden">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-8 sm:mb-12 px-4 sm:px-6 lg:px-8">
             <Badge className="bg-[#f3eaf8] text-[#6c2c8b] border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Specialized Care</Badge>
             <motion.h2 
@@ -448,7 +448,7 @@ export default function HomePage() {
           </div>
           
           {/* Services Container */}
-          <div className="relative w-full group">
+          <div className="relative w-full group overflow-x-hidden">
             {/* Left Chevron Button */}
             <button
               onClick={() => handleManualScroll(-300)}
@@ -469,7 +469,7 @@ export default function HomePage() {
 
             <div
               ref={marqueeContainerRef}
-              className="flex overflow-x-auto whitespace-nowrap scrollbar-hide py-6 sm:py-8 px-2 sm:px-3"
+              className="flex overflow-x-auto whitespace-nowrap scrollbar-hide py-6 sm:py-8 px-2 sm:px-3 w-full"
             >
               {Services.map((service : any, index : number) => (
                 <div key={index} className="flex-shrink-0 mx-2 sm:mx-3 w-[240px] sm:w-[280px]">
@@ -502,13 +502,13 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#6c2c8b] text-white"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#6c2c8b] text-white overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative overflow-hidden w-full">
           <motion.div 
             className="absolute -top-24 -left-24 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white opacity-10"
             animate={{ 
@@ -574,13 +574,13 @@ export default function HomePage() {
 
       {/* Testimonials Section - Updated */}
       <motion.section 
-        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-8 sm:mb-12">
             <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Patient Stories</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4">What Our Patients Say</h2>
@@ -635,13 +635,13 @@ export default function HomePage() {
 
       {/* About Kynexa */}
       <motion.section 
-        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa]"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa] overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <motion.div 
               className="relative order-2 lg:order-1"
@@ -715,13 +715,13 @@ With a strong emphasis on patient education, proactive care, and long-term welln
 
       {/* Conditions We Treat - Improved */}
       <motion.section 
-        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-8 sm:mb-12">
             <Badge className="bg-[#6c2c8b]/80 text-white border-none px-3 sm:px-4 py-1.5 mb-4 text-xs sm:text-sm">Comprehensive Care</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#6c2c8b] font-heading mb-4">Conditions We Treat</h2>

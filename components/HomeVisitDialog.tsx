@@ -77,10 +77,9 @@ export function HomeVisitDialog() {
             <Input
               name="email"
               type="email"
-              placeholder="Email Address"
+              placeholder="Email Address (Optional)"
               value={formData.email}
               onChange={handleChange}
-              required
               className="border-gray-200 rounded-md h-10 text-sm"
             />
             <Input

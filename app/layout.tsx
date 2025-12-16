@@ -66,8 +66,8 @@ export default function RootLayout({
   ]
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+      <body className="font-sans antialiased overflow-x-hidden">
         <Navbar subServices={services} />
         {children}
 

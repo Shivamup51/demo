@@ -7,8 +7,9 @@ export async function POST(request) {
 		const body = await request.json()
 		const { name, email, phone, address, preferredDateTime, message } = body
 
-		if (!email) {
-			return NextResponse.json({ error: "Email is required" }, { status: 400 })
+		// Email is now optional, but we need at least phone or email for contact
+		if (!email && !phone) {
+			return NextResponse.json({ error: "Either email or phone is required" }, { status: 400 })
 		}
 
 		const oAuth2Client = new google.auth.OAuth2(
@@ -46,9 +47,9 @@ export async function POST(request) {
 		const adminText = `New consultation request:
 
 Name: ${name || "-"}
-Email: ${email}
+Email: ${email || "Not provided"}
 Phone: ${phone || "-"}
-Address: ${address || "-"}
+Address: ${address || "Not provided"}
 Preferred Date/Time: ${dateDisplay}
 Message: ${message || "-"}
 `
@@ -57,9 +58,9 @@ Message: ${message || "-"}
 				<h2>New Consultation Request</h2>
 				<ul>
 					<li><strong>Name:</strong> ${name || "-"}</li>
-					<li><strong>Email:</strong> ${email}</li>
+					<li><strong>Email:</strong> ${email || "Not provided"}</li>
 					<li><strong>Phone:</strong> ${phone || "-"}</li>
-					<li><strong>Address:</strong> ${address || "-"}</li>
+					<li><strong>Address:</strong> ${address || "Not provided"}</li>
 					<li><strong>Preferred Date/Time:</strong> ${dateDisplay}</li>
 					<li><strong>Message:</strong> ${message || "-"}</li>
 				</ul>
@@ -73,9 +74,9 @@ Message: ${message || "-"}
 				<p>We received your request. Here are the details:</p>
 				<ul>
 					<li><strong>Name:</strong> ${name || "-"}</li>
-					<li><strong>Email:</strong> ${email}</li>
+					<li><strong>Email:</strong> ${email || "Not provided"}</li>
 					<li><strong>Phone:</strong> ${phone || "-"}</li>
-					<li><strong>Address:</strong> ${address || "-"}</li>
+					<li><strong>Address:</strong> ${address || "Not provided"}</li>
 					<li><strong>Preferred Date/Time:</strong> ${dateDisplay}</li>
 					<li><strong>Message:</strong> ${message || "-"}</li>
 				</ul>
@@ -86,25 +87,29 @@ Message: ${message || "-"}
 		const adminMail = {
 			from: `${process.env.GMAIL_SENDER_NAME || "Kynexa Physio"} <${process.env.GMAIL_SENDER}>`,
 			to: adminTo,
-			replyTo: email,
-			subject: `New consultation request - ${name || email}`,
+			replyTo: email || process.env.GMAIL_SENDER,
+			subject: `New consultation request - ${name || phone || "Guest"}`,
 			text: adminText,
 			html: adminHtml,
 		}
 
-		const userMail = {
-			from: `${process.env.GMAIL_SENDER_NAME || "Kynexa Physio"} <${process.env.GMAIL_SENDER}>`,
-			to: email,
-			subject: "We received your consultation request",
-			text: adminText,
-			html: userHtml,
+		// Send to admin
+		const sendPromises = [transporter.sendMail(adminMail)]
+
+		// Only send confirmation email to user if email is provided
+		if (email) {
+			const userMail = {
+				from: `${process.env.GMAIL_SENDER_NAME || "Kynexa Physio"} <${process.env.GMAIL_SENDER}>`,
+				to: email,
+				subject: "We received your consultation request",
+				text: adminText,
+				html: userHtml,
+			}
+			sendPromises.push(transporter.sendMail(userMail))
 		}
 
-		// Send to admin and user
-		await Promise.all([
-			transporter.sendMail(adminMail),
-			transporter.sendMail(userMail),
-		])
+		// Send emails
+		await Promise.all(sendPromises)
 
 		return NextResponse.json({ ok: true })
 	} catch (err) {

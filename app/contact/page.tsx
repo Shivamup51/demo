@@ -94,7 +94,7 @@ export default function ContactPage() {
    }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-7xl mx-auto">
@@ -223,10 +223,9 @@ export default function ContactPage() {
                         <Input
                           name="email"
                           type="email"
-                          placeholder="Email Address"
+                          placeholder="Email Address (Optional)"
                           value={formData.email}
                           onChange={handleChange}
-                          required
                           className="border-gray-200 rounded-md h-10 text-sm"
                         />
                         <Input
