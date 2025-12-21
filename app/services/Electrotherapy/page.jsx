@@ -1,19 +1,36 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Calendar, CheckCircle, Clock, MapPin, Mail, Zap, ArrowUp, ArrowDown, Info } from "lucide-react"
-import { FaBolt, FaUserMd, FaBriefcaseMedical, FaRegChartBar } from "react-icons/fa"
-import Image from "next/image"
-import Link from "next/link"
-import FormDialog from "@/components/formDialog"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Phone,
+  Calendar,
+  Home,
+  CheckCircle,
+  Clock,
+  MapPin,
+  Mail,
+  Zap,
+  ArrowUp,
+  ArrowDown,
+  Info,
+} from "lucide-react";
+import {
+  FaBolt,
+  FaUserMd,
+  FaBriefcaseMedical,
+  FaRegChartBar,
+} from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import FormDialog from "@/components/formDialog";
 export default function ElectrotherapyPage() {
-  const [expandedFaq, setExpandedFaq] = useState(null)
-  const [isOpen, setIsOpen] = useState(false)
+  const [expandedFaq, setExpandedFaq] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleFaq = (index) => {
-    setExpandedFaq(expandedFaq === index ? null : index)
-  }
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
 
   const benefits = [
     "Decrease pain by blocking pain receptors",
@@ -21,8 +38,8 @@ export default function ElectrotherapyPage() {
     "Improve muscle strength and endurance",
     "Break muscle spasms and joint stiffness",
     "Facilitate faster recovery from injury or surgery",
-    "Re-educate muscles after neurological impairment or disuse"
-  ]
+    "Re-educate muscles after neurological impairment or disuse",
+  ];
 
   // New array for Benefits of Electrotherapy section
   const electrotherapyBenefits = [
@@ -34,8 +51,8 @@ export default function ElectrotherapyPage() {
     "Relieves nerve-related pain and muscle spasms",
     "Improves joint mobility and functional movement",
     "Speeds up recovery after injury or surgery",
-    "Supports rehabilitation for chronic pain conditions"
-  ]
+    "Supports rehabilitation for chronic pain conditions",
+  ];
 
   const conditions = [
     "Lower back pain and lumbar spondylosis",
@@ -45,16 +62,16 @@ export default function ElectrotherapyPage() {
     "Muscle weakness and post-fracture stiffness",
     "Chronic inflammatory conditions like fibromyalgia",
     "Sports injuries and repetitive strain syndromes",
-    "Post-surgical pain and soft tissue healing support"
-  ]
+    "Post-surgical pain and soft tissue healing support",
+  ];
 
   const whyChooseUs = [
     "Trained Professionals with hands-on experience in electro-modality protocols",
     "Modern Equipment including TENS, IFT, EMS, Ultrasound, and Shockwave",
     "Personalized therapies evolving with each stage of your recovery",
     "Integrated Care combining electrotherapy with hands-on techniques and therapeutic movement",
-    "Transparent Guidance on safety, effectiveness, and home program integration"
-  ]
+    "Transparent Guidance on safety, effectiveness, and home program integration",
+  ];
 
   const shockwaveConditions = [
     "Plantar fasciitis",
@@ -62,27 +79,31 @@ export default function ElectrotherapyPage() {
     "Calcific shoulder tendonitis",
     "Tennis/golfer's elbow",
     "Trigger point release and chronic scar tissue breakdown",
-    "Patellar tendinopathy (jumper's knee)"
-  ]
+    "Patellar tendinopathy (jumper's knee)",
+  ];
 
   const faqs = [
     {
       question: "Is electrotherapy painful?",
-      answer: "Not at all. Most patients feel mild tingling or warmth, but the sensation is generally soothing and non-invasive."
+      answer:
+        "Not at all. Most patients feel mild tingling or warmth, but the sensation is generally soothing and non-invasive.",
     },
     {
       question: "How long is each session?",
-      answer: "Sessions typically range between 15–30 minutes, depending on the treatment goal."
+      answer:
+        "Sessions typically range between 15–30 minutes, depending on the treatment goal.",
     },
     {
       question: "Are there side effects?",
-      answer: "Side effects are rare and minimal. Our physiotherapists will assess your suitability before starting."
+      answer:
+        "Side effects are rare and minimal. Our physiotherapists will assess your suitability before starting.",
     },
     {
       question: "Can electrotherapy be combined with other treatments?",
-      answer: "Yes, it's often most effective when used alongside manual therapy, dry needling, or corrective exercise."
-    }
-  ]
+      answer:
+        "Yes, it's often most effective when used alongside manual therapy, dry needling, or corrective exercise.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
@@ -93,20 +114,40 @@ export default function ElectrotherapyPage() {
             <div className="space-y-8">
               <div className="space-y-5 mt-10">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight">
-                  Electrotherapy <br />in Delhi
+                  Electrotherapy <br />
+                  in Delhi
                 </h1>
                 <div className="h-1 w-20 bg-white/40 rounded"></div>
-                <p className="text-xl text-white/90 font-body">Stimulating Recovery, Naturally and Effectively</p>
+                <p className="text-xl text-white/90 font-body">
+                  Stimulating Recovery, Naturally and Effectively
+                </p>
                 <p className="text-lg text-white/80 font-body max-w-lg leading-relaxed">
-                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic, our Electrotherapy services in Delhi offer a modern, non-invasive solution for pain relief and functional recovery. By using medically guided electrical impulses, we help stimulate muscles, improve circulation, and reduce inflammation—naturally and effectively. Whether you're coping with post-injury stiffness, chronic nerve pain, or muscular weakness, our physiotherapists personalize each electrotherapy session to accelerate healing and restore your body's optimal rhythm.
+                  At Kynexa Advanced Physiotherapy and Manual Therapy Clinic,
+                  our Electrotherapy services in Delhi offer a modern,
+                  non-invasive solution for pain relief and functional recovery.
+                  By using medically guided electrical impulses, we help
+                  stimulate muscles, improve circulation, and reduce
+                  inflammation—naturally and effectively. Whether you're coping
+                  with post-injury stiffness, chronic nerve pain, or muscular
+                  weakness, our physiotherapists personalize each electrotherapy
+                  session to accelerate healing and restore your body's optimal
+                  rhythm.
                 </p>
               </div>
-             <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => setIsOpen(true)}
-                className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  onClick={() => setIsOpen(true)}
+                  className="bg-white text-[#6c2c8b] hover:bg-white/90 px-6 py-3 sm:px-8 sm:py-6 text-base sm:text-lg font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full sm:w-auto"
+                >
                   <Calendar className="w-5 h-5 mr-2 flex-shrink-0" />
                   Book Your Consultation
                 </Button>
+                <Link href="/home-visit" className="w-full sm:hidden">
+                  <Button className="bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white hover:opacity-90 px-6 py-3 text-base font-medium transition-all duration-300 rounded-xl flex items-center justify-center w-full">
+                    <Home className="w-5 h-5 mr-2 flex-shrink-0" />
+                    Home Visit
+                  </Button>
+                </Link>
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
@@ -117,7 +158,7 @@ export default function ElectrotherapyPage() {
                   </Button>
                 </Link>
               </div>
-              </div>
+            </div>
             <div className="relative">
               <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
                 <Image
@@ -154,13 +195,23 @@ export default function ElectrotherapyPage() {
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
             <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2 lg:pl-8">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">What is Electrotherapy?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+                What is Electrotherapy?
+              </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-gray-700 font-body leading-relaxed mb-6">
-                  Electrotherapy is a non-invasive, pain-relieving treatment method that uses carefully controlled electrical impulses to stimulate nerves and muscles. At Kynexa Advanced Physiotherapy and Manual Therapy Clinic in Delhi, we employ a range of clinically proven modalities to reduce inflammation, accelerate tissue repair, and improve muscle function—without the need for medication or surgery.
+                  Electrotherapy is a non-invasive, pain-relieving treatment
+                  method that uses carefully controlled electrical impulses to
+                  stimulate nerves and muscles. At Kynexa Advanced Physiotherapy
+                  and Manual Therapy Clinic in Delhi, we employ a range of
+                  clinically proven modalities to reduce inflammation,
+                  accelerate tissue repair, and improve muscle function—without
+                  the need for medication or surgery.
                 </p>
                 <p className="text-lg text-gray-700 font-body leading-relaxed">
-                  Our expert physiotherapists customize electrotherapy treatments based on your diagnosis, lifestyle, and response to therapy, ensuring a safe and effective path to recovery.
+                  Our expert physiotherapists customize electrotherapy
+                  treatments based on your diagnosis, lifestyle, and response to
+                  therapy, ensuring a safe and effective path to recovery.
                 </p>
               </div>
             </div>
@@ -168,92 +219,121 @@ export default function ElectrotherapyPage() {
         </div>
       </section>
 
-    {/* How Does Electrotherapy Work */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center space-y-4 mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">How Does Electrotherapy Work?</h2>
-      <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
-        Using devices that deliver low- to medium-frequency electrical impulses through surface electrodes, electrotherapy targets specific muscle groups or nerve pathways. These impulses mimic the body's own bioelectric signals to:
-      </p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {benefits.map((benefit, index) => (
-        <Card key={index} className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full">
-          <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
-          <CardContent className="p-6 flex flex-col items-center">
-            <div className="flex items-center space-x-4">
-              <div className="text-[#9d4ed8]">
-                <FaBolt className="w-7 h-7" />
-              </div>
-              <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">Step {index + 1}</h3>
-              </div>
-              <p className="text-gray-600 font-body text-base leading-relaxed mt-4  ">{benefit}</p>
-          </CardContent>
-        </Card>
-      ))}   
-    </div>
-  </div>
-</section>
+      {/* How Does Electrotherapy Work */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              How Does Electrotherapy Work?
+            </h2>
+            <p className="text-xl text-gray-700 font-body max-w-8xl mx-auto">
+              Using devices that deliver low- to medium-frequency electrical
+              impulses through surface electrodes, electrotherapy targets
+              specific muscle groups or nerve pathways. These impulses mimic the
+              body's own bioelectric signals to:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden border-none rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 h-full"
+              >
+                <div className="h-2 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-[#9d4ed8]">
+                      <FaBolt className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#6c2c8b] font-heading">
+                      Step {index + 1}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 font-body text-base leading-relaxed mt-4  ">
+                    {benefit}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-{/* Benefits of Electrotherapy - NEW SECTION */}
-<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-  <div className="max-w-7xl mx-auto">
-    <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-      <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Benefits of Electrotherapy</h2>
-        <div className="space-y-4">
-          {electrotherapyBenefits.map((benefit, index) => (
-            <div key={index} className="flex items-start space-x-3">
-              <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
-              <p className="text-gray-700 font-body text-base leading-relaxed">{benefit}</p>
+      {/* Benefits of Electrotherapy - NEW SECTION */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-6 p-6 lg:p-0 order-2 lg:order-1">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+                Benefits of Electrotherapy
+              </h2>
+              <div className="space-y-4">
+                {electrotherapyBenefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-[#6c2c8b] mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-body text-base leading-relaxed">
+                      {benefit}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+            <div className="relative order-1 lg:order-2">
+              <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
+                <Image
+                  src="/electro/Electrotherapy-Benefits.jpg"
+                  alt="Benefits of Electrotherapy"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="relative order-1 lg:order-2">
-        <div className="relative z-10 bg-white rounded-3xl p-6 lg:p-0 shadow-lg">
-          <Image
-            src="/electro/Electrotherapy-Benefits.jpg"
-            alt="Benefits of Electrotherapy"
-            width={500}
-            height={400}
-            className="w-full h-auto rounded-2xl"
-          />
-        </div>
-        <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#9d4ed8] rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Shockwave Therapy */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Shockwave Therapy: Precision Impact for Chronic Pain</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              Shockwave Therapy: Precision Impact for Chronic Pain
+            </h2>
             <p className="text-xl text-gray-700 font-body max-w-9xl mx-auto">
-              As part of our advanced electrotherapy options, Shockwave Therapy delivers high-energy acoustic waves directly to affected tissues. This non-invasive technique is ideal for breaking down calcific deposits, stimulating the body's healing mechanisms, and relieving persistent musculoskeletal pain.
+              As part of our advanced electrotherapy options, Shockwave Therapy
+              delivers high-energy acoustic waves directly to affected tissues.
+              This non-invasive technique is ideal for breaking down calcific
+              deposits, stimulating the body's healing mechanisms, and relieving
+              persistent musculoskeletal pain.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {shockwaveConditions.map((condition, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+              <Card
+                key={index}
+                className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full"
+              >
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
                     <Zap className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{condition}</p>
+                    <p className="text-gray-700 font-body text-base leading-relaxed">
+                      {condition}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="text-center mt-8 bg-slate-50 p-6 rounded-xl shadow-sm">
-          <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
+            <Info className="w-8 h-8 text-[#9d4ed8] mx-auto mb-3" />
             <p className="text-lg text-gray-700 font-body">
-              Patients often experience reduced pain and improved function after just a few sessions, making it a valuable addition to rehabilitation plans.
+              Patients often experience reduced pain and improved function after
+              just a few sessions, making it a valuable addition to
+              rehabilitation plans.
             </p>
           </div>
         </div>
@@ -263,19 +343,27 @@ export default function ElectrotherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Conditions Treated with Electrotherapy</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              Conditions Treated with Electrotherapy
+            </h2>
             <p className="text-xl text-gray-700 font-body max-w-3xl mx-auto">
-              Our electrotherapy in Delhi is effective for a variety of conditions, including:
+              Our electrotherapy in Delhi is effective for a variety of
+              conditions, including:
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {conditions.map((condition, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full">
+              <Card
+                key={index}
+                className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-xl transition-all duration-300 h-full"
+              >
                 <div className="h-1.5 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
                     <Zap className="w-6 h-6 text-[#9d4ed8] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-body text-base leading-relaxed">{condition}</p>
+                    <p className="text-gray-700 font-body text-base leading-relaxed">
+                      {condition}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -302,18 +390,27 @@ export default function ElectrotherapyPage() {
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#6c2c8b] rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
             <div className="space-y-6 p-6 lg:p-0 order-1 lg:order-2">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Why Choose Kynexa for Electrotherapy?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+                Why Choose Kynexa for Electrotherapy?
+              </h2>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
-                  <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
+                  <div
+                    key={index}
+                    className="flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm"
+                  >
                     <div className="text-[#9d4ed8] flex-shrink-0">
                       {index === 0 && <FaUserMd className="w-5 h-5" />}
-                      {index === 1 && <FaBriefcaseMedical className="w-5 h-5" />}
+                      {index === 1 && (
+                        <FaBriefcaseMedical className="w-5 h-5" />
+                      )}
                       {index === 2 && <FaRegChartBar className="w-5 h-5" />}
                       {index === 3 && <Zap className="w-5 h-5" />}
                       {index === 4 && <CheckCircle className="w-5 h-5" />}
                     </div>
-                    <p className="text-gray-700 font-body text-lg leading-relaxed">{reason}</p>
+                    <p className="text-gray-700 font-body text-lg leading-relaxed">
+                      {reason}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -326,9 +423,13 @@ export default function ElectrotherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">Book Your Appointment Today</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading">
+              Book Your Appointment Today
+            </h2>
             <p className="text-lg text-white/80 font-body leading-relaxed">
-              Rediscover pain-free living with Kynexa's advanced electrotherapy in Delhi. We also offer virtual consultations and electrotherapy education for long-term support.
+              Rediscover pain-free living with Kynexa's advanced electrotherapy
+              in Delhi. We also offer virtual consultations and electrotherapy
+              education for long-term support.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -336,32 +437,45 @@ export default function ElectrotherapyPage() {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Phone className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Call Us</h3>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">
+                Call Us
+              </h3>
               <p className="text-white/80 font-body">+91 8868879387</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <Mail className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Email Us</h3>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">
+                Email Us
+              </h3>
               <p className="text-white/80 font-body">info@kynexaphysio.com</p>
             </div>
             <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-4">
                 <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-white font-heading mb-2">Visit Us</h3>
-              <p className="text-white/80 font-body">D 16 , Basement , Hauz Khas , New Delhi - 110016</p>
+              <h3 className="text-lg font-bold text-white font-heading mb-2">
+                Visit Us
+              </h3>
+              <p className="text-white/80 font-body">
+                D 16 , Basement , Hauz Khas , New Delhi - 110016
+              </p>
             </div>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm inline-block mx-auto mb-8">
             <div className="flex items-center justify-center space-x-4">
               <Clock className="w-5 h-5 text-white" />
-              <p className="text-white/80 font-body">Timings: Monday to Saturday 08:00 AM - 08:00 PM</p>
+              <p className="text-white/80 font-body">
+                Timings: Monday to Saturday 08:00 AM - 08:00 PM
+              </p>
             </div>
           </div>
           <div>
-            <Button onClick={() => setIsOpen(true)} className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl">
+            <Button
+              onClick={() => setIsOpen(true)}
+              className="bg-white text-[#6c2c8b] hover:bg-white/90 px-8 py-6 text-lg font-medium transition-all duration-300 rounded-xl"
+            >
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Your Appointment
             </Button>
@@ -373,11 +487,16 @@ export default function ElectrotherapyPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6c2c8b] font-heading">
+              Frequently Asked Questions
+            </h2>
           </div>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={index} className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300">
+              <Card
+                key={index}
+                className="overflow-hidden border-none rounded-xl shadow-md bg-white hover:shadow-lg transition-all duration-300"
+              >
                 <div className="h-1 bg-gradient-to-r from-[#6c2c8b] to-[#9d4ed8]"></div>
                 <CardContent className="p-6">
                   <div
@@ -398,7 +517,9 @@ export default function ElectrotherapyPage() {
                   </div>
                   {expandedFaq === index && (
                     <div className="mt-4 pl-9">
-                      <p className="text-gray-600 font-body text-base leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-600 font-body text-base leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </div>
                   )}
                 </CardContent>
@@ -408,5 +529,5 @@ export default function ElectrotherapyPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
